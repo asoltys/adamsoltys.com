@@ -12,3 +12,131 @@ Migrating to CreateCompanies (1)
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 [0m
   [4;35;1mSQL (0.000000)[0m   [0mPRAGMA index_list(companies)[0m
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2007-10-17 22:25:16) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZjA5NDFkYjhlMzA3M2U0ZDgzZjMzOGNmOGY5NTc5%0AMjEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--8ac3a5969d963e03213e172e0e7bcbb6610259b7
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+
+
+CGI::Session::CookieStore::TamperedWithCookie (CGI::Session::CookieStore::TamperedWithCookie):
+    D:/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.5.7919/lib/action_controller/session/cookie_store.rb:122:in `unmarshal'
+    D:/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.5.7919/lib/action_controller/session/cookie_store.rb:81:in `restore'
+    D:/ruby/lib/ruby/1.8/cgi/session.rb:304:in `[]'
+    D:/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.5.7919/lib/action_controller/cgi_process.rb:134:in `session'
+    D:/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.5.7919/lib/action_controller/cgi_process.rb:162:in `stale_session_check!'
+    D:/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.5.7919/lib/action_controller/cgi_process.rb:114:in `session'
+    D:/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.5.7919/lib/action_controller/base.rb:1107:in `assign_shortcuts_without_flash'
+    D:/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.5.7919/lib/action_controller/flash.rb:167:in `assign_shortcuts'
+    D:/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.5.7919/lib/action_controller/base.rb:511:in `process_without_filters'
+    D:/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.5.7919/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    D:/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.5.7919/lib/action_controller/session_management.rb:123:in `process'
+    D:/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.5.7919/lib/action_controller/base.rb:377:in `process'
+    D:/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.5.7919/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    D:/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.5.7919/lib/action_controller/dispatcher.rb:114:in `dispatch'
+    D:/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.5.7919/lib/action_controller/dispatcher.rb:125:in `dispatch_cgi'
+    D:/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.5.7919/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    D:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:78:in `process'
+    D:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:76:in `synchronize'
+    D:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/rails.rb:76:in `process'
+    D:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:618:in `process_client'
+    D:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:617:in `each'
+    D:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:617:in `process_client'
+    D:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `run'
+    D:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `initialize'
+    D:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `new'
+    D:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:736:in `run'
+    D:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `initialize'
+    D:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `new'
+    D:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel.rb:720:in `run'
+    D:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:271:in `run'
+    D:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:270:in `each'
+    D:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/configurator.rb:270:in `run'
+    D:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/bin/mongrel_rails:127:in `run'
+    D:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/lib/mongrel/command.rb:211:in `run'
+    D:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.0.1-mswin32/bin/mongrel_rails:243
+    D:/ruby/bin/mongrel_rails:16:in `load'
+    D:/ruby/bin/mongrel_rails:16
+
+Rendering D:/ruby/lib/ruby/gems/1.8/gems/actionpack-1.13.5.7919/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2007-10-17 22:25:41) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--8aee9f971e8bca089e4081d679dfe0112c42b9d0
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.000000)[0m   [0;1mSELECT * FROM companies [0m
+Rendering template within layouts/companies
+Rendering companies/index
+Completed in 0.03100 (32 reqs/sec) | Rendering: 0.01500 (48%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#new (for 127.0.0.1 at 2007-10-17 22:25:43) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--8aee9f971e8bca089e4081d679dfe0112c42b9d0
+  Parameters: {"action"=>"new", "controller"=>"companies"}
+Rendering template within layouts/companies
+Rendering companies/new
+Completed in 0.01500 (66 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.00000 (0%) | 200 OK [http://localhost/companies/new]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2007-10-17 22:25:51) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDczNzQ5NjE0YWYyMTA3MTA2ZGJjOTg3YWM3NTRk%0AN2UiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1e107c3230ee71240b859273722bd634182a5e21
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.000000)[0m   [0mSELECT * FROM companies [0m
+Rendering template within layouts/companies
+Rendering companies/index
+Completed in 0.01600 (62 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.00000 (0%) | 200 OK [http://localhost/companies/]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2007-10-17 22:25:54) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDczNzQ5NjE0YWYyMTA3MTA2ZGJjOTg3YWM3NTRk%0AN2UiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1e107c3230ee71240b859273722bd634182a5e21
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.000000)[0m   [0;1mSELECT * FROM companies [0m
+Rendering template within layouts/companies
+Rendering companies/index
+Completed in 0.01600 (62 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.00000 (0%) | 200 OK [http://localhost/companies]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2007-10-17 22:25:58) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDczNzQ5NjE0YWYyMTA3MTA2ZGJjOTg3YWM3NTRk%0AN2UiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1e107c3230ee71240b859273722bd634182a5e21
+  Parameters: {"format"=>"xml", "action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.000000)[0m   [0mSELECT * FROM companies [0m
+Completed in 0.01500 (66 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.00000 (0%) | 200 OK [http://localhost/companies.xml]
+
+
+Processing CompaniesController#new (for 127.0.0.1 at 2007-10-17 22:26:03) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDczNzQ5NjE0YWYyMTA3MTA2ZGJjOTg3YWM3NTRk%0AN2UiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1e107c3230ee71240b859273722bd634182a5e21
+  Parameters: {"action"=>"new", "controller"=>"companies"}
+Rendering template within layouts/companies
+Rendering companies/new
+Completed in 0.03200 (31 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.00000 (0%) | 200 OK [http://localhost/companies/new]
+
+
+Processing CompaniesController#create (for 127.0.0.1 at 2007-10-17 22:26:04) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDczNzQ5NjE0YWYyMTA3MTA2ZGJjOTg3YWM3NTRk%0AN2UiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1e107c3230ee71240b859273722bd634182a5e21
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"f7447026025a94839e5b97e5d63fee7c6d04aed1", "action"=>"create", "controller"=>"companies"}
+  [4;36;1mCompany Create (0.000000)[0m   [0;1mINSERT INTO companies ("updated_at", "created_at") VALUES('2007-10-17 22:26:04', '2007-10-17 22:26:04')[0m
+Redirected to http://localhost:3000/companies/1
+Completed in 0.14100 (7 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://localhost/companies]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2007-10-17 22:26:05) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDczNzQ5NjE0YWYyMTA3MTA2ZGJjOTg3YWM3NTRk%0AN2UiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIiZDb21wYW55IHdhcyBzdWNjZXNzZnVsbHkgY3JlYXRl%0AZC4GOgpAdXNlZHsGOwdU--f24ccf5c81ee89bb31a88ea0caecf40ae4349c87
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.000000)[0m   [0mSELECT * FROM companies WHERE (companies."id" = 1) [0m
+Rendering template within layouts/companies
+Rendering companies/show
+Completed in 0.25000 (4 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.00000 (0%) | 200 OK [http://localhost/companies/1]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2007-10-17 22:26:10) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDczNzQ5NjE0YWYyMTA3MTA2ZGJjOTg3YWM3NTRk%0AN2UiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1e107c3230ee71240b859273722bd634182a5e21
+  Parameters: {"format"=>"xml", "action"=>"show", "id"=>"1", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.000000)[0m   [0;1mSELECT * FROM companies WHERE (companies."id" = 1) [0m
+Completed in 0.03100 (32 reqs/sec) | Rendering: 0.01600 (51%) | DB: 0.00000 (0%) | 200 OK [http://localhost/companies/1.xml]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2007-10-17 22:26:15) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDczNzQ5NjE0YWYyMTA3MTA2ZGJjOTg3YWM3NTRk%0AN2UiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--1e107c3230ee71240b859273722bd634182a5e21
+  Parameters: {"format"=>"xml", "action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.000000)[0m   [0mSELECT * FROM companies [0m
+Completed in 0.01500 (66 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.00000 (0%) | 200 OK [http://localhost/companies.xml]
