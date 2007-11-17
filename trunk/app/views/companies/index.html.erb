@@ -6,6 +6,7 @@
 
 <% for company in @companies %>
   <tr>
+	<td><%= company.name %></td>
     <td><%= link_to 'Show', company %></td>
     <td><%= link_to 'Edit', edit_company_path(company) %></td>
     <td><%= link_to 'Destroy', company, :confirm => 'Are you sure?', :method => :delete %></td>

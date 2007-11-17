@@ -1,0 +1,520 @@
+/*  
+Theme Name: FallSeason
+Theme URI: http://wpthemepark.com
+Description: Zenlike by <a href="http://www.nodethirtythree.com/" title="nodethirtythree">nodethirtythree</a> , FallSeason blog Theme by <a href="http://wpthemepark.com/" target="_blank">WP ThemePark</a>
+Version: 1.2
+Author: Sadish
+Author URI: http://wpthemepark.com
+*/
+/*
+
+	zenlike1.0 by nodethirtythree design
+	http://www.nodethirtythree.com
+
+*/
+
+*
+{
+	padding: 0em;
+	margin: 0em;
+}
+
+body
+{
+	background: #141 url(images/bg.gif) repeat fixed;
+	padding: 35px 0px 35px 0px;
+	font-size: small;
+	font-family:Verdana, Tahoma, Arial, Serif;
+	color: #333333;
+	font-size:0.8em;
+}
+p
+{
+	line-height: 1.6em;
+	margin: 0 0 0.5em;
+}
+
+a
+{
+	color: #B96D00;
+	text-decoration: none;
+	border-bottom:#B96D00 1px dashed;
+}
+a:hover
+{
+	text-decoration: none;
+	border-bottom:#B96D00 1px solid;
+}
+h1,h2,h3,h4,h5,h6 
+{
+	font-family:Georgia, Verdana, Arial, Serif;
+}
+h3,h4
+{
+	display: inline;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	background-position: left;
+}
+h3
+{
+	font-size: 1.7em;
+	padding-left: 24px;
+	background-image: url(images/db1.gif);
+}
+h4
+{
+	font-size: 1.4em;
+	padding-left: 18px;
+	background-image: url(images/db2.gif);
+}
+h3 span
+{
+	font-weight: normal;
+	font-size:60%;
+	color:#999;
+}
+h5 
+{
+	font-weight:normal;
+	font-family:Verdana, Arial, Serif;
+	font-size:1em;
+}
+.contentarea
+{
+	padding-top: 1.3em;
+}
+dl 
+{
+	margin:1em 0px;
+}
+dt 
+{
+	font-weight:bold;
+}
+dd 
+{
+	margin:0.5em 1em;
+	padding:0;
+}
+img
+{
+	border: solid 1px #dcdcdc;
+	padding:3px;
+}
+img.left
+{
+	position: relative;
+	float: left;
+	margin: 0em 1.8em 1.4em 0em;
+}
+img.right
+{
+	position: relative;
+	float: right;
+	margin: 0em 0em 1.8em 1.8em;
+}
+img.profile
+{
+	position: relative;
+	float: left;
+	margin: 0.5em;
+	padding:3px;
+}
+ul, ol 
+{
+	margin:1em;
+	padding:0;
+}
+li 
+{
+	margin:0 1em;
+	padding:0.15em;
+}
+#contentarea ul li 
+{
+	list-style-image: url(images/db3.gif);
+}
+blockquote 
+{
+    margin:1em;
+    padding:0 0 0 40px;  
+    color:#666;
+    background:url(images/blockquote.gif) no-repeat left top;
+}
+fieldset 
+{
+	border:none;
+}
+.divider1
+{
+	position: relative;
+	background: #fff url(images/border2.gif) repeat-x;
+	height: 14px;
+	margin: 2.0em 0em 1.5em 0em;
+	clear: both;
+}
+.post 
+{
+	border-bottom: solid 1px #eaeaea;
+	margin: 2em 0;	
+}
+.post h4 a 
+{
+	text-decoration:none;
+	color:#141;	
+	border:none;
+}
+
+.post .details
+{
+	position: relative;
+	top: -1.5em;
+	font-size: 0.86em;
+	color: #787878;
+	margin:0;
+	padding:0;
+}
+.post .details .user 
+{
+	background:url(images/user.png) no-repeat left center;
+	padding-left:15px;
+}
+.post .details .date 
+{
+	background:url(images/date.gif) no-repeat left center;
+	padding-left:15px;
+	margin:0 0 0 1em;
+}
+#outer .post ul.controls
+{
+	clear: both;
+	margin:0;
+	padding:1em 0;
+	background:#fcfcfc;
+	color: #787878;
+}
+
+.post ul.controls li
+{
+	display: inline;
+	font-size: 0.86em;
+	margin:0;
+	padding: 0em 1.0em 0em 15px;
+}
+.post ul.controls li.comments
+{
+	background: url(images/icon-comments.gif) no-repeat left center;
+}
+
+.post ul.controls li.more
+{
+	background: url(images/icon-more.gif) no-repeat left center;
+}
+
+.box
+{
+	background: #FDFCF6 url(images/boxbg.gif) repeat-x;
+	padding: 1.5em;
+	border-top: solid 1px #E1D2BD;
+	border-bottom: solid 1px #E1D2BD;
+	margin-bottom: 1.0em;
+	text-align:left;
+}
+
+ul.linklist
+{
+	list-style: none;
+}
+
+ul.linklist li
+{
+	line-height: 2.0em;
+}
+
+#outer
+{
+	z-index: 2;
+	position: relative;
+	/*
+		The width value below controls the overall width of the design. By default it's set to 82%
+		(so it'll take up 82% of the browser window's width). You can set it to a different percentage
+		value (70%, 90%, etc.) or even a pixel value (760px, 800px, etc.) to enforce a fixed width.
+	*/
+	width: 82%;
+	border: solid 7px #fff;
+	background-color: #fff;
+	margin: 0 auto;
+}
+
+#header
+{
+	position: relative;
+	width: 100%;
+	height: 9em;
+	background: #2b2b2b url(images/topbg.gif) repeat-x;
+	margin-bottom: 2px;
+}
+
+#headercontent
+{
+	position: absolute;
+	bottom: 0em;
+	padding: 0em 2.0em 1.3em 2.0em;
+}
+
+#headercontent h1
+{
+	font-weight: normal;
+	font-size: 2.5em;
+}
+#headercontent h1 a:link, #headercontent h1 a:visited
+{
+	color:#9F9030;
+	text-decoration:none;
+	border:none;
+}
+#headercontent h1 a:hover, #headercontent h1 a:active
+{
+	text-decoration:none;
+	color:#fff;
+	border:none;
+}
+#headercontent h2
+{
+	font-size: 1.0em;
+	font-weight: normal;
+	color: #aaa;
+}
+
+#search
+{
+	position: absolute;
+	top: 5.5em;
+	right: 2.0em;
+	padding-right: 0.0em;
+	color:#aaa;
+}
+
+#search input.text
+{
+	margin-right: 0.5em;
+	vertical-align: middle;
+	border: solid 1px #f0f0f0;
+	padding: 0.1em;
+	width: 10.0em;
+	background:#fff url(images/button_bg.gif) repeat-x top;
+}
+
+#search input.submit
+{
+	background: #8f4008;
+	border: solid 1px #9F9030;
+	font-weight: bold;
+	padding: 0.25em;
+	font-size: 0.8em;
+	color: #F2F3DE;
+	vertical-align: middle;
+}
+
+#headerpic
+{
+	position: relative;
+	height: 149px;
+	background: #fff url(images/fall_leaves.jpg) repeat-x bottom left;
+	margin-bottom: 2px;
+}
+
+#menu
+{
+	position: relative;
+	background: #7F8400 url(images/menubg.gif) repeat-x top left;
+	height: 3.5em;
+	padding: 0 1.0em;
+	margin: 0 0 2px;
+}
+
+#menu ul
+{
+	padding:1em 0 0 0;
+	margin:0;
+}
+
+#menu ul li
+{
+	position: relative;
+	display: inline;
+	padding:0;
+	margin:0;
+}
+
+#menu ul li a:link, #menu ul li a:visited
+{
+	color: #fff;
+	padding: 0.5em 1.0em 0.9em 1.0em;
+	text-decoration: none;	
+	border:none;
+}
+
+#menu ul li a:hover, #menu ul li a:active, #menu ul li.current_page_item a
+{
+	background: #7F8400 url(images/menuactive.gif) repeat-x top left;	
+	border:none;
+}
+
+#menubottom
+{
+	background: #fff url(images/border1.gif) repeat-x;
+	height: 14px;
+	margin-bottom: 1.5em;
+}
+
+#content
+{
+	padding: 0 2.0em;
+}
+
+#primarycontainer
+{
+	float: left;
+	margin-right: -18.0em;
+	width: 100%;
+}
+
+#primarycontent
+{
+	margin: 1.5em 22em 0 0;
+}
+
+#sidebar
+{
+	margin: 0;
+	float: right;
+	width: 18.0em;
+}
+#sidebar ul
+{
+	list-style:none;
+	margin:0.5em 0 0;	
+}
+#sidebar li 
+{
+	margin:1em 0;
+	padding:0.5em;
+}
+#sidebar li li 
+{
+	margin:0;
+	padding:0.5em;
+	background:none;
+}
+#sidebar li li li
+{
+	margin:0;
+	padding:0.5em 0 0 1em;
+}
+#sidebar ul.feeds li 
+{
+	background:url(images/feed.png) no-repeat left center;
+	margin:1em 0;
+	padding:0 1.5em;	
+}
+#footer
+{
+	position: relative;
+	height: 2.0em;
+	clear: both;
+	padding-top: 5.0em;
+	background: #fff url(images/border2.gif) repeat-x 0 2.5em;
+	font-size: 0.86em;
+}
+
+#footer .left
+{
+	position: absolute;
+	left: 2em;
+	bottom: 1.2em;
+}
+
+#footer .right
+{
+	position: absolute;
+	right: 2.0em;
+	bottom: 1.2em;
+}
+/*comments and their styles*/
+#comments, #respond{
+	margin: 2em 0 0 5px;
+}
+#commentform 
+{
+	margin:10px;
+	padding:10px;
+}
+#outer .commentlist {
+	margin: 0;
+	padding: 0;
+}
+.commentlist li 
+{
+	list-style:none;
+	margin: 2em 0;
+	padding: 0.5em;			
+	border-bottom:#ddd 1px dashed;
+	background:#fcfcfc url(images/border2.gif) repeat-x top;
+}
+.commentlist li p 
+{
+    margin:0 1em;
+}
+.commentlist li .cmtinfo 
+{
+	font-family:Trebuchet MS,Verdana, Tahoma, Serif;
+	font-size:0.9em;		
+	padding:5px;
+	margin-bottom: 10px;
+	position:relative;	
+}
+.commentlist li .cmtinfo em 
+{
+	margin:0;
+	padding:0 1em;
+	text-align:right;
+	font-style:normal;			
+	color:#999;	
+}
+.commentlist li cite 
+{
+	font-style:normal;
+	font-weight:bold;
+}
+
+.commentlist li.alt
+{
+	background:#fcfcf9 url(images/border2.gif) repeat-x top;
+}
+
+textarea{
+	width: 90%;
+	padding:5px;
+	height: 20em;
+	border: 1px solid #ccc;	
+	background:#f9f9f9 url(images/button_bg.gif) repeat-x top;
+	font:1em Verdana, Arial, Serif;
+}
+#outer input.text 
+{
+	background:#f9f9f9 url(images/button_bg.gif) repeat-x top;
+	border:#ccc 1px solid;
+	padding:2px;
+	font:1em Verdana, Arial, Serif;
+}
+.post h5 em
+{
+	font-style:normal;
+	float:right;
+	font-weight:normal;
+}
+#header, #content, #sidebar, #footer, .widget {
+    overflow: hidden;
+}

@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :products
+
+  map.resources :projects
+
   map.resources :companies
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -26,10 +30,15 @@ ActionController::Routing::Routes.draw do |map|
   #     admin.resources :products
   #   end
 
-  # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
-  map.root :controller => "companies"
-
   # See how all your routes lay out with "rake routes"
+	
+	# Routes for static pages
+	map.root :controller => 'application', :action => 'home'
+	map.connect 'about/', :controller => 'application', :action => 'about'
+	map.connect 'resume/', :controller => 'application', :action => 'resume'
+	map.connect 'contact/', :controller => 'application', :action => 'contact'
+	map.connect 'blog/', :controller => 'application', :action => 'blog'
+	map.connect 'login/', :controller => 'login', :action => 'index'
 
   # Install the default routes as the lowest priority.
   map.connect ':controller/:action/:id'

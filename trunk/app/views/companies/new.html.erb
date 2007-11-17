@@ -4,6 +4,7 @@
 
 <% form_for(@company) do |f| %>
   <p>
+	<%= render :partial => 'form' %>
     <%= f.submit "Create" %>
   </p>
 <% end %>
