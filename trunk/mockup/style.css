@@ -518,3 +518,20 @@ textarea{
 #header, #content, #sidebar, #footer, .widget {
     overflow: hidden;
 }
+
+div.resume div {
+	margin-top: 10px;
+}
+
+div.resume p {
+	margin: 0;
+}
+
+div.resume h2 {
+	margin-bottom: 15px;
+	margin-top: 15px;
+}
+
+about.h2 {
+		margin-top: 10px;
+	}

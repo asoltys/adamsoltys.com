@@ -1,5 +1,5 @@
 class LoginController < ApplicationController
 	def index
-		@client = Client();
+		@client = Client.new;
 	end
 end
