@@ -30,8 +30,8 @@ body
 }
 p
 {
-	line-height: 1.6em;
-	margin: 0 0 0.5em;
+	line-height: 2.0em;
+	margin: 0 0 1.0em;
 }
 
 a
@@ -533,5 +533,6 @@ div.contentarea h2 {
 }
 
 #photo {
-	float: left;
+	float: right;
+	margin-left: 15px;
 }
