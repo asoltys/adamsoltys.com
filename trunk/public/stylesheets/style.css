@@ -19,9 +19,13 @@ Author URI: http://wpthemepark.com
 	margin: 0em;
 }
 
-body
+html
 {
 	background: #141 url(/images/bg.gif) repeat fixed;
+}
+
+body
+{
 	padding: 35px 0px 35px 0px;
 	font-size: small;
 	font-family:Verdana, Tahoma, Arial, Serif;
