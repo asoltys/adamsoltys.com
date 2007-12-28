@@ -13,10 +13,15 @@ class ApplicationController < ActionController::Base
 	
 	def adjust_request_format
     request.format = :xhtml if xhtml_ready_browser?
+		
+		respond_to do |format|
+			format.html
+			format.xhtml
+		end
   end
 	
 	def xhtml_ready_browser?
-    return request.env["HTTP_ACCEPT"].split(',').include?("application/xhtml+xml")
-  end
+    request.env["HTTP_ACCEPT"].split(',').include?("application/xhtml+xml")
+	end
 end
 
