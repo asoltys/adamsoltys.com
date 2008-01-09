@@ -31,7 +31,7 @@ link:files/vendor/rails/actionpack/README.html.
    and your application name. Ex: rails myapp
    (If you've downloaded Rails in a complete tgz or zip, this step is already done)
 2. Change directory into myapp and start the web server: <tt>script/server</tt> (run with --help for options)
-3. Go to localhost:3000/ and get "Welcome aboard: You’re riding the Rails!"
+3. Go to http://localhost:3000/ and get "Welcome aboard: You’re riding the Rails!"
 4. Follow the guidelines to start developing your application
 
 
@@ -173,9 +173,6 @@ app/helpers
 
 config
   Configuration files for the Rails environment, the routing map, the database, and other dependencies.
-
-components
-  Self-contained mini-applications that can bundle together controllers, models, and views.
 
 db
   Contains the database schema in schema.rb.  db/migrate contains all

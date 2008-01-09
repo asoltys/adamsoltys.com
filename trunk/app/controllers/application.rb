@@ -3,7 +3,6 @@
 
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
-	before_filter :adjust_request_format
 
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
@@ -24,4 +23,3 @@ class ApplicationController < ActionController::Base
     request.env["HTTP_ACCEPT"].split(',').include?("application/xhtml+xml")
 	end
 end
-
