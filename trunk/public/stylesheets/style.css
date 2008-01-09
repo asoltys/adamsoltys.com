@@ -300,6 +300,11 @@ ul.linklist li
 	color:#aaa;
 }
 
+* html #search {
+	left: 10.0em;
+	display: block;
+}
+
 #search input.text
 {
 	margin-right: 0.5em;

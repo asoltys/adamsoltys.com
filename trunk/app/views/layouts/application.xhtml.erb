@@ -34,12 +34,12 @@
 
 	<div id="menu">
 		<ul>
-			<li><a href="http://adamsoltys.com/" title="Home">Home</a></li>
-			<li><a href="http://adamsoltys.com/about/" title="About">About</a></li>
-			<li><a href="http://adamsoltys.com/resume/" title="Resume">Resume</a></li>
-			<li><a href="http://adamsoltys.com/contact/" title="Contact">Contact</a></li>
+			<li><%= link_to 'Home', :action => 'home' %></li>
+			<li><%= link_to 'About', :action => 'about' %></li>
+			<li><%= link_to 'Resume', :action => 'home' %></li>
+			<li><%= link_to 'Contact', :action => 'about' %></li>
 			<li><a href="http://blog.adamsoltys.com/" title="Blog">Blog</a></li>
-			<li><a href="http://adamsoltys.com/login/" title="Client Login">Client Login</a></li>
+			<li><%= link_to 'Client Login', :action => 'login' %></li>
 		</ul>
 
 	</div>
