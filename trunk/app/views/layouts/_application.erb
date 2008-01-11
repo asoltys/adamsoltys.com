@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Adam Soltys  </title>
+<meta name="keywords" content="Adam Soltys, ColdFusion, Flex, Ruby, Rails, PHP, SQL, Victoria, Vancouver, BC, Programmer, Student, Computer Science, Technology, Web Developer, Web Design, Hosting" />
+<meta name="description" content="The personal site of Adam Soltys, a programmer located in Victoria British Columbia." />
+<%= stylesheet_link_tag 'style' %>
+<link rel="alternate" type="application/rss+xml" title="Adam Soltys RSS Feed" href="http://feeds.feedburner.com/asoltys" />
+</head>
+<body>
+<div id="outer">
+
+	<div id="header">
+		<div id="headercontent">
+			<h1><a href="http://adamsoltys.com/" title="Adam Soltys">Adam Soltys</a></h1>
+			<h2>Thoughts on life and technology</h2>
+		</div>
+	</div>
+
+
+	<div id="search">
+		<form id="searchform" method="get" action="http://blog.adamsoltys.com/index.php">
+			<fieldset>
+				<label for="s" id="lblSearch">Find</label>
+				<br/>
+				<input type="text" name="s" id="s" class="text" value="" size="15" />
+				<input type="submit" id="searchsubmit" value="Go" class="submit" name="searchsubmit" />			
+			</fieldset>
+		</form>
+	</div>
+
+	<div id="headerpic"></div>
+
+	<div id="menu">
+		<ul>
+			<li><%= link_to 'Home', home_url %></li>
+			<li><%= link_to 'About', about_url %></li>
+			<li><%= link_to 'Resume', resume_url %></li>
+			<li><%= link_to 'Contact', contact_url %></li>
+			<li><a href="http://blog.adamsoltys.com/" title="Blog">Blog</a></li>
+			<li><%= link_to 'Client Login', login_url %></li>
+		</ul>
+
+	</div>
+	<div id="menubottom"></div>	
+	
+	<div id="content">
+				<!-- Primary content: Stuff that goes in the primary content column (by default, the left column) -->
+		<div id="primarycontainer">
+			<div id="primarycontent">
+				<div id="contentarea"><!-- Primary content area start -->
+					<div class="contentarea">
+						<%= @content_for_layout %>
+					</div>
+				</div>
+			</div><!-- primarycontent end -->
+		</div><!-- primarycontainer end -->
+	</div><!--content end -->
+
+
+<div id="footer">
+			<div class="left"><strong>Adam Soltys</strong>. &copy; 2007 All rights reserved.</div>
+
+			<div class="right"><a href="http://wpthemepark.com/themes/fallseason/">WordPress Themes</a> based on a design by <a href="http://www.nodethirtythree.com/">NodeThirtyThree</a></div>
+	</div>
+</div>
+</body>
+</html>

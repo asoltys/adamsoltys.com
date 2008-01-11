@@ -3,6 +3,7 @@
 
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
+	before_filter :adjust_request_format
 
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
@@ -12,7 +13,7 @@ class ApplicationController < ActionController::Base
 	
 	def adjust_request_format
     request.format = :xhtml if xhtml_ready_browser?
-		
+
 		respond_to do |format|
 			format.html
 			format.xhtml
