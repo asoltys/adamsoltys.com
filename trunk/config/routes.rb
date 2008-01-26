@@ -29,10 +29,9 @@ ActionController::Routing::Routes.draw do |map|
 
 	map.root :controller => 'application', :action => 'home'	
 	map.home '/home', :controller => 'application', :action => 'home'
-	map.about '/about', :controller => 'application', :action => 'about'
+	map.lists '/lists', :controller => 'application', :action => 'lists'
 	map.contact '/contact', :controller => 'application', :action => 'contact'
 	map.resume '/resume', :controller => 'application', :action => 'resume'
-	map.login '/login', :controller => 'login', :action => 'index'
 	
 
 
