@@ -238,7 +238,6 @@ ul.linklist li
 
 #outer
 {
-	z-index: 2;
 	position: relative;
 	/*
 		The width value below controls the overall width of the design. By default it's set to 82%
@@ -274,7 +273,7 @@ ul.linklist li
 }
 #headercontent h1 a:link, #headercontent h1 a:visited
 {
-	color:#9F9030;
+	color:#FFE465;
 	text-decoration:none;
 	border:none;
 }
@@ -296,13 +295,13 @@ ul.linklist li
 	position: absolute;
 	top: 5.5em;
 	right: 2.0em;
+	left: auto;
 	padding-right: 0.0em;
 	color:#aaa;
 }
 
-* html #search {
-	left: 10.0em;
-	display: block;
+#search form fieldset {
+	display: inline;
 }
 
 #search input.text

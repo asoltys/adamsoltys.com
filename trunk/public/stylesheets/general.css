@@ -1,0 +1,19 @@
+/* CSS Document */
+
+div.resume div {
+	margin-top: 10px;
+}
+
+div.resume p {
+	margin: 0;
+}
+
+div.contentarea h2 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#photo {
+	float: right;
+	margin-left: 15px;
+}
