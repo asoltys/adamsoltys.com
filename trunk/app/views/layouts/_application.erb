@@ -1,16 +1,21 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Adam Soltys  </title>
-<meta name="keywords" content="Adam Soltys, asoltys, ColdFusion, Flex, Ruby, Rails, PHP, SQL, Victoria, Vancouver, BC, Programmer, Student, Computer Science, Technology, Web Developer, Web Design, Hosting, Salties, Solties, Salty's, Soltis, Saltis, Saltees, Soltees, Solteez" />
-<meta name="description" content="The personal website of Adam Soltys, a software engineer and web developer in Victoria, British Columbia." />
-<%= stylesheet_link_tag 'fallseason' %>
-<%= stylesheet_link_tag 'general' %>
-<link rel="alternate" type="application/rss+xml" title="Adam Soltys' RSS Feed" href="http://feeds.feedburner.com/asoltys" />
-<link rel="shortcut icon" href="/favicon.ico" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Adam Soltys  </title>
+	<meta name="keywords" content="Adam Soltys, asoltys, ColdFusion, Flex, Ruby, Rails, PHP, SQL, Victoria, Vancouver, BC, Programmer, Student, Computer Science, Technology, Web Developer, Web Design, Hosting, Salties, Solties, Salty's, Soltis, Saltis, Saltees, Soltees, Solteez" />
+	<meta name="description" content="The personal website of Adam Soltys, a software engineer and web developer in Victoria, British Columbia." />
+	
+	<%= stylesheet_link_tag 'fallseason' %>
+	<%= stylesheet_link_tag 'general' %>
+	
+	<link rel="alternate" type="application/rss+xml" title="Adam Soltys' RSS Feed" href="http://feeds.feedburner.com/asoltys" />
+	<link rel="shortcut icon" href="/favicon.ico" />
 </head>
+
 <body>
+
 <div id="outer">
 
 	<div id="header">
@@ -42,15 +47,14 @@
 			<li><%= link_to 'Contact', contact_url %></li>
 			<li><a href="http://blog.adamsoltys.com/" title="Blog">Blog</a></li>
 		</ul>
-
 	</div>
+	
 	<div id="menubottom"></div>	
 	
 	<div id="content">
-				<!-- Primary content: Stuff that goes in the primary content column (by default, the left column) -->
 		<div id="primarycontainer">
 			<div id="primarycontent">
-				<div id="contentarea"><!-- Primary content area start -->
+				<div id="contentarea">
 					<div class="contentarea">
 						<%= @content_for_layout %>
 					</div>
@@ -60,10 +64,22 @@
 	</div><!--content end -->
 
 
-<div id="footer">
-			<div class="left"><strong>Adam Soltys</strong>. &copy; 2007 All rights reserved.</div>
-
-			<div class="right"><a href="http://wpthemepark.com/themes/fallseason/">WordPress Themes</a> based on a design by <a href="http://www.nodethirtythree.com/">NodeThirtyThree</a></div>
+	<div id="footer">
+		<div class="left">
+			<strong>Adam Soltys</strong>. &copy; 2007 All rights reserved.
+		</div>
+		
+		<div class="right">
+			<a href="http://wpthemepark.com/themes/fallseason/">
+				WordPress Themes
+			</a> 
+			
+			based on a design by 
+			
+			<a href="http://www.nodethirtythree.com/">
+				NodeThirtyThree
+			</a>
+		</div>
 	</div>
 </div>
 </body>
