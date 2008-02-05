@@ -26,12 +26,12 @@ html
 
 body
 {
-	padding: 35px 0px 35px 0px;
-	font-size: small;
-	font-family:Verdana, Tahoma, Arial, Serif;
+	padding: 2.0em 0px 2.0em 0px;
 	color: #333333;
-	font-size:0.8em;
+	font-family: "Lucida Grande","Lucida Sans Unicode",Tahoma,Verdana;
+	font-size: 0.8em;
 }
+
 p
 {
 	line-height: 2.0em;
@@ -379,14 +379,13 @@ ul.linklist li
 
 #primarycontainer
 {
-	float: left;
-	margin-right: -18.0em;
 	width: 100%;
 }
 
 #primarycontent
 {
-	margin: 1.5em 22em 0 0;
+	margin: 1.5em 0 0 0;
+	max-width: 80em;
 }
 
 #sidebar
