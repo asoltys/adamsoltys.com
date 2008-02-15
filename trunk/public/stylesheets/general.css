@@ -2,14 +2,13 @@
 SITEWIDE
 --------------------------------------------------------------------- */
 
-div.contentarea h2 {
-	margin-top: 10px;
-	margin-bottom: 10px;
+div.contentarea h1 {
+	padding-left: 1.0em;
+	background-image: url(../images/db1.gif);
+	background-position:left center;
+	background-repeat:no-repeat;
 }
 
-pre {
-	font-size: 1.0em;
-}
 
 /* ------------------------------------------------------------------ 
 HOME
@@ -36,6 +35,31 @@ div.resume p {
 
 *.hidden {
 	display: none;
+}
+
+/* ------------------------------------------------------------------ 
+PROJECTS
+--------------------------------------------------------------------- */
+
+div.projects div {
+	width: 650px;
+	background: #FDFCF6 url(/images/boxbg.gif) repeat-x;
+	padding: 1.0em;
+	border-top: solid 1px #E1D2BD;
+	border-bottom: solid 1px #E1D2BD;
+	margin-bottom: 1.0em;
+	text-align:left;
+}
+
+div.projects img {
+	float: right;
+	border: 1px solid #E1D2BD;
+	padding: 0.7em;
+	margin-right: 0.5em;
+}
+
+div.projects p {
+	margin: 0;
 }
 
 /* ------------------------------------------------------------------ 

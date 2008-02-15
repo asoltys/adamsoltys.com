@@ -49,45 +49,7 @@ a:hover
 	text-decoration: none;
 	border-bottom:#B96D00 1px solid;
 }
-h1,h2,h3,h4,h5,h6 
-{
-	font-family:Georgia, Verdana, Arial, Serif;
-}
-h3,h4
-{
-	display: inline;
-	font-weight: bold;
-	background-repeat: no-repeat;
-	background-position: left;
-}
-h3
-{
-	font-size: 1.7em;
-	padding-left: 24px;
-	background-image: url(/images/db1.gif);
-}
-h4
-{
-	font-size: 1.4em;
-	padding-left: 18px;
-	background-image: url(/images/db2.gif);
-}
-h3 span
-{
-	font-weight: normal;
-	font-size:60%;
-	color:#999;
-}
-h5 
-{
-	font-weight:normal;
-	font-family:Verdana, Arial, Serif;
-	font-size:1em;
-}
-.contentarea
-{
-	padding-top: 1.3em;
-}
+
 dl 
 {
 	margin:1em 0px;
@@ -211,16 +173,6 @@ fieldset
 	background: url(/images/icon-more.gif) no-repeat left center;
 }
 
-.box
-{
-	background: #FDFCF6 url(/images/boxbg.gif) repeat-x;
-	padding: 1.5em;
-	border-top: solid 1px #E1D2BD;
-	border-bottom: solid 1px #E1D2BD;
-	margin-bottom: 1.0em;
-	text-align:left;
-}
-
 ul.linklist
 {
 	list-style: none;
@@ -268,7 +220,7 @@ ul.linklist li
 }
 #headercontent h1 a:link, #headercontent h1 a:visited
 {
-	color:#FFE465;
+	color: #F7B928;
 	text-decoration:none;
 	border:none;
 }
@@ -369,7 +321,6 @@ ul.linklist li
 {
 	background: #fff url(/images/border1.gif) repeat-x;
 	height: 14px;
-	margin-bottom: 1.5em;
 }
 
 #content
