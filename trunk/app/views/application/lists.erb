@@ -1,8 +1,45 @@
 <h1>Lists</h1>
 
+<h2>Stock Portfolio</h2>
+
+<!-- Gotta consume this: http://www.webservicex.net/stockquote.asmx/GetQuote?symbol=BMO.TO -->
+
+<h3>Transaction History</h3>
+
+<table>
+	<tr>
+		<th>Date</th>
+		<th>Company</th>
+		<th>Symbol</th>
+		<th>Shares</th>
+		<th>Price</th>
+		<th>Total</th>
+	</tr>
+	<% for t in @transactions %>
+	<tr>
+		<td><%= t.date %></td>
+		<td><%= t.company %></td>
+		<td><%= t.symbol %></td>
+		<td><%= t.shares %></td>
+		<td>$<%= t.price %></td>
+		<td>$<%= t.shares * t.price %></td>
+	</tr>
+	<% end %>
+</table>
+		
+		
+		
+		
+
 <h2>Books I Plan To Read</h2>
 
 <ul>
+	<li>A Passage to India - E.M. Forster</li>
+	<li>The Sun Also Rises - Ernest Hemingway</li>
+	<li>A Farewell to Arms - Ernest Hemingway</li>
+	<li>Love in the Time of Cholera - Gabriel Garcia Marquez</li>
+	<li>The Spirit Tracker - Norm Pratt</li>
+	<li>Animal, Vegetable, Miracle - Barbara Kingsolver, Camille Kingsolver, Steven L. Hopp</li>
 	<li>Northern Lights - Philip Pullman</li>
 	<li>The Call of Cthulu - H.P. Lovecraft </li>
 	<li>Hill of Dreams - Arthur Machen</li>
@@ -11,7 +48,6 @@
 	<li>The League of Extraordinary Gentlemen - Alan Moore</li>
 	<li>20,000 Leagues Under the Sea - Jules Verne</li>
 	<li>Naked Lunch - Tim Burroughs</li>
-	<li>The Shadow of the Sun: My African Life - Ryszard Kapuscinski</li>
 	<li>How to Sail Around the World - Hal Roth</li>
 	<li>Paradise Lost - John Milton</li>
 </ul>
@@ -21,6 +57,7 @@
 <strong>Liked and Finished</strong>
 
 <ul>
+	<li>The Shadow of the Sun: My African Life - Ryszard Kapuscinski</li>
 	<li>Tales of Horror and the Supernatural - Arthur Machen</li>
 	<li>The Catcher in the Rye - J.D. Salinger</li>
 	<li>On The Road - Jack Kerouac</li>
@@ -36,6 +73,7 @@
 <strong>Attempted but Didn't Get Through</strong>
 
 <ul>
+	<li>A Confederacy of Dunces - John Kennedy Toole</li>
 	<li>The Gum Thief - Douglas Coupland</li>
 	<li>Midnight's Children - Salman Rushdie</li>
 	<li>Hey Nostradamus - Douglas Coupland</li>
@@ -49,20 +87,21 @@
 <strong>New Releases</strong>
 
 <ul>
-	<li>The Assasination of the Outlaw Jesse James by the Coward Robert Ford</li>
 	<li>The Diving Bell and the Butterfly</li>
+	<li>Stardust</li>
+	<li>Charlie and the Chocolate Factory</li>
+	<li>Control</li>
 </ul>
 
-<strong>Classics</strong>
+<strong>Oldies</strong>
 
 <ul>
-	<li>Miller's Crossing</li>
-	<li>Singin' in the Rain</li>
+	<li>A Clockwork Orange</li>
+	<li>Leolo</li>
+	<li>Bande a part</li>
+	<li>Farewell my Concubine</li>
 	<li>Baron Munchhausen</li>
-	<li>Deliverance</li>
-	<li>The Searchers</li>
 	<li>The Rules of the Game</li>
-	<li>Stardust</li>
 	<li>The Princess Bride</li>
 	<li>Sneakers</li>
 </ul>
@@ -72,6 +111,10 @@
 <strong>New Releases I Liked</strong>
 
 <ul>
+	<li>Dan in Real Life</li>
+	<li>Definitely, Maybe</li>
+	<li>Margot's Wedding</li>
+	<li>The Planet Earth Series</li>
 	<li>There Will be Blood</li>
 	<li>Into the Wild</li>
 	<li>No Country for Old Men</li>
@@ -80,18 +123,28 @@
 	<li>Zodiac</li>
 </ul>
 
-<strong>New Releases I Didn't Like So Much</strong>
+<strong>New Releases I Didn't Like</strong>
 
 <ul>
+	<li>Beer Fest</li>
+	<li>Across the Universe</li>
+	<li>The Assasination of the Outlaw Jesse James by the Coward Robert Ford</li>
+	<li>Poor Boy's Game</li>
 	<li>Atonement</li>
 	<li>3:10 to Yuma</li>
 	<li>Venus</li>
 	<li>A Good Year</li>
 </ul>
 
-<strong>Classics (I only ever watch oldies that I know I'll like!)</strong>
+<strong>Oldies I Liked</strong>
 
 <ul>
+	<li>The Wild Bunch</li>
+	<li>Straw Dogs</li>
+	<li>A Streetcar Named Desire</li>
+	<li>The Searchers</li>
+	<li>Singin' in the Rain</li>
+	<li>Deliverance</li>
 	<li>The Godfather</li>
 	<li>Tokyo Story</li>
 	<li>Citizen Kane</li>
@@ -99,6 +152,37 @@
 	<li>Annie Hall</li>
 	<li>Manhattan</li>
 	<li>Blood Simple</li>
+	<li>Seven Samurai</li>
 </ul>
 
-<p>If you want to know more about me and see some photos then feel free to check out my <a href="http://ubc.facebook.com/profile.php?id=21013817">Facebook Page</a>.</p>
+<strong>Oldies I Didn't Like</strong>
+
+<ul>
+	<li>Leon</li>
+	<li>Miller's Crossing</li>
+</ul>
+
+
+<h2>Games I Like</h2>
+
+<strong>Board Games</strong>
+
+<ul>
+	<li>Chess</li>
+	<li>Scrabble</li>
+	<li>Backgammon</li>
+	<li>Crib</li>
+	<li>Poker</li>
+	<li>Settlers of Catan</li>
+	<li>Caylus</li>
+	<li>Cranium</li>
+</ul>
+
+<strong>Video Games</strong>
+
+<ul>
+	<li>Halo</li>
+	<li>Guitar Hero</li>
+	<li>StarCraft</li>
+	<li>Minesweeper</li>
+</ul>

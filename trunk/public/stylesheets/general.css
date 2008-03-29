@@ -9,6 +9,16 @@ div.contentarea h1 {
 	background-repeat:no-repeat;
 }
 
+div.contentarea table {
+	width: 100%;
+	border: 1px solid #ccc;
+}
+
+div.contentarea th {
+ background-color:#818800;
+ color: #fff;
+}
+
 
 /* ------------------------------------------------------------------ 
 HOME
@@ -43,7 +53,6 @@ PROJECTS
 
 div.projects div {
 	width: 650px;
-	background: #FDFCF6 url(/images/boxbg.gif) repeat-x;
 	padding: 1.0em;
 	border-top: solid 1px #E1D2BD;
 	border-bottom: solid 1px #E1D2BD;

@@ -30,9 +30,11 @@ ActionController::Routing::Routes.draw do |map|
 	map.root :controller => 'application', :action => 'home'	
 	map.home '/home', :controller => 'application', :action => 'home'
 	map.lists '/lists', :controller => 'application', :action => 'lists'
-	map.projects '/projects', :controller => 'projects', :action => 'index'
 	map.contact '/contact', :controller => 'application', :action => 'contact'
 	map.resume '/resume', :controller => 'application', :action => 'resume'
+	map.finances '/finances', :controller => 'application', :action => 'finances'
+	map.resources :reviews
+	map.resources :projects
 	
 
 
