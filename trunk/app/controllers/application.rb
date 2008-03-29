@@ -13,6 +13,7 @@ class ApplicationController < ActionController::Base
 	
 	def lists
 		@transactions = Transaction.find(:all)
+		@quote = Quote.find(:symbol => 'BMO')
 	end
 
 	private

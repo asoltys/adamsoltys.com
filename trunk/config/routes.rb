@@ -35,6 +35,7 @@ ActionController::Routing::Routes.draw do |map|
 	map.finances '/finances', :controller => 'application', :action => 'finances'
 	map.resources :reviews
 	map.resources :projects
+	map.resources :companies
 	
 
 
