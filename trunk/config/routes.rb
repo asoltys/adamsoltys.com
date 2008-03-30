@@ -36,6 +36,7 @@ ActionController::Routing::Routes.draw do |map|
 	map.resources :reviews
 	map.resources :projects
 	map.resources :companies
+	map.connect '/quotes/:symbol', :controller => 'quotes', :action => 'new'
 	
 
 

@@ -1,7 +1,16 @@
-class Quote < ActiveResource::Base
-	self.site = "http://www.webservicex.net"
+class Quote
+	require 'rubygems'
+	require 'hpricot'
+	require 'open-uri'
 	
-	def element_path(id, prefix_options = {}, query_options = nil)
-		"/stockquote.asmx/GetQuote?symbol=GOOG"
+	include ROXML
+	xml_text :symbol
+	xml_text :price
+	
+	def initialize(symbol)
+		@symbol = symbol
+		@url = "http://finance.google.com/finance?q=#{symbol}&hl=en";
+		@hp = Hpricot(open(@url));
+		@price = @hp.at("span[@class='pr']").inner_html
 	end
 end

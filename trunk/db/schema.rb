@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 9) do
+ActiveRecord::Schema.define(:version => 10) do
 
   create_table "categories", :force => true do |t|
     t.string "name"
@@ -26,7 +26,9 @@ ActiveRecord::Schema.define(:version => 9) do
   end
 
   create_table "clients", :force => true do |t|
-    t.string   "name"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "password"
     t.integer  "company_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -68,12 +70,16 @@ ActiveRecord::Schema.define(:version => 9) do
     t.integer "category_id"
   end
 
+  create_table "stocks", :force => true do |t|
+    t.string "symbol"
+    t.string "company"
+  end
+
   create_table "transactions", :force => true do |t|
     t.date    "date"
-    t.string  "symbol"
-    t.string  "company"
     t.integer "shares"
     t.float   "price"
+    t.integer "stock_id"
   end
 
 end

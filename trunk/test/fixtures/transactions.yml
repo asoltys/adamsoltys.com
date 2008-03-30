@@ -3,23 +3,20 @@
 BMO:
   id: 1
   date: March 18, 2008
-  symbol: BMO
-  company: Bank of Montreal
+  stock_id: 1
   price: 40.50
   shares: 25
 
 GMP:
   id: 2
+  stock_id: 2
   date: March 27, 2008
-  symbol: GMP.UN
-  company: GMP Capital Trust
   price: 17.00
   shares: 100
 	
 CNR:
   id: 3
   date: March 27, 2008
-  symbol: CNR
-  company: Canadian National Railway
+  stock_id: 3
   price: 49.95
   shares: 25

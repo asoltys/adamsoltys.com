@@ -9,8 +9,12 @@ RAILS_GEM_VERSION = '2.0.2' unless defined? RAILS_GEM_VERSION
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
+require 'ROXML'
 
 Rails::Initializer.run do |config|
+	config.load_paths += %W( #{RAILS_ROOT}/app/sweepers )
+	config.action_controller.page_cache_directory = RAILS_ROOT + "/public/cache/"
+	
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
   # -- all .rb files in that directory are automatically loaded.
