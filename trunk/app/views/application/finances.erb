@@ -1,48 +1,67 @@
 <h1>Finances</h1>
 
-<h2>Non-Registered Assets</h2>
+<h2>Stock Portfolio</h2>
+
+<h3>Transaction History</h3>
 
 <table>
 	<tr>
-		<th colspan="2">Cash</th>
-	<tr>
-		<td>CIBC Chequing Account</td>
-		<td>2908.13</td>
+		<th>Date</th>
+		<th>Company</th>
+		<th>Symbol</th>
+		<th>Shares</th>
+		<th>Price</th>
+		<th>Cost</th>
+		<th>Current Price</th>
+		<th>Current Value</th>
+		<th>Gain/Loss</th>
 	</tr>
+	<% for t in @transactions %>
 	<tr>
-		<th colspan="2">Term Deposits</th>
-	<tr>
-		<td>Term Deposits</td>
-		<td>2908.13</td>
+		<td><%= t.date %></td>
+		<td><%= t.company %></td>
+		<td><%= t.symbol %></td>
+		<td><%= t.shares %></td>
+		<td>$<%= sprintf("%.2f", t.price) %></td>
+		<td>$<%= sprintf("%.2f", t.cost) %></td>
+		<td>$<%= sprintf("%.2f", t.current_price) %></td>
+		<td>$<%= sprintf("%.2f", t.value) %></td>
+		<td>$<%= sprintf("%.2f", t.gain) %></td>
 	</tr>
-	<tr>
-		<th colspan="2">Bonds</th>
-	<tr>
-		<td>CIBC Chequing Account</td>
-		<td>2908.13</td>
-	</tr>
-	<tr>
-		<th colspan="2">Stocks</th>
-	<tr>
-		<td>CIBC Chequing Account</td>
-		<td>2908.13</td>
-	</tr>
+	<% end %>
 </table>
 
-<h3>Term Deposits</h3>
-<h3>Bonds</h3>
-<h3>Stocks</h3>
-<h3>Mutual Funds</h3>
+<h3>Totals</h3>
 
-<h2>Registered Assets</h2>
+<img id="finance" class="right" src="/images/finance.jpg" style="width: 300px; height: 200px" title="Finances" alt="Finances" />
 
-<h3>Term Deposits</h3>
-
-
-<h3>Bonds</h3>
-<h3>Stocks</h3>
-<h3>Mutual Funds</h3>
-
-<p>
-	Total RRSP Value:
-</p>
+<table style="width: 50%">
+	<tr>
+		<th colspan="2">&nbsp;</th>
+	</tr>
+	
+	<tr>
+		<td>Original Cost</td>
+		<td>$<%= sprintf("%.2f", @total_cost) %></td>
+	</tr>
+	
+	<tr>
+		<td>Current Market Value</td>
+		<td>$<%= sprintf("%.2f", @total_value) %></td>
+	</tr>
+	
+	<tr>
+		<td>Overall Gain/Loss</td>
+		<td>$<%= sprintf("%.2f", @total_gain) %></td>
+	</tr>
+	
+	<tr>
+		<td>Less Commissions</td>
+		<td>$<%= sprintf("%.2f", @commissions) %></td>
+	</tr>
+	
+	<tr>
+		<td>Total Profit</td>
+		<td>$<%= sprintf("%.2f", @total_profit) %></td>
+	</tr>
+</table>

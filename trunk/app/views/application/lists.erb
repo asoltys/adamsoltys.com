@@ -1,39 +1,6 @@
 <h1>Lists</h1>
 
-<h2>Stock Portfolio</h2>
-
-<h3>Transaction History</h3>
-
-<table>
-	<tr>
-		<th>Date</th>
-		<th>Company</th>
-		<th>Symbol</th>
-		<th>Shares</th>
-		<th>Price</th>
-		<th>Cost</th>
-		<th>Current Price</th>
-		<th>Current Value</th>
-		<th>Gain/Loss</th>
-	</tr>
-	<% for t in @transactions %>
-	<tr>
-		<td><%= t.date %></td>
-		<td><%= t.company %></td>
-		<td><%= t.symbol %></td>
-		<td><%= t.shares %></td>
-		<td>$<%= sprintf("%.2f", t.price) %></td>
-		<td>$<%= sprintf("%.2f", t.cost) %></td>
-		<td>$<%= sprintf("%.2f", t.current_price) %></td>
-		<td>$<%= sprintf("%.2f", t.value) %></td>
-		<td>$<%= sprintf("%.2f", t.gain) %></td>
-	</tr>
-	<% end %>
-</table>
-		
-		
-		
-		
+<img id="book" class="right" src="/images/book.jpg" style="width: 300px; height: 300px;" />
 
 <h2>Books I Plan To Read</h2>
 

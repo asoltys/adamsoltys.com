@@ -4,7 +4,7 @@
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
 	before_filter :adjust_request_format
-	caches_page :home, :lists, :resume, :contact
+	caches_page :home, :about, :lists, :finances, :resume, :contact
 
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
@@ -14,10 +14,31 @@ class ApplicationController < ActionController::Base
 		respond_appropriately
 	end
 	
-	def lists
-		@transactions = Transaction.find(:all)
+	def about
 		respond_appropriately
 	end
+	
+	def lists
+		respond_appropriately
+	end
+	
+	def finances
+		@transactions = Transaction.find(:all)
+		
+		@total_cost = @total_value = @total_gain = @commissions = 0
+		
+		@transactions.each do |t|
+			@total_cost += t.cost
+			@total_value += t.value
+			@total_gain += t.gain
+			@commissions += 2 * 4.95
+		end
+		
+		@total_profit = @total_gain - @commissions
+		
+		respond_appropriately
+	end
+	
 	
 	def resume
 		respond_appropriately

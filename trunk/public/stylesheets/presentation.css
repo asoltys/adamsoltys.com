@@ -2,11 +2,37 @@
 SITEWIDE
 --------------------------------------------------------------------- */
 
+a
+{
+	color: #B96D00;
+	text-decoration: none;
+	border-bottom:#B96D00 1px dashed;
+}
+
+a:hover
+{
+	text-decoration: none;
+	border-bottom:#B96D00 1px solid;
+}
+
+*.hidden {
+	display: none;
+}
+
+/* ------------------------------------------------------------------ 
+CONTENT AREA
+--------------------------------------------------------------------- */
+
 div.contentarea h1 {
 	padding-left: 1.0em;
 	background-image: url(../images/db1.gif);
 	background-position:left center;
 	background-repeat:no-repeat;
+}
+
+div.contentarea h3 {
+	margin-top: 15px;
+	margin-bottom: 15px;
 }
 
 div.contentarea table {
@@ -19,17 +45,35 @@ div.contentarea th {
  color: #fff;
 }
 
+div.contentarea img.left
+{
+	position: relative;
+	float: left;
+	margin: 0em 1.8em 1.4em 0em;
+}
+
+div.contentarea img.right
+{
+	position: relative;
+	float: right;
+	margin: 0em 0em 1.8em 1.8em;
+}
+
+div.contentarea span.date
+{
+	background:url(/images/date.gif) no-repeat left center;
+	padding-left:15px;
+}
+
+div.contentarea img {
+	border: 1px solid #ccc;
+}
 
 /* ------------------------------------------------------------------ 
 HOME
 --------------------------------------------------------------------- */
 
-img#photo {
-	float: right;
-	margin-left: 15px;
-	border: solid 1px #dcdcdc;
-	padding:3px;
-}
+
 
 /* ------------------------------------------------------------------ 
 RESUME
@@ -41,10 +85,6 @@ div.resume div {
 
 div.resume p {
 	margin: 0;
-}
-
-*.hidden {
-	display: none;
 }
 
 /* ------------------------------------------------------------------ 
