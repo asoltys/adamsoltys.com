@@ -10,7 +10,6 @@ class Quote
 	def initialize(symbol)
 		@symbol = symbol
 		@url = "http://finance.google.com/finance?q=#{symbol}&hl=en";
-		@hp = Hpricot(open(@url));
-		@price = @hp.at("span[@class='pr']").inner_html
+		@price = Hpricot(open(@url)).at("span[@class='pr']").inner_html
 	end
 end

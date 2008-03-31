@@ -19,7 +19,7 @@
 	<% for t in @transactions %>
 	<tr>
 		<td><%= t.date %></td>
-		<td><%= t.company %></td>
+		<td><%= link_to t.company, "http://finance.google.com/finance?q=#{t.symbol}" %></td>
 		<td><%= t.symbol %></td>
 		<td><%= t.shares %></td>
 		<td>$<%= sprintf("%.2f", t.price) %></td>
@@ -61,7 +61,7 @@
 	</tr>
 	
 	<tr>
-		<td>Total Profit</td>
-		<td>$<%= sprintf("%.2f", @total_profit) %></td>
+		<td><strong>Total Profit/Loss To Date</strong></td>
+		<td><strong class="<%= @total_profit >= 0 ? 'profit' : 'loss' %>">$<%= sprintf("%.2f", @total_profit) %></strong></td>
 	</tr>
 </table>

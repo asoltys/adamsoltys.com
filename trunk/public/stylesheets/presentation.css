@@ -41,7 +41,7 @@ div.contentarea table {
 }
 
 div.contentarea th {
- background-color:#818800;
+ background-image: url('/images/topbg.gif');
  color: #fff;
 }
 
@@ -63,6 +63,8 @@ div.contentarea span.date
 {
 	background:url(/images/date.gif) no-repeat left center;
 	padding-left:15px;
+	font-size: 0.86em;
+	color: #787878;
 }
 
 div.contentarea img {
@@ -73,7 +75,17 @@ div.contentarea img {
 HOME
 --------------------------------------------------------------------- */
 
+/* ------------------------------------------------------------------ 
+FINANCES
+--------------------------------------------------------------------- */
 
+strong.profit {
+	color: #009900;
+}
+
+strong.loss {
+	color: #990000;
+}
 
 /* ------------------------------------------------------------------ 
 RESUME
