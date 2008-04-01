@@ -1,8 +1,0 @@
---- 
-cwd: C:\Inetpub\CFusionMX7\adam_soltys
-log_file: log/mongrel.log
-port: "3002"
-environment: production
-address: 127.0.0.1
-pid_file: tmp/pids/mongrel.pid
-servers: 2

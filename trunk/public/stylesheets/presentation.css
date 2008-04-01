@@ -79,11 +79,11 @@ HOME
 FINANCES
 --------------------------------------------------------------------- */
 
-strong.profit {
+span.profit {
 	color: #009900;
 }
 
-strong.loss {
+span.loss {
 	color: #990000;
 }
 

@@ -26,7 +26,7 @@
 		<td>$<%= sprintf("%.2f", t.cost) %></td>
 		<td>$<%= sprintf("%.2f", t.current_price) %></td>
 		<td>$<%= sprintf("%.2f", t.value) %></td>
-		<td>$<%= sprintf("%.2f", t.gain) %></td>
+		<td>$<%= gain_or_loss(t.gain) %></td>
 	</tr>
 	<% end %>
 </table>
@@ -52,16 +52,20 @@
 	
 	<tr>
 		<td>Overall Gain/Loss</td>
-		<td>$<%= sprintf("%.2f", @total_gain) %></td>
+		<td>$<%= gain_or_loss(@total_gain) %></td>
 	</tr>
 	
 	<tr>
 		<td>Less Commissions</td>
-		<td>$<%= sprintf("%.2f", @commissions) %></td>
+		<td>$<%= gain_or_loss(@commissions) %></td>
 	</tr>
 	
 	<tr>
 		<td><strong>Total Profit/Loss To Date</strong></td>
-		<td><strong class="<%= @total_profit >= 0 ? 'profit' : 'loss' %>">$<%= sprintf("%.2f", @total_profit) %></strong></td>
+		<td><strong>$<%= gain_or_loss(@total_profit) %></strong></td>
 	</tr>
 </table>
+
+<p>
+	Prices taken from <%= link_to 'http://finance.google.com', 'http://finance.google.com' %> daily at 4:30pm EST.  <%= link_to 'Click here', expire_cache_path(:page => 'finances') %> to refresh prices now.
+</p>

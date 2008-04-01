@@ -23,6 +23,7 @@ class ApplicationController < ActionController::Base
 	end
 	
 	def finances
+		expire_page(:controller => 'application', :action => 'finances') if params[:expire_cache]
 		@transactions = Transaction.find(:all)
 		
 		@total_cost = @total_value = @total_gain = @commissions = 0
@@ -31,10 +32,10 @@ class ApplicationController < ActionController::Base
 			@total_cost += t.cost
 			@total_value += t.value
 			@total_gain += t.gain
-			@commissions += 2 * 4.95
+			@commissions += -2 * 4.95
 		end
 		
-		@total_profit = @total_gain - @commissions
+		@total_profit = @total_gain + @commissions
 		
 		respond_appropriately
 	end
@@ -48,8 +49,13 @@ class ApplicationController < ActionController::Base
 		respond_appropriately
 	end
 	
-	private
+	def expire_cache
+		expire_page(:controller => 'application', :action => params[:page])
+		redirect_to :controller => 'application', :action => params[:page]
+	end
 	
+	private
+		
 	def respond_appropriately	
 		respond_to do |format|
 			format.html
