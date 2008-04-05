@@ -9,7 +9,7 @@ RAILS_GEM_VERSION = '2.0.2' unless defined? RAILS_GEM_VERSION
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
-require 'ROXML'
+require 'roxml'
 
 Rails::Initializer.run do |config|	
 	config.action_controller.page_cache_directory = RAILS_ROOT + "/public/cache/"
