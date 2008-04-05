@@ -1,0 +1,8 @@
+--- 
+cwd: /var/www/adam_soltys
+log_file: log/mongrel.log
+port: "3005"
+environment: production
+address: 0.0.0.0
+pid_file: tmp/pids/mongrel.pid
+servers: 2
