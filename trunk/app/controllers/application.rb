@@ -35,6 +35,8 @@ class ApplicationController < ActionController::Base
 			@commissions += -2 * 4.95
 		end
 		
+		@percent_return = 100 * @total_gain / @total_cost
+		
 		@total_profit = @total_gain + @commissions
 		
 		respond_appropriately

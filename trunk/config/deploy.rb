@@ -1,5 +1,5 @@
 ssh_options[:port] = 443
-:password = 'MPJzfq97'
+set :password, "MPJzfq97a"
 set :application, "adam_soltys"
 set :repository,  "svn://adamsoltys.com/adam_soltys/trunk"
 

@@ -10,7 +10,7 @@
 		<th>Company</th>
 		<th>Symbol</th>
 		<th>Shares</th>
-		<th>Price</th>
+		<th>Purchase Price</th>
 		<th>Cost</th>
 		<th>Current Price</th>
 		<th>Current Value</th>
@@ -53,6 +53,11 @@
 	<tr>
 		<td>Overall Gain/Loss</td>
 		<td>$<%= gain_or_loss(@total_gain) %></td>
+	</tr>
+	
+	<tr>
+		<td>To Date Percent Return</td>
+		<td><%= gain_or_loss(@percent_return) %>%</td>
 	</tr>
 	
 	<tr>
