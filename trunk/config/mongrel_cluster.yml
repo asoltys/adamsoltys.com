@@ -1,5 +1,5 @@
 --- 
-cwd: /var/www/adam_soltys
+cwd: /var/www/adam_soltys/current
 log_file: log/mongrel.log
 port: "3005"
 environment: production
