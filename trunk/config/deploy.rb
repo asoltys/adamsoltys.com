@@ -14,9 +14,9 @@ set :deploy_to, "/var/www/#{application}"
 # your SCM below:
 # set :scm, :subversion
 
-role :app, "www.adamsoltys.com"
-role :web, "www.adamsoltys.com"
-role :db,  "www.adamsoltys.com", :primary => true
+role :app, "adamsoltys.com"
+role :web, "adamsoltys.com"
+role :db,  "adamsoltys.com", :primary => true
 
 namespace :deploy do
 	desc <<-DESC
@@ -32,4 +32,23 @@ namespace :deploy do
 	task :stop, :roles => :app do
 		run "/etc/init.d/mongrel_cluster stop"
 	end
+	
+	desc <<-DESC
+    Load fixtures after migrating
+  DESC
+	task :after_migrate, :roles => :app do
+		rake = fetch(:rake, "rake")
+    rails_env = fetch(:rails_env, "production")
+    migrate_env = fetch(:migrate_env, "")
+    migrate_target = fetch(:migrate_target, :latest)
+
+    directory = case migrate_target.to_sym
+      when :current then current_path
+      when :latest  then current_release
+      else raise ArgumentError, "unknown migration target #{migrate_target.inspect}"
+      end
+
+    run "cd #{directory}; #{rake} RAILS_ENV=#{rails_env} #{migrate_env} db:fixtures:load"
+	end
+	
 end
