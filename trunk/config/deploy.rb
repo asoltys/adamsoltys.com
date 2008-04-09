@@ -51,4 +51,10 @@ namespace :deploy do
     run "cd #{directory}; #{rake} RAILS_ENV=#{rails_env} #{migrate_env} db:fixtures:load"
 	end
 	
+	desc <<-DESC
+    Clear cache after upload
+  DESC
+	task :after_upload, :roles => :app do
+		run "rm #{current_path}/public/cache/*.html"
+	end
 end
