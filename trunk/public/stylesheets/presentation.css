@@ -153,6 +153,11 @@ div.resume p {
 PROJECTS
 --------------------------------------------------------------------- */
 
+img#dynamic_investigations {
+	width: 20.0em;
+	height: 6.328em;
+}
+
 div.projects div {
 	width: 50.0em;
 	padding: 1.0em;
