@@ -23,21 +23,22 @@
 		</div>
 	</div>
 
-	<div id="headerpic"></div>
+	<div id="headerpic">
+		<%= image_tag "fall_leaves.jpg" %>
+	</div>
 
 	<div id="menu">
+		<img src="/images/menubg.gif" />
 		<%= render :partial => 'layouts/navigation' %>
 	</div>
 	
-	<div id="menubottom"></div>	
+	<div id="menubottom" />
 	
 	<div id="content">
 		<div id="primarycontainer">
 			<div id="primarycontent">
 				<div id="contentarea">
-					<div class="contentarea">
-						<%= @content_for_layout %>
-					</div>
+					<%= @content_for_layout %>
 				</div>
 			</div>
 		</div>
@@ -50,12 +51,7 @@
 		</div>
 		
 		<div class="right">
-			<a href="http://wpthemepark.com/themes/fallseason/">
-				WordPress Themes
-			</a> 
-			
-			based on a design by 
-			
+			Website design based on a theme by		
 			<a href="http://www.nodethirtythree.com/">
 				NodeThirtyThree
 			</a>

@@ -1,22 +1,6 @@
-/*  
-Theme Name: FallSeason
-Theme URI: http://wpthemepark.com
-Description: Zenlike by <a href="http://www.nodethirtythree.com/" title="nodethirtythree">nodethirtythree</a> , FallSeason blog Theme by <a href="http://wpthemepark.com/" target="_blank">WP ThemePark</a>
-Version: 1.2
-Author: Sadish
-Author URI: http://wpthemepark.com
-*/
-/*
-
-	zenlike1.0 by nodethirtythree design
-	http://www.nodethirtythree.com
-
-*/
-
-*
-{
-	padding: 0em;
-	margin: 0em;
+* {
+	margin: 0;
+	padding: 0;
 }
 
 html
@@ -26,77 +10,36 @@ html
 
 body
 {
-	padding: 2.0em 0px 2.0em 0px;
-	color: #333333;
-	font-family: "Lucida Grande","Lucida Sans Unicode",Tahoma,Verdana;
-	font-size: 0.8em;
+	padding: 2.0em 0.0em 2.0em 0.0em;
 }
 
 p
 {
 	line-height: 2.0em;
-	margin: 0 0 1.0em;
+	margin-bottom: 1.0em;
 }
 
 ul, ol 
 {
-	margin:1em;
-	padding:0;
+	margin: 1.0em;
 }
+
 li 
 {
-	margin:0 1em;
-	padding:0.15em;
+	margin-left: 1.0em;
+	padding: 0.15em;
 }
-#contentarea ul li 
-{
-	list-style-image: url(/images/db3.gif);
-}
-blockquote 
-{
-    margin:1em;
-    padding:0 0 0 40px;  
-    color:#666;
-    background:url(/images/blockquote.gif) no-repeat left top;
-}
-fieldset 
-{
-	border:none;
-}
-.divider1
+
+div#outer
 {
 	position: relative;
-	background: #fff url(/images/border2.gif) repeat-x;
-	height: 14px;
-	margin: 2.0em 0em 1.5em 0em;
-	clear: both;
-}
-
-ul.linklist
-{
-	list-style: none;
-}
-
-ul.linklist li
-{
-	line-height: 2.0em;
-}
-
-#outer
-{
-	position: relative;
-	/*
-		The width value below controls the overall width of the design. By default it's set to 82%
-		(so it'll take up 82% of the browser window's width). You can set it to a different percentage
-		value (70%, 90%, etc.) or even a pixel value (760px, 800px, etc.) to enforce a fixed width.
-	*/
-	width: 82%;
+	width: 75.0em;
 	border: solid 7px #fff;
 	background-color: #fff;
 	margin: 0 auto;
 }
 
-#header
+div#header
 {
 	position: relative;
 	width: 100%;
@@ -105,30 +48,32 @@ ul.linklist li
 	margin-bottom: 2px;
 }
 
-#headercontent
+div#headercontent
 {
 	position: absolute;
 	bottom: 0em;
 	padding: 0em 2.0em 1.3em 2.0em;
 }
 
-#headercontent h1
-{
+div#headercontent h1 {
 	font-weight: normal;
 	font-size: 2.5em;
 }
-#headercontent h1 a:link, #headercontent h1 a:visited
+
+div#headercontent h1 a:link, #headercontent h1 a:visited
 {
 	color: #F7B928;
 	text-decoration:none;
 	border:none;
 }
+
 #headercontent h1 a:hover, #headercontent h1 a:active
 {
 	text-decoration:none;
 	color:#fff;
 	border:none;
 }
+
 #headercontent h2
 {
 	font-size: 1.0em;
@@ -171,30 +116,33 @@ ul.linklist li
 	vertical-align: middle;
 }
 
-#headerpic
+div#headerpic img
 {
-	position: relative;
-	height: 149px;
-	background: #fff url(/images/fall_leaves.jpg) repeat-x bottom left;
-	margin-bottom: 2px;
+	width: 75.0em;
+	height: 12.0em;
 }
 
-#menu
+div#menu
 {
-	position: relative;
-	background: #692B00 url(/images/menubg.gif) repeat-x top left;
 	height: 3.5em;
-	padding: 0 1.0em;
-	margin: 0 0 2px;
+	padding-bottom: 0.25em;
 }
 
-#menu ul
+div#menu img {
+	position: absolute;
+	width: 75.0em;
+	height: 3.5em;
+	z-index: 0;
+}
+
+div#menu ul
 {
 	padding:1em 0 0 0;
 	margin:0;
+	z-index: 2;
 }
 
-#menu ul li
+div#menu ul li
 {
 	position: relative;
 	display: inline;
@@ -202,7 +150,7 @@ ul.linklist li
 	margin:0;
 }
 
-#menu ul li a:link, #menu ul li a:visited
+div#menu ul li a:link, #menu ul li a:visited
 {
 	color: #fff;
 	padding: 0.5em 1.0em 0.9em 1.0em;
@@ -210,67 +158,34 @@ ul.linklist li
 	border:none;
 }
 
-#menu ul li a:hover, #menu ul li a:active, #menu ul li.current_page_item a
+div#menu ul li a:hover, #menu ul li a:active, #menu ul li.current_page_item a
 {
-	background: #692B00 url(/images/menuactive.gif) repeat-x top left;	
+	color: #D0E8C1;
 	border:none;
 }
 
-#menubottom
+div#menubottom
 {
 	background: #fff url(/images/border1.gif) repeat-x;
-	height: 14px;
+	height: 1.0em;
 }
 
-#content
+div#content
 {
 	padding: 0 2.0em;
 }
 
-#primarycontainer
+div#primarycontainer
 {
 	width: 100%;
 }
 
-#primarycontent
+div#primarycontent
 {
 	margin: 1.5em 0 0 0;
 	max-width: 80em;
 }
 
-#sidebar
-{
-	margin: 0;
-	float: right;
-	width: 18.0em;
-}
-#sidebar ul
-{
-	list-style:none;
-	margin:0.5em 0 0;	
-}
-#sidebar li 
-{
-	margin:1em 0;
-	padding:0.5em;
-}
-#sidebar li li 
-{
-	margin:0;
-	padding:0.5em;
-	background:none;
-}
-#sidebar li li li
-{
-	margin:0;
-	padding:0.5em 0 0 1em;
-}
-#sidebar ul.feeds li 
-{
-	background:url(/images/feed.png) no-repeat left center;
-	margin:1em 0;
-	padding:0 1.5em;	
-}
 #footer
 {
 	position: relative;
@@ -281,110 +196,16 @@ ul.linklist li
 	font-size: 0.86em;
 }
 
-#footer .left
+#footer div.left
 {
 	position: absolute;
 	left: 2em;
 	bottom: 1.2em;
 }
 
-#footer .right
+#footer div.right
 {
 	position: absolute;
 	right: 2.0em;
 	bottom: 1.2em;
-}
-/*comments and their styles*/
-#comments, #respond{
-	margin: 2em 0 0 5px;
-}
-#commentform 
-{
-	margin:10px;
-	padding:10px;
-}
-#outer .commentlist {
-	margin: 0;
-	padding: 0;
-}
-.commentlist li 
-{
-	list-style:none;
-	margin: 2em 0;
-	padding: 0.5em;			
-	border-bottom:#ddd 1px dashed;
-	background:#fcfcfc url(/images/border2.gif) repeat-x top;
-}
-.commentlist li p 
-{
-    margin:0 1em;
-}
-.commentlist li .cmtinfo 
-{
-	font-family:Trebuchet MS,Verdana, Tahoma, Serif;
-	font-size:0.9em;		
-	padding:5px;
-	margin-bottom: 10px;
-	position:relative;	
-}
-.commentlist li .cmtinfo em 
-{
-	margin:0;
-	padding:0 1em;
-	text-align:right;
-	font-style:normal;			
-	color:#999;	
-}
-.commentlist li cite 
-{
-	font-style:normal;
-	font-weight:bold;
-}
-
-.commentlist li.alt
-{
-	background:#fcfcf9 url(/images/border2.gif) repeat-x top;
-}
-
-textarea{
-	width: 90%;
-	padding:5px;
-	height: 20em;
-	border: 1px solid #ccc;	
-	background:#f9f9f9 url(/images/button_bg.gif) repeat-x top;
-	font:1em Verdana, Arial, Serif;
-}
-#outer input.text 
-{
-	background:#f9f9f9 url(/images/button_bg.gif) repeat-x top;
-	border:#ccc 1px solid;
-	padding:2px;
-	font:1em Verdana, Arial, Serif;
-}
-.post h5 em
-{
-	font-style:normal;
-	float:right;
-	font-weight:normal;
-}
-#header, #content, #sidebar, #footer, .widget {
-    overflow: hidden;
-}
-
-div.resume div {
-	margin-top: 10px;
-}
-
-div.resume p {
-	margin: 0;
-}
-
-div.contentarea h2 {
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
-
-#photo {
-	float: right;
-	margin-left: 15px;
 }

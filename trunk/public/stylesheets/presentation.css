@@ -20,51 +20,67 @@ a:hover
 }
 
 img.framed {
-	border: 5px solid #323232;
+	border: 2px solid #323232;
 	padding: 1px;
+}
+
+body {
+	color: #333333;
+	font-family: "Lucida Grande","Lucida Sans Unicode",Tahoma,Verdana;
+	font-size: 0.8em;
+}
+
+div#contentarea ul li 
+{
+	list-style-image: url(/images/db3.gif);
 }
 
 /* ------------------------------------------------------------------ 
 CONTENT AREA
 --------------------------------------------------------------------- */
 
-div.contentarea h1 {
+div#contentarea h1 {
 	padding-left: 1.0em;
 	background-image: url(../images/db1.gif);
 	background-position:left center;
 	background-repeat:no-repeat;
 }
 
-div.contentarea h3 {
-	margin-top: 15px;
-	margin-bottom: 15px;
+div#contentarea h2 {
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
-div.contentarea table {
+div#contentarea h3 {
+	margin-top: 1.0em;
+	margin-bottom: 1.0em;
+}
+
+div#contentarea table {
 	width: 100%;
 	border: 1px solid #ccc;
 }
 
-div.contentarea th {
+div#contentarea th {
  background-image: url('/images/topbg.gif');
  color: #fff;
 }
 
-div.contentarea img.left
+div#contentarea img.left
 {
 	position: relative;
 	float: left;
 	margin: 0em 1.8em 1.4em 0em;
 }
 
-div.contentarea img.right
+div#contentarea img.right
 {
 	position: relative;
 	float: right;
 	margin: 0em 0em 1.8em 1.8em;
 }
 
-div.contentarea span.date
+div#contentarea span.date
 {
 	background:url(/images/date.gif) no-repeat left center;
 	padding-left:15px;
@@ -76,17 +92,42 @@ div.contentarea span.date
 HOME
 --------------------------------------------------------------------- */
 
+img#photo {
+	width: 10.0em;
+	height: 12.969em;
+}
+
 /* ------------------------------------------------------------------ 
 ABOUT
 --------------------------------------------------------------------- */
+
+img#plato {
+	width: 12.0em;
+	height: 15.947em;
+}
 
 /* ------------------------------------------------------------------ 
 LISTS
 --------------------------------------------------------------------- */
 
+img#book {
+	width: 25.0em;
+	height: 25.0em;
+}
+
 /* ------------------------------------------------------------------ 
 FINANCES
 --------------------------------------------------------------------- */
+
+div#contentarea table#totals {
+	width: 45.0em;
+}
+
+img#finance {
+	width: 24.0em;
+	height: 16.0em;
+}
+	
 
 span.profit {
 	color: #009900;
@@ -113,7 +154,7 @@ PROJECTS
 --------------------------------------------------------------------- */
 
 div.projects div {
-	width: 650px;
+	width: 50.0em;
 	padding: 1.0em;
 	border-top: solid 1px #E1D2BD;
 	border-bottom: solid 1px #E1D2BD;
