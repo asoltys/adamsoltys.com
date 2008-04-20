@@ -23,14 +23,14 @@ namespace :deploy do
     Start the application
   DESC
 	task :start, :roles => :app do
-		run "ln -fs #{current_path}/config/mongrel_cluster.yml /etc/mongrel_cluster/#{application}.yml && /etc/init.d/mongrel_cluster start"
+		run "/etc/init.d/thin restart"
 	end
 	
 	desc <<-DESC
     Stop the application
   DESC
 	task :stop, :roles => :app do
-		run "/etc/init.d/mongrel_cluster stop"
+		run "/etc/init.d/thin stop"
 	end
 	
 	desc <<-DESC
