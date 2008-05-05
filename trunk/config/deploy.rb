@@ -52,9 +52,10 @@ namespace :deploy do
 	end
 	
 	desc <<-DESC
-    Clear cache after upload
+    Perform an SVN update and clear the cache
   DESC
-	task :after_upload, :roles => :app do
+	task :update, :roles => :app do
+		run "cd #{current_path} && svn up"
 		run "rm #{current_path}/public/cache/*.html"
 	end
 end
