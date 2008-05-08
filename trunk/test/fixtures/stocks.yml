@@ -14,3 +14,8 @@ CNR:
   id: 3
   symbol: TSE:CNR
   company: Canadian National Railway
+
+TORO:
+  id: 4
+  symbol: OTC:TORO
+  company: Toro Venture Inc.
