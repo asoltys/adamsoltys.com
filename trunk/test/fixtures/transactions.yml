@@ -20,3 +20,18 @@ CNR:
   stock_id: 3
   price: 49.95
   shares: 25
+
+TORO:
+  id: 4
+  date: May 07, 2008
+  stock_id: 4
+  price: 2.04
+  shares: 500
+
+TORO2:
+  id: 5
+  date: May 14, 2008
+  stock_id: 4
+  price: 1.65
+  shares: 500
+
