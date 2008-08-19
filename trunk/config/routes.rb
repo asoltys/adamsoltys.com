@@ -30,6 +30,7 @@ ActionController::Routing::Routes.draw do |map|
 	map.root :controller => 'application', :action => 'home'
 	map.expire_cache '/expire_cache', :controller => 'application', :action => 'expire_cache'
 	map.home '/home', :controller => 'application', :action => 'home'
+	map.about '/archive', :controller => 'application', :action => 'archive'
 	map.about '/about', :controller => 'application', :action => 'about'
 	map.lists '/lists', :controller => 'application', :action => 'lists'
 	map.contact '/contact', :controller => 'application', :action => 'contact'
