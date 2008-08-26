@@ -25,19 +25,18 @@ img.framed {
 }
 
 body {
-	color: #333333;
+	background-color: #333333;
 	font-family: "Lucida Grande","Lucida Sans Unicode",Tahoma,Verdana;
 	font-size: 0.8em;
-}
-
-div#contentarea ul li 
-{
-	list-style-image: url(/images/db3.gif);
 }
 
 /* ------------------------------------------------------------------ 
 CONTENT AREA
 --------------------------------------------------------------------- */
+
+div#contentarea {
+	color: #333333;
+}
 
 div#contentarea h1 {
 	padding-left: 1.0em;
@@ -64,6 +63,11 @@ div#contentarea table {
 div#contentarea th {
  background-image: url('/images/topbg.gif');
  color: #fff;
+}
+
+div#contentarea ul li 
+{
+	list-style-image: url(/images/db3.gif);
 }
 
 div#contentarea img.left
