@@ -2,6 +2,12 @@
 SITEWIDE
 --------------------------------------------------------------------- */
 
+body {
+	background-color: #333333;
+	font-family: "Lucida Grande","Lucida Sans Unicode",Tahoma,Verdana;
+	font-size: 0.8em;
+}
+
 a
 {
 	color: #B96D00;
@@ -24,72 +30,117 @@ img.framed {
 	padding: 1px;
 }
 
-body {
-	background-color: #333333;
-	font-family: "Lucida Grande","Lucida Sans Unicode",Tahoma,Verdana;
-	font-size: 0.8em;
+div#container {
+	background: #fff;
+	border: solid 0.5em #fff;
 }
 
 /* ------------------------------------------------------------------ 
-CONTENT AREA
+HEADER
 --------------------------------------------------------------------- */
 
-div#contentarea {
+div#header
+{
+	background: #2b2b2b url(/images/topbg.gif) repeat-x;
+}
+
+div#header h1 {
+	font-size: 2.5em;
+}
+
+div#header h1 a:link, #header h1 a:visited
+{
+	color: #F7B928;
+	text-decoration:none;
+	border:none;
+}
+
+div#header h1 a:hover, #header h1 a:active
+{
+	border:none;
+	color:#fff;
+	text-decoration:none;
+}
+
+div#header h2
+{
+	color: #aaa;
+	font-size: 1.0em;
+}
+
+/* ------------------------------------------------------------------ 
+MENU
+--------------------------------------------------------------------- */
+
+div#menu {
+	background: #333;
+}
+
+/* ------------------------------------------------------------------ 
+CONTENT
+--------------------------------------------------------------------- */
+
+div#content {
 	color: #333333;
 }
 
-div#contentarea h1 {
+div#content h1 {
 	padding-left: 1.0em;
 	background-image: url(../images/db1.gif);
 	background-position:left center;
 	background-repeat:no-repeat;
 }
 
-div#contentarea h2 {
+div#content h2 {
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
 
-div#contentarea h3 {
+div#content h3 {
 	margin-top: 1.0em;
 	margin-bottom: 1.0em;
 }
 
-div#contentarea table {
+div#content table {
 	width: 100%;
 	border: 1px solid #ccc;
 }
 
-div#contentarea th {
+div#content th {
  background-image: url('/images/topbg.gif');
  color: #fff;
 }
 
-div#contentarea ul li 
+div#content ul li 
 {
 	list-style-image: url(/images/db3.gif);
 }
 
-div#contentarea img.left
+div#content img.left
 {
-	position: relative;
-	float: left;
 	margin: 0em 1.8em 1.4em 0em;
 }
 
-div#contentarea img.right
+div#content img.right
 {
-	position: relative;
-	float: right;
 	margin: 0em 0em 1.8em 1.8em;
 }
 
-div#contentarea span.date
+div#content span.date
 {
 	background:url(/images/date.gif) no-repeat left center;
 	padding-left:15px;
 	font-size: 0.86em;
 	color: #787878;
+}
+
+/* ------------------------------------------------------------------ 
+FOOTER
+--------------------------------------------------------------------- */
+
+div#footer {
+	background: #fff url(/images/border2.gif) repeat-x 0 2.5em;
+	font-size: 0.86em;
 }
 
 /* ------------------------------------------------------------------ 
@@ -123,7 +174,7 @@ img#book {
 FINANCES
 --------------------------------------------------------------------- */
 
-div#contentarea table#totals {
+div#content table#totals {
 	width: 45.0em;
 }
 
@@ -150,35 +201,6 @@ div.resume div {
 }
 
 div.resume p {
-	margin: 0;
-}
-
-/* ------------------------------------------------------------------ 
-PROJECTS
---------------------------------------------------------------------- */
-
-img#dynamic_investigations {
-	width: 20.0em;
-	height: 6.328em;
-}
-
-div.projects div {
-	width: 50.0em;
-	padding: 1.0em;
-	border-top: solid 1px #E1D2BD;
-	border-bottom: solid 1px #E1D2BD;
-	margin-bottom: 1.0em;
-	text-align:left;
-}
-
-div.projects img {
-	float: right;
-	border: 1px solid #E1D2BD;
-	padding: 0.7em;
-	margin-right: 0.5em;
-}
-
-div.projects p {
 	margin: 0;
 }
 
