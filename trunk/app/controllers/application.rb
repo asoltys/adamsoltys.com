@@ -32,7 +32,7 @@ class ApplicationController < ActionController::Base
 		
 		@total_cost = @total_value = @total_gain = @commissions = 0
 		
-		@transactions.each do |t|
+		@transactions.each do |t|				
 			@total_cost += t.cost
 			@total_value += t.value
 			@total_gain += t.gain
@@ -45,6 +45,7 @@ class ApplicationController < ActionController::Base
 		
 		respond_appropriately
 	end
+	
 	
 	
 	def resume

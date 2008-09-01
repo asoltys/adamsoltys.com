@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 10) do
+ActiveRecord::Schema.define(:version => 12) do
 
   create_table "categories", :force => true do |t|
     t.string "name"
@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(:version => 10) do
   create_table "stocks", :force => true do |t|
     t.string "symbol"
     t.string "company"
+    t.float  "last_known_price"
   end
 
   create_table "transactions", :force => true do |t|
@@ -80,6 +81,7 @@ ActiveRecord::Schema.define(:version => 10) do
     t.integer "shares"
     t.float   "price"
     t.integer "stock_id"
+    t.string  "type",     :limit => nil
   end
 
 end

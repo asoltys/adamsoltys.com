@@ -1,63 +1,46 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
-
-<head>
-	<meta http-equiv="Content-Type" content="application/xml+xhtml; charset=UTF-8" />
-	<title>Adam Soltys  </title>
-	<meta name="keywords" content="Adam Soltys, asoltys, ColdFusion, Flex, Ruby, Rails, PHP, SQL, Victoria, Vancouver, BC, Programmer, Student, Computer Science, Technology, Web Developer, Web Design, Hosting, Salties, Solties, Salty's, Soltis, Saltis, Saltees, Soltees, Solteez" />
-	<meta name="description" content="The personal website of Adam Soltys, a software engineer and web developer in Victoria, British Columbia." />
-	
-	<%= stylesheet_link_tag :all, :cache => true %>
-	
-	<link rel="shortcut icon" href="/favicon.ico" />
-</head>
-
-<body>
-
-<div id="outer">
-
-	<div id="header">
-		<div id="headercontent">
-			<h1><a href="/" title="Adam Soltys">Adam Soltys</a></h1>
-			<h2>Personal Homepage</h2>
-		</div>
-	</div>
-
-	<div id="headerpic">
-		<%= image_tag "fall_leaves.jpg" %>
-	</div>
-
-	<div id="menu">
-		<img src="/images/menubg.gif" alt="Menu Background" />
-		<%= render :partial => 'layouts/navigation' %>
-	</div>
-	
-	<div id="menubottom" />
-	
-	<div id="content">
-		<div id="primarycontainer">
-			<div id="primarycontent">
-				<div id="contentarea">
-					<%= @content_for_layout %>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-	<div id="footer">
-		<div class="left">
-			<strong>Adam Soltys</strong>. &copy; 2008 All rights reserved.
-		</div>
-		
-		<div class="right">
-			Website design based on a theme by		
-			<a href="http://www.nodethirtythree.com/">
-				NodeThirtyThree
-			</a>
-		</div>
-	</div>
-</div>
-
-</body>
+  <head>
+    <title>Adam Soltys</title>
+    <meta http-equiv="Content-Type" content="application/xml+xhtml; charset=UTF-8" />
+    <meta name="keywords" content="Adam Soltys, Victoria, Vancouver, Programmer, Computer Science, Web Developer, ColdFusion, Ruby on Rails" />
+    <meta name="description" content="The personal website of Adam Soltys, a software engineer and web developer living in Victoria, British Columbia." />
+    
+    <%= stylesheet_link_tag :all, :cache => true %>
+    <link rel="shortcut icon" href="/favicon.ico" />
+  </head>
+  
+  <body>  
+    <div id="container">
+      <div id="header">
+        <h1><a href="/" title="Adam Soltys">Adam Soltys</a></h1>
+        <h2>Personal Homepage</h2>
+      </div>
+    
+      <div id="banner">
+        <%= image_tag "fall_leaves.jpg" %>
+      </div>
+    
+      <div id="menu">
+        <%= render :partial => 'layouts/navigation' %>
+      </div>
+  
+      <div id="content">
+        <%= @content_for_layout %>
+      </div>
+    
+      <div id="footer">
+        <div class="left">
+          <strong>Adam Soltys</strong>. &copy; 2008 All rights reserved.
+        </div>
+        
+        <div class="right">
+          Website design based on a theme by    
+          <a href="http://www.nodethirtythree.com/">
+            NodeThirtyThree
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

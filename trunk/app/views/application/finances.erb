@@ -19,12 +19,12 @@
 	<% for t in @transactions %>
 	<tr>
 		<td><%= t.date %></td>
-		<td><%= link_to t.company, "http://finance.google.com/finance?q=#{t.symbol}" %></td>
-		<td><%= t.symbol %></td>
+		<td><%= link_to t.stock.company, "http://finance.google.com/finance?q=#{t.stock.symbol}" %></td>
+		<td><%= t.stock.symbol %></td>
 		<td><%= t.shares %></td>
 		<td>$<%= sprintf("%.2f", t.price) %></td>
 		<td>$<%= sprintf("%.2f", t.cost) %></td>
-		<td>$<%= sprintf("%.2f", t.current_price) %></td>
+		<td>$<%= sprintf("%.2f", t.stock.last_known_price) %></td>
 		<td>$<%= sprintf("%.2f", t.value) %></td>
 		<td>$<%= gain_or_loss(t.gain) %></td>
 	</tr>
