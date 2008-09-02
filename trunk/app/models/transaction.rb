@@ -12,4 +12,8 @@ class Transaction < ActiveRecord::Base
 	def gain
 		value - cost
 	end
+	
+	def percent_return
+		100 * gain / cost
+	end
 end

@@ -10,9 +10,10 @@
 		<th>Company</th>
 		<th>Symbol</th>
 		<th>Shares</th>
-		<th>Cost</th>
-		<th>Value</th>
+		<th>Buy Price</th>
+		<th>Current Price</th>
 		<th>Gain/Loss</th>
+		<th>Percent Return</th>
 	</tr>
 	<% for t in @transactions %>
 	<tr>
@@ -20,16 +21,16 @@
 		<td><%= link_to t.stock.company, "http://finance.google.com/finance?q=#{t.stock.symbol}" %></td>
 		<td><%= t.stock.symbol %></td>
 		<td><%= t.shares %></td>
-		<td>$<%= sprintf("%.2f", t.cost) %></td>
-		<td>$<%= sprintf("%.2f", t.value) %></td>
+		<td>$<%= sprintf("%.2f", t.price) %></td>
+		<td>$<%= sprintf("%.2f", t.stock.last_known_price) %></td>
 		<td>$<%= gain_or_loss(t.gain) %></td>
+		<td><%= gain_or_loss(t.percent_return) %>%</td>
 	</tr>
 	<% end %>
 	<tr>
-		<td colspan="3"></td>
+		<td colspan="5"></td>
 		<td><strong>Total:</strong></td>
-		<td>$<%= sprintf("%.2f", @total_cost) %></td>
-		<td>$<%= sprintf("%.2f", @total_value) %></td>
 		<td>$<%= gain_or_loss(@total_gain) %></td>
+		<td><%= gain_or_loss(@percent_return) %>%</td>
 	</td>
 </table>
