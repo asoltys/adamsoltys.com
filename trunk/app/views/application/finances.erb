@@ -34,3 +34,5 @@
 		<td><%= gain_or_loss(@percent_return) %>%</td>
 	</tr>
 </table>
+
+<p><%= link_to 'Click here', :controller => 'application', :action => 'update_stocks' %> to refresh this page with the latest stock prices from <a href="http://finance.google.com" title="Google Finance">Google Finance</a></p>

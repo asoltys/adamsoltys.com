@@ -53,7 +53,7 @@ class ApplicationController < ActionController::Base
 			s.update_last_known_price
 		end
 		
-		redirect_to :controller => 'application', :action => 'finances'
+		redirect_to :action => 'finances', :expire_cache => true
 	end	
 	
 	def resume
