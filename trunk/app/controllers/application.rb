@@ -46,7 +46,15 @@ class ApplicationController < ActionController::Base
 		respond_appropriately
 	end
 	
-	
+	def update_stocks
+		@stocks = Stock.find(:all)
+
+		@stocks.each do |s|
+			s.update_last_known_price
+		end
+		
+		redirect_to :controller => 'application', :action => 'finances'
+	end	
 	
 	def resume
 		respond_appropriately
