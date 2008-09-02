@@ -10,10 +10,8 @@
 		<th>Company</th>
 		<th>Symbol</th>
 		<th>Shares</th>
-		<th>Purchase Price</th>
 		<th>Cost</th>
-		<th>Current Price</th>
-		<th>Current Value</th>
+		<th>Value</th>
 		<th>Gain/Loss</th>
 	</tr>
 	<% for t in @transactions %>
@@ -22,55 +20,16 @@
 		<td><%= link_to t.stock.company, "http://finance.google.com/finance?q=#{t.stock.symbol}" %></td>
 		<td><%= t.stock.symbol %></td>
 		<td><%= t.shares %></td>
-		<td>$<%= sprintf("%.2f", t.price) %></td>
 		<td>$<%= sprintf("%.2f", t.cost) %></td>
-		<td>$<%= sprintf("%.2f", t.stock.last_known_price) %></td>
 		<td>$<%= sprintf("%.2f", t.value) %></td>
 		<td>$<%= gain_or_loss(t.gain) %></td>
 	</tr>
 	<% end %>
-</table>
-
-<h3>Totals</h3>
-
-<img id="finance" class="framed right" src="/images/finance.jpg" title="Finances" alt="Finances" />
-
-<table id="totals">
 	<tr>
-		<th colspan="2">&nbsp;</th>
-	</tr>
-	
-	<tr>
-		<td>Original Cost</td>
+		<td colspan="3"></td>
+		<td><strong>Total:</strong></td>
 		<td>$<%= sprintf("%.2f", @total_cost) %></td>
-	</tr>
-	
-	<tr>
-		<td>Current Market Value</td>
 		<td>$<%= sprintf("%.2f", @total_value) %></td>
-	</tr>
-	
-	<tr>
-		<td>Overall Gain/Loss</td>
 		<td>$<%= gain_or_loss(@total_gain) %></td>
-	</tr>
-	
-	<tr>
-		<td>To Date Percent Return</td>
-		<td><%= gain_or_loss(@percent_return) %> &#37;</td>
-	</tr>
-	
-	<tr>
-		<td>Less Commissions</td>
-		<td>$<%= gain_or_loss(@commissions) %></td>
-	</tr>
-	
-	<tr>
-		<td><strong>Total Profit/Loss To Date</strong></td>
-		<td><strong>$<%= gain_or_loss(@total_profit) %></strong></td>
-	</tr>
+	</td>
 </table>
-
-<p>
-	Prices taken from <%= link_to 'http://finance.google.com', 'http://finance.google.com' %> daily at 4:30pm EST.  <%= link_to 'Click here', expire_cache_path(:page => 'finances') %> to refresh prices now.
-</p>

@@ -1,0 +1,5 @@
+@stocks = Stock.find(:all)
+
+@stocks.each do |s|
+	s.update_last_known_price
+end

@@ -48,23 +48,17 @@ div#header h1 {
 	font-size: 2.5em;
 }
 
-div#header h1 a:link, #header h1 a:visited
+div#header h1 a
 {
-	color: #F7B928;
+	color: #FFF95F;
 	text-decoration:none;
 	border:none;
 }
 
-div#header h1 a:hover, #header h1 a:active
-{
-	border:none;
-	color:#fff;
-	text-decoration:none;
-}
 
 div#header h2
 {
-	color: #aaa;
+	color: #fff;
 	font-size: 1.0em;
 }
 
@@ -74,7 +68,21 @@ MENU
 
 div#menu {
 	background: #333;
+	color: #DF6900;
 }
+
+div#menu a:link, div#menu a:visited
+{
+	color: #fff;
+	text-decoration: none;	
+}
+
+div#menu a:hover, div#menu a:active
+{
+	color: #FFF95F;
+	text-decoration: none;
+}
+
 
 /* ------------------------------------------------------------------ 
 CONTENT
@@ -85,18 +93,18 @@ div#content {
 }
 
 div#content h1 {
-	padding-left: 1.0em;
-	background-image: url(../images/db1.gif);
-	background-position:left center;
-	background-repeat:no-repeat;
+	
 }
 
 div#content h2 {
+	color: #444;
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
 
 div#content h3 {
+	color: #444;
+	font-size: 1.0em;
 	margin-top: 1.0em;
 	margin-bottom: 1.0em;
 }
@@ -173,10 +181,6 @@ img#book {
 /* ------------------------------------------------------------------ 
 FINANCES
 --------------------------------------------------------------------- */
-
-div#content table#totals {
-	width: 45.0em;
-}
 
 img#finance {
 	width: 24.0em;
