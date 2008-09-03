@@ -35,3 +35,10 @@ TORO2:
   price: 1.65
   shares: 500
 
+TORO3:
+  id: 6
+  date: August 28, 2008
+  stock_id: 4
+  price: 1.30
+  shares: 1000
+
