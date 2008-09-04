@@ -2,6 +2,8 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
+	require 'aasm'
+	include AuthenticatedSystem
   helper :all # include all helpers, all the time
 	before_filter :adjust_request_format
 	caches_page :home, :archive, :about, :lists, :finances, :resume, :contact

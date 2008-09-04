@@ -9,7 +9,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 12) do
+ActiveRecord::Schema.define(:version => 20080904044320) do
+
+  create_table "bloggers", :force => true do |t|
+    t.integer  "poster_id",   :null => false
+    t.string   "poster_type", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "bloggers", ["poster_id", "poster_type"], :name => "index_bloggers_on_poster_id_and_poster_type", :unique => true
 
   create_table "categories", :force => true do |t|
     t.string "name"
@@ -34,6 +43,15 @@ ActiveRecord::Schema.define(:version => 12) do
     t.datetime "updated_at"
   end
 
+  create_table "comments", :force => true do |t|
+    t.integer  "post_id",     :null => false
+    t.integer  "poster_id",   :null => false
+    t.string   "poster_type", :null => false
+    t.text     "content",     :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "companies", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -51,6 +69,17 @@ ActiveRecord::Schema.define(:version => 12) do
   create_table "invoices", :force => true do |t|
     t.integer  "project_id"
     t.date     "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "posts", :force => true do |t|
+    t.string   "permalink",                        :null => false
+    t.integer  "poster_id",                        :null => false
+    t.string   "poster_type",                      :null => false
+    t.string   "title",                            :null => false
+    t.text     "content",                          :null => false
+    t.string   "state",       :default => "draft", :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -83,5 +112,19 @@ ActiveRecord::Schema.define(:version => 12) do
     t.integer "stock_id"
     t.string  "type",     :limit => nil
   end
+
+  create_table "users", :force => true do |t|
+    t.string   "login",                     :limit => 40
+    t.string   "name",                      :limit => 100, :default => ""
+    t.string   "email",                     :limit => 100
+    t.string   "crypted_password",          :limit => 40
+    t.string   "salt",                      :limit => 40
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "remember_token",            :limit => 40
+    t.datetime "remember_token_expires_at"
+  end
+
+  add_index "users", ["login"], :name => "index_users_on_login", :unique => true
 
 end
