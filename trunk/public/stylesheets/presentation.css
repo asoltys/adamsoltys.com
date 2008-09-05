@@ -3,7 +3,7 @@ SITEWIDE
 --------------------------------------------------------------------- */
 
 html {
-        background-color: #333;
+	background-color: #333;
 }
 
 body {
@@ -139,12 +139,20 @@ div#content img.right
 	margin: 0em 0em 1.8em 1.8em;
 }
 
-div#content span.date
-{
-	background:url(/images/date.gif) no-repeat left center;
-	padding-left:15px;
+div#content div.date
+{	
+	background:url(/images/date.gif) no-repeat left top;
+	color: #787878;	
 	font-size: 0.86em;
-	color: #787878;
+	padding: 0 0 1.0em 2.0em;
+	width: 80.0em;
+}
+
+div#content div.post
+{
+	border: 1px dashed #ccc;
+	padding: 1.0em;
+	margin-bottom: 1.0em;
 }
 
 /* ------------------------------------------------------------------ 
