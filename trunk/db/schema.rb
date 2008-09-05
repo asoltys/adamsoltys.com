@@ -9,16 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080904044320) do
-
-  create_table "bloggers", :force => true do |t|
-    t.integer  "poster_id",   :null => false
-    t.string   "poster_type", :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "bloggers", ["poster_id", "poster_type"], :name => "index_bloggers_on_poster_id_and_poster_type", :unique => true
+ActiveRecord::Schema.define(:version => 20080905012900) do
 
   create_table "categories", :force => true do |t|
     t.string "name"
@@ -39,15 +30,6 @@ ActiveRecord::Schema.define(:version => 20080904044320) do
     t.string   "last_name"
     t.string   "password"
     t.integer  "company_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "comments", :force => true do |t|
-    t.integer  "post_id",     :null => false
-    t.integer  "poster_id",   :null => false
-    t.string   "poster_type", :null => false
-    t.text     "content",     :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -74,12 +56,8 @@ ActiveRecord::Schema.define(:version => 20080904044320) do
   end
 
   create_table "posts", :force => true do |t|
-    t.string   "permalink",                        :null => false
-    t.integer  "poster_id",                        :null => false
-    t.string   "poster_type",                      :null => false
-    t.string   "title",                            :null => false
-    t.text     "content",                          :null => false
-    t.string   "state",       :default => "draft", :null => false
+    t.string   "title"
+    t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -110,7 +88,7 @@ ActiveRecord::Schema.define(:version => 20080904044320) do
     t.integer "shares"
     t.float   "price"
     t.integer "stock_id"
-    t.string  "type",     :limit => nil
+    t.string  "type",     :limit => 1
   end
 
   create_table "users", :force => true do |t|

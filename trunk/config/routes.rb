@@ -15,11 +15,12 @@ ActionController::Routing::Routes.draw do |map|
 	
 	# Resources
 	
-	map.resources :reviews
-	map.resources :projects
 	map.resources :companies
-	map.resources :users
+	map.resources :posts
+	map.resources :projects
+	map.resources :reviews
   map.resource :session
+	map.resources :users
 	
 	# User Routes
 	

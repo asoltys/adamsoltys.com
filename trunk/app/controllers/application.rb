@@ -13,10 +13,12 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # :secret => '3f8438829100c0cf5f5a5ed73c0ba3792bd5dd1c0988b01bbe28998d2b21d8fdc0fd77d0a227d236443ee1307647cfd935b81524ba054c79cd381ac65467d370'
 	
 	def home
+		@post = Post.find(:last)
 		respond_appropriately
 	end
 	
 	def archive
+		@posts = Post.find(:all)
 		respond_appropriately
 	end
 	
@@ -30,9 +32,9 @@ class ApplicationController < ActionController::Base
 	
 	def finances
 		expire_page(:controller => 'application', :action => 'finances') if params[:expire_cache]
+
 		@transactions = Transaction.find(:all)
-		
-		@total_cost = @total_value = @total_gain = @commissions = 0
+		@total_cost = @total_value = @total_gain = @commissions = @percent_return = 0
 		
 		@transactions.each do |t|				
 			@total_cost += t.cost
@@ -41,10 +43,12 @@ class ApplicationController < ActionController::Base
 			@commissions += -2 * 4.95
 		end
 		
-		@percent_return = 100 * @total_gain / @total_cost
+		if @total_cost > 0
+			@percent_return = 100 * @total_gain / @total_cost
+		end
 		
 		@total_profit = @total_gain + @commissions
-		
+	
 		respond_appropriately
 	end
 	
