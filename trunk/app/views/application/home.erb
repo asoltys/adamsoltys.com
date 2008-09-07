@@ -7,8 +7,14 @@
 <h2>What's New</h2>
 
 <div class="post">
-	<div class="date">September 1, 2008</div>
-	<p>I'm just coming off of a great labour day long weekend in Victoria filled with friends and activities.  Today I finished watching <em>The Long Way Round</em> and have since been cleaning up this website and reading <em>The Alexandria Quartet</em> by Lawrence Durrell.  It's proving to be a bit dry and intellectual for my tastes so far but I'll give it a chance.</p>
+	<div class="date"><%= @post.created_at.strftime('%B %d, %Y') %></div>
+	<%= @post.body %>
+
+	<% if logged_in? %>
+	<p>
+		<%= link_to 'Edit', edit_post_path(@post) %>
+	</p>
+	<% end %>
 </div>
 
 <p>
