@@ -4,6 +4,7 @@
 #
 
 load_paths.unshift File.expand_path(File.dirname(__FILE__))
+load 'awesomeness/backup'
 
 # don't do a fresh checkout, just svn update
 set :deploy_via, :remote_cache
