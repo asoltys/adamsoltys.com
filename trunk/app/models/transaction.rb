@@ -12,28 +12,26 @@ class Transaction < ActiveRecord::Base
 	def value
 		stock.last_known_price * shares
 	end
-	
-	def gain
-		if type == 'Buy'
-			value - cost
-		else
-			0
-		end
-	end
-	
-	def percent_return
-		if cost > 0
-			100 * gain / cost
-		else
-			0
-		end
-	end
-	
+			
 	def type
 		if transaction_type == 'b'
 			'Buy'
 		else
 			'Sell'
+		end
+	end
+	
+	def commission
+		if shares < 495
+			4.95
+		else
+			shares / 100
+		end
+	end
+	
+	def profit
+		if type == 'Sell'
+			value - cost
 		end
 	end
 end

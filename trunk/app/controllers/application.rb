@@ -43,6 +43,19 @@ class ApplicationController < ActionController::Base
 			@commissions += -2 * 4.95
 		end
 		
+		@stocks = @transactions.collect { |t| t.stock }.uniq
+		
+		@stocks.each do |s|
+			p = Position.new
+			p.stock = s
+			buy_transactions = @transactions.select { |t| t.stock.symbol === s.symbol && t.transaction_type == 'Buy' }
+			sell_transactions = @transactions - buy_transactions
+			bought_shares = buy_transactions.inject { |sum,t| sum + t.shares }
+			sold_shares = sell_transactions.inject { |sum,t| sum + t.shares }
+			p.shares = bought_shares - sold_shares
+			@positions.push(p)
+		end
+		
 		if @total_cost > 0
 			@percent_return = 100 * @total_gain / @total_cost
 		end
