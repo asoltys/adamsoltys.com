@@ -34,7 +34,7 @@ class FinancesController < ApplicationController
 			end
 		end
 
-		@profit = @value - @cost
+		@profit = @value - (@cost + @commission)
 		@percent_return = 100 * @profit / @cost
 
 		respond_appropriately
