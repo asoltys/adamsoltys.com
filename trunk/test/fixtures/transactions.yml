@@ -2,7 +2,8 @@
 
 BMO:
   id: 1
-  date: March 18, 2008
+  date: 2008-03-18
+  transaction_type: b
   stock_id: 1
   price: 40.50
   shares: 25
@@ -10,34 +11,39 @@ BMO:
 GMP:
   id: 2
   stock_id: 2
-  date: March 27, 2008
+  transaction_type: b
+  date: 2008-03-27
   price: 17.00
   shares: 100
 	
 CNR:
   id: 3
-  date: March 27, 2008
+  date: 2008-03-27
+  transaction_type: b
   stock_id: 3
   price: 49.95
   shares: 25
 
 TORO:
   id: 4
-  date: May 07, 2008
+  date: 2008-05-07
+  transaction_type: b
   stock_id: 4
   price: 2.04
   shares: 500
 
 TORO2:
   id: 5
-  date: May 14, 2008
+  date: 2008-05-14
+  transaction_type: b
   stock_id: 4
   price: 1.65
   shares: 500
 
 TORO3:
   id: 6
-  date: August 28, 2008
+  date: 2008-08-14
+  transaction_type: b
   stock_id: 4
   price: 1.30
   shares: 1000

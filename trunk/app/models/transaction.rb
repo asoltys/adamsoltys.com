@@ -2,7 +2,11 @@ class Transaction < ActiveRecord::Base
 	belongs_to :stock
 
 	def cost
-		price * shares
+		if type == 'Buy'
+			price * shares
+		else
+			0
+		end
 	end
 	
 	def value
@@ -10,10 +14,26 @@ class Transaction < ActiveRecord::Base
 	end
 	
 	def gain
-		value - cost
+		if type == 'Buy'
+			value - cost
+		else
+			0
+		end
 	end
 	
 	def percent_return
-		100 * gain / cost
+		if cost > 0
+			100 * gain / cost
+		else
+			0
+		end
+	end
+	
+	def type
+		if transaction_type == 'b'
+			'Buy'
+		else
+			'Sell'
+		end
 	end
 end
