@@ -11,7 +11,7 @@ ActionController::Routing::Routes.draw do |map|
 	map.lists '/lists', :controller => 'application', :action => 'lists'
 	map.contact '/contact', :controller => 'application', :action => 'contact'
 	map.resume '/resume', :controller => 'application', :action => 'resume'
-	map.finances '/finances', :controller => 'application', :action => 'finances'
+	map.finances '/finances', :controller => 'finances', :action => 'index'
 	
 	# Resources
 	
@@ -20,6 +20,7 @@ ActionController::Routing::Routes.draw do |map|
 	map.resources :projects
 	map.resources :reviews
   map.resource :session
+	map.resources :transactions
 	map.resources :users
 	
 	# User Routes
@@ -31,7 +32,7 @@ ActionController::Routing::Routes.draw do |map|
 	
 	# Finance Routes
 	
-	map.update_stocks '/update_stocks', :controller => 'application', :action => 'update_stocks'
+	map.update_stocks '/update_stocks', :controller => 'finances', :action => 'update_stocks'
 	map.expire_cache '/expire_cache', :controller => 'application', :action => 'expire_cache'
 
 	map.connect '/quotes/:symbol', :controller => 'quotes', :action => 'new'

@@ -1,6 +1,6 @@
 class Transaction < ActiveRecord::Base
 	belongs_to :stock
-			
+				
 	def type
 		if transaction_type == 'b'
 			'Buy'

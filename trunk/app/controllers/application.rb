@@ -29,57 +29,7 @@ class ApplicationController < ActionController::Base
 	def lists
 		respond_appropriately
 	end
-	
-	def finances
-		expire_page(:controller => 'application', :action => 'finances') if params[:expire_cache]
-
-		@transactions = Transaction.find(:all)
-		@profit = @commission = @gain = @cost = @value = @percent_return = 0
 		
-		@transactions.each do |t|				
-			@commission += t.commission
-			@cost += t.cost
-		end
-		
-		@stocks = @transactions.collect { |t| t.stock }.uniq
-		@positions = []
-		
-		@stocks.each do |s|
-			p = Position.new
-			p.stock = s
-
-			buy_transactions = @transactions.select { |t| t.stock.symbol === s.symbol && t.type == 'Buy' }
-			sell_transactions = @transactions.select { |t| t.stock.symbol === s.symbol && t.type == 'Sell' }
-
-			bought_shares = sold_shares = cost = gain = 0
-
-			buy_transactions.each { |t| bought_shares += t.shares; cost += t.cost }
-			sell_transactions.each { |t| sold_shares += t.shares; }
-					
-			p.shares = bought_shares - sold_shares
-			p.price = cost / p.shares
-
-			@positions.push(p)
-			
-			@value += p.value
-		end
-
-		@profit = @value - @cost
-		@percent_return = 100 * @profit / @cost
-
-		respond_appropriately
-	end
-	
-	def update_stocks
-		@stocks = Stock.find(:all)
-
-		@stocks.each do |s|
-			s.update_last_known_price
-		end
-		
-		redirect_to :action => 'finances', :expire_cache => true
-	end	
-	
 	def resume
 		respond_appropriately
 	end

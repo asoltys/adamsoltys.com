@@ -6,6 +6,10 @@
 
 <table id="portfolio">
 	<tr>
+		<% if logged_in? %>
+		<th>&nbsp;</th>
+		<th>&nbsp;</th>
+		<% end %>
 		<th>Date</th>
 		<th>Type</th>
 		<th>Company</th>
@@ -14,10 +18,14 @@
 		<th>Price</th>
 		<th>Current Price</th>
 		<th>Commission</th>
-		<th>Cost</th>
+		<th>Gain</th>
 	</tr>
 	<% for t in @transactions %>
 	<tr>
+		<% if logged_in? %>
+		<td><%= link_to 'Delete', transaction_path(t), :method => :delete %></td>
+		<td><%= link_to 'Edit', edit_transaction_path(t) %></td>
+		<% end %>
 		<td><%= t.date %></td>
 		<td><%= t.type %></td>
 		<td><%= link_to t.stock.company, "http://finance.google.com/finance?q=#{t.stock.symbol}" %></td>
@@ -30,12 +38,22 @@
 	</tr>
 	<% end %>
 	<tr>
+		<% if logged_in? %>
+		<td colspan="8"></td>
+		<% else %>
 		<td colspan="6"></td>
+		<% end %>
 		<td><strong>Total:</strong></td>
 		<td>$<%= gain_or_loss(-@commission) %></td>
 		<td>$<%= gain_or_loss(-@cost) %></td>
 	</tr>
 </table>
+
+<% if logged_in? %>
+	<p>
+		<%= link_to 'Add Transaction', new_transaction_path %>
+	</p>
+<% end %>
 
 <h3>Current Positions</h3>
 
@@ -69,12 +87,12 @@
 <table>
 	<tr>
 		<th>Current Market Value</th>
-		<th>Overall Cost</th>
-		<th>Projected Profit</th>
-		<th>Projected Return</th>
+		<th>Current Gain</th>
+		<th>Projected Gain</th>
+		<th>Projected Percent Return</th>
 	</tr>
 	<tr>
-		<td>$<%= gain_or_loss(@value) %></td>
+		<td>$<%= sprintf("%.2f", @value) %></td>
 		<td>$<%= gain_or_loss(-@cost) %></td>
 		<td>$<%= gain_or_loss(@profit) %></td>
 		<td><%= gain_or_loss(@percent_return) %>%</td>
