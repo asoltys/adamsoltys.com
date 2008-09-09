@@ -88,7 +88,7 @@ ActiveRecord::Schema.define(:version => 20080909044658) do
     t.integer "shares"
     t.float   "price"
     t.integer "stock_id"
-    t.string  "transaction_type", :limit => 1
+    t.string  "transaction_type"
   end
 
   create_table "users", :force => true do |t|

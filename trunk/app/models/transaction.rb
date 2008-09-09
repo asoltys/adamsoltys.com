@@ -1,13 +1,5 @@
 class Transaction < ActiveRecord::Base
 	belongs_to :stock
-
-	def cost
-		if type == 'Buy'
-			price * shares
-		else
-			0
-		end
-	end
 			
 	def type
 		if transaction_type == 'b'
@@ -15,6 +7,10 @@ class Transaction < ActiveRecord::Base
 		else
 			'Sell'
 		end
+	end
+	
+	def cost
+		price * shares
 	end
 	
 	def commission
@@ -25,11 +21,11 @@ class Transaction < ActiveRecord::Base
 		end
 	end
 	
-	def profit
-		if type == 'Sell'
-			value - (cost + commission)
+	def investment
+		if type == 'Buy'
+			- (cost - commission)
 		else
-			-commission
+			cost - commission
 		end
 	end
 end
