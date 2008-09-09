@@ -10,7 +10,11 @@ class Transaction < ActiveRecord::Base
 	end
 	
 	def cost
-		price * shares
+		if type == 'Buy'
+			(price * shares) + commission
+		else
+			-(price * shares) + commission
+		end
 	end
 	
 	def commission
@@ -18,14 +22,6 @@ class Transaction < ActiveRecord::Base
 			4.95
 		else
 			shares / 100
-		end
-	end
-	
-	def investment
-		if type == 'Buy'
-			- (cost - commission)
-		else
-			cost - commission
 		end
 	end
 end

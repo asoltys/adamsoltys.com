@@ -34,11 +34,11 @@ class ApplicationController < ActionController::Base
 		expire_page(:controller => 'application', :action => 'finances') if params[:expire_cache]
 
 		@transactions = Transaction.find(:all)
-		@profit = @commission = @investment = @gain = @cost = @value = @percent_return = 0
+		@profit = @commission = @gain = @cost = @value = @percent_return = 0
 		
 		@transactions.each do |t|				
-			@investment += t.investment
 			@commission += t.commission
+			@cost += t.cost
 		end
 		
 		@stocks = @transactions.collect { |t| t.stock }.uniq
@@ -54,7 +54,7 @@ class ApplicationController < ActionController::Base
 			bought_shares = sold_shares = cost = gain = 0
 
 			buy_transactions.each { |t| bought_shares += t.shares; cost += t.cost }
-			sell_transactions.each { |t| sold_shares += t.shares; gain += t.cost  }
+			sell_transactions.each { |t| sold_shares += t.shares; }
 					
 			p.shares = bought_shares - sold_shares
 			p.price = cost / p.shares
@@ -62,11 +62,9 @@ class ApplicationController < ActionController::Base
 			@positions.push(p)
 			
 			@value += p.value
-			@cost += cost
-			@gain += gain
 		end
 
-		@profit = (@gain + @value) - @cost
+		@profit = @value - @cost
 		@percent_return = 100 * @profit / @cost
 
 		respond_appropriately
