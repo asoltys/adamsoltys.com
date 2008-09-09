@@ -25,7 +25,7 @@ namespace :backup do
   task :download, :roles => :db, :only => {:primary => true} do
     version = fetch(:backup_version, latest)
     run "tar -C #{backup_path} -czf #{backup_path}/#{version}.tar.gz #{version}"
-    `mkdir -p backups`
+    `mkdir backups`
     get "#{backup_path}/#{version}.tar.gz", "backups/#{version}.tar.gz"
     run "rm #{backup_path}/#{version}.tar.gz"
     `tar -C backups -zxf backups/#{version}.tar.gz`
@@ -36,7 +36,7 @@ namespace :backup do
   task :mirror, :roles => :db, :only => {:primary => true} do
     create
     download
-    `rake db:backup:restore`
+    %x{rake.cmd db:backup:restore}
   end
   
 end
