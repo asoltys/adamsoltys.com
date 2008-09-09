@@ -1,19 +1,19 @@
 class Position
-	attr_accessor :stock, :shares
+	attr_accessor :stock, :shares, :price
+	
+	def cost
+		price * shares
+	end
+	
+	def value
+		stock.last_known_price * shares
+	end
 	
 	def percent_return
-		if cost > 0
-			100 * gain / cost
-		else
-			0
-		end
+		100 * gain / cost
 	end
 	
 	def gain
-		if type == 'Buy'
-			value - cost
-		else
-			0
-		end
+		value - cost
 	end
 end

@@ -25,14 +25,15 @@
 		<td><%= t.shares %></td>
 		<td>$<%= sprintf("%.2f", t.price) %></td>
 		<td>$<%= sprintf("%.2f", t.stock.last_known_price) %></td>
-		<td>$<%= sprintf("%.2f", t.commission) %></td>
-		<td>$<%= sprintf("%.2f", t.profit) %></td>
+		<td>$<%= gain_or_loss(-t.commission) %></td>
+		<td>$<%= gain_or_loss(t.profit) %></td>
 	</tr>
 	<% end %>
 	<tr>
 		<td colspan="6"></td>
 		<td><strong>Total:</strong></td>
-		<td><%= gain_or_loss(@percent_return) %>%</td>
+		<td>$<%= gain_or_loss(-@commission) %></td>
+		<td>$<%= gain_or_loss(@profit) %></td>
 	</tr>
 </table>
 
@@ -43,7 +44,7 @@
 		<th>Company</th>
 		<th>Symbol</th>
 		<th>Shares</th>
-		<th>Buy Price</th>
+		<th>Avg Price</th>
 		<th>Current Price</th>
 		<th>Gain/Loss</th>
 		<th>Percent Return</th>
@@ -60,9 +61,9 @@
 	</tr>
 	<% end %>
 	<tr>
-		<td colspan="6"></td>
+		<td colspan="4"></td>
 		<td><strong>Total:</strong></td>
-		<td>$<%= gain_or_loss(@total_gain) %></td>
+		<td>$<%= gain_or_loss(@gain) %></td>
 		<td><%= gain_or_loss(@percent_return) %>%</td>
 	</tr>
 </table>

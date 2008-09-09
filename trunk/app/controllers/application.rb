@@ -34,33 +34,38 @@ class ApplicationController < ActionController::Base
 		expire_page(:controller => 'application', :action => 'finances') if params[:expire_cache]
 
 		@transactions = Transaction.find(:all)
-		@total_cost = @total_value = @total_gain = @commissions = @percent_return = 0
+		@profit = @commission = @gain = @cost = @percent_return = 0
 		
 		@transactions.each do |t|				
-			@total_cost += t.cost
-			@total_value += t.value
-			@total_gain += t.gain
-			@commissions += -2 * 4.95
+			@profit += t.profit
+			@commission += t.commission
 		end
 		
 		@stocks = @transactions.collect { |t| t.stock }.uniq
+		@positions = []
 		
 		@stocks.each do |s|
 			p = Position.new
 			p.stock = s
-			buy_transactions = @transactions.select { |t| t.stock.symbol === s.symbol && t.transaction_type == 'Buy' }
-			sell_transactions = @transactions - buy_transactions
-			bought_shares = buy_transactions.inject { |sum,t| sum + t.shares }
-			sold_shares = sell_transactions.inject { |sum,t| sum + t.shares }
+
+			buy_transactions = @transactions.select { |t| t.stock.symbol === s.symbol && t.type == 'Buy' }
+			sell_transactions = @transactions.select { |t| t.stock.symbol === s.symbol && t.type == 'Sell' }
+
+			bought_shares = sold_shares = cost = 0
+
+			buy_transactions.each { |t| bought_shares += t.shares; cost += t.cost }
+			sell_transactions.each { |t| sold_shares += t.shares;  }
+					
 			p.shares = bought_shares - sold_shares
+			p.price = cost / p.shares
+
 			@positions.push(p)
+			
+			@gain += p.gain
+			@cost += cost
 		end
 		
-		if @total_cost > 0
-			@percent_return = 100 * @total_gain / @total_cost
-		end
-		
-		@total_profit = @total_gain + @commissions
+		@percent_return = 100 * @gain / @cost
 	
 		respond_appropriately
 	end

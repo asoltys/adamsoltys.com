@@ -8,10 +8,6 @@ class Transaction < ActiveRecord::Base
 			0
 		end
 	end
-	
-	def value
-		stock.last_known_price * shares
-	end
 			
 	def type
 		if transaction_type == 'b'
@@ -31,7 +27,9 @@ class Transaction < ActiveRecord::Base
 	
 	def profit
 		if type == 'Sell'
-			value - cost
+			value - (cost + commission)
+		else
+			-commission
 		end
 	end
 end
