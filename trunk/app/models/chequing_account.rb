@@ -1,0 +1,3 @@
+class ChequingAccount < Account
+
+end

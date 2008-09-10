@@ -1,102 +1,35 @@
 <h1>Finances</h1>
 
-<h2>Stock Portfolio</h2>
-
-<h3>Transactions</h3>
-
-<table id="portfolio">
-	<tr>
-		<% if logged_in? %>
-		<th>&nbsp;</th>
-		<th>&nbsp;</th>
-		<% end %>
-		<th>Date</th>
-		<th>Type</th>
-		<th>Company</th>
-		<th>Symbol</th>
-		<th>Shares</th>
-		<th>Price</th>
-		<th>Current Price</th>
-		<th>Commission</th>
-		<th>Gain</th>
-	</tr>
-	<% for t in @transactions %>
-	<tr>
-		<% if logged_in? %>
-		<td><%= link_to 'Delete', transaction_path(t), :method => :delete %></td>
-		<td><%= link_to 'Edit', edit_transaction_path(t) %></td>
-		<% end %>
-		<td><%= t.date %></td>
-		<td><%= t.type %></td>
-		<td><%= link_to t.stock.company, "http://finance.google.com/finance?q=#{t.stock.symbol}" %></td>
-		<td><%= t.stock.symbol %></td>
-		<td><%= t.shares %></td>
-		<td>$<%= sprintf("%.2f", t.price) %></td>
-		<td>$<%= sprintf("%.2f", t.stock.last_known_price) %></td>
-		<td>$<%= gain_or_loss(-t.commission) %></td>
-		<td>$<%= gain_or_loss(-t.cost) %></td>
-	</tr>
-	<% end %>
-	<tr>
-		<% if logged_in? %>
-		<td colspan="8"></td>
-		<% else %>
-		<td colspan="6"></td>
-		<% end %>
-		<td><strong>Total:</strong></td>
-		<td>$<%= gain_or_loss(-@commission) %></td>
-		<td>$<%= gain_or_loss(-@cost) %></td>
-	</tr>
-</table>
-
-<% if logged_in? %>
-	<p>
-		<%= link_to 'Add Transaction', new_transaction_path %>
-	</p>
-<% end %>
-
-<h3>Current Positions</h3>
-
-<table id="positions">
-	<tr>
-		<th>Company</th>
-		<th>Symbol</th>
-		<th>Shares</th>
-		<th>Avg Purchase Price</th>
-		<th>Current Price</th>
-		<th>Market Value</th>
-		<th>Gain/Loss</th>
-		<th>Percent Return</th>
-	</tr>
-	<% for p in @positions %>
-	<tr>
-		<td><%= link_to p.stock.company, "http://finance.google.com/finance?q=#{t.stock.symbol}" %></td>
-		<td><%= p.stock.symbol %></td>
-		<td><%= p.shares %></td>
-		<td>$<%= sprintf("%.2f", p.price) %></td>
-		<td>$<%= sprintf("%.2f", p.stock.last_known_price) %></td>
-		<td>$<%= sprintf("%.2f", p.value) %></td>
-		<td>$<%= gain_or_loss(p.gain) %></td>
-		<td><%= gain_or_loss(p.percent_return) %>%</td>
-	</tr>
-	<% end %>
-</table>
-
-<h3>Totals</h3>
+<h2>Assets</h2>
 
 <table>
 	<tr>
-		<th>Current Market Value</th>
-		<th>Current Gain</th>
-		<th>Projected Gain</th>
-		<th>Projected Percent Return</th>
+		<th>Name</th>
+		<th>Value</th>
 	</tr>
 	<tr>
-		<td>$<%= sprintf("%.2f", @value) %></td>
-		<td>$<%= gain_or_loss(-@cost) %></td>
-		<td>$<%= gain_or_loss(@profit) %></td>
-		<td><%= gain_or_loss(@percent_return) %>%</td>
+		<td><%= link_to 'Stock Portfolio', stocks_path %></td>
+		<td>$6000</td>
 	</tr>
+	<% for i in @investments %>
+	<tr>
+		<td><%= i.type %></td>
+		<td>$<%= sprintf("%.2f", i.value) %></td>
+	</tr>
+	<% end %>
 </table>
 
-<p><%= link_to 'Click here', :controller => 'application', :action => 'update_stocks' %> to refresh this page with the latest stock prices from <a href="http://finance.google.com" title="Google Finance">Google Finance</a></p>
+<h2>Liabilities</h2>
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Value</th>
+	</tr>
+	<% for l in @liabilities %>
+	<tr>
+		<td><%= l.balances.length %></td>
+		<td>$<%= sprintf("%.2f", l.worth) %></td>
+	</tr>
+	<% end %>
+</table>

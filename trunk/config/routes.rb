@@ -32,6 +32,7 @@ ActionController::Routing::Routes.draw do |map|
 	
 	# Finance Routes
 	
+	map.stocks '/stocks', :controller => 'finances', :action => 'stocks'
 	map.update_stocks '/update_stocks', :controller => 'finances', :action => 'update_stocks'
 	map.expire_cache '/expire_cache', :controller => 'application', :action => 'expire_cache'
 

@@ -4,18 +4,22 @@ BMO:
   id: 1
   symbol: TSE:BMO
   company: Bank of Montreal
+  last_known_price: 1
 
 GMP:
   id: 2
   symbol: TSE:GMP.UN
   company: GMP Capital Trust
+  last_known_price: 1
 	
 CNR:
   id: 3
   symbol: TSE:CNR
   company: Canadian National Railway
+  last_known_price: 1
 
 TORO:
   id: 4
   symbol: OTC:TORO
   company: Toro Venture Inc.
+  last_known_price: 1

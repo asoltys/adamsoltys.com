@@ -9,7 +9,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080909044658) do
+ActiveRecord::Schema.define(:version => 20080910015202) do
+
+  create_table "accounts", :force => true do |t|
+    t.string "name"
+    t.string "type"
+  end
+
+  create_table "assets", :force => true do |t|
+    t.string "type"
+  end
+
+  create_table "balances", :force => true do |t|
+    t.float   "balance"
+    t.integer "account_id"
+  end
 
   create_table "categories", :force => true do |t|
     t.string "name"
@@ -42,7 +56,6 @@ ActiveRecord::Schema.define(:version => 20080909044658) do
 
   create_table "investments", :force => true do |t|
     t.float  "principal"
-    t.float  "rate"
     t.string "type"
     t.date   "investment_date"
     t.date   "maturity_date"
@@ -53,6 +66,10 @@ ActiveRecord::Schema.define(:version => 20080909044658) do
     t.date     "date"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "liabilities", :force => true do |t|
+    t.string "type"
   end
 
   create_table "posts", :force => true do |t|

@@ -1,0 +1,3 @@
+class VISAAccount < Account
+
+end

@@ -1,6 +1,11 @@
 class FinancesController < ApplicationController
 	def index
-		expire_page(:controller => 'finances', :action => 'index') if params[:expire_cache]
+		@investments = Investment.find(:all)
+		@liabilities = Liability.find(:all)
+	end
+	
+	def stocks
+		expire_page(:controller => 'finances', :action => 'stocks') if params[:expire_cache]
 
 		@transactions = Transaction.find(:all)
 		@profit = @commission = @gain = @cost = @value = @percent_return = 0
@@ -38,6 +43,9 @@ class FinancesController < ApplicationController
 		@percent_return = 100 * @profit / @cost
 
 		respond_appropriately
+	end
+	
+	def investments
 	end
 	
 	def update_stocks
