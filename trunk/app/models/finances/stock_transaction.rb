@@ -1,13 +1,5 @@
-class Transaction < ActiveRecord::Base
+class StockTransaction < Transaction
 	belongs_to :stock
-				
-	def type
-		if transaction_type == 'b'
-			'Buy'
-		else
-			'Sell'
-		end
-	end
 	
 	def cost
 		if type == 'Buy'
