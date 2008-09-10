@@ -1,50 +1,79 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-BMO:
+BMO_1:
   id: 1
+  account: QuestTrade	
   date: 2008-03-18
   transaction_type: Buy
   stock_id: 1
   price: 40.50
   shares: 25
 
-GMP:
+GMP_1:
   id: 2
   stock_id: 2
+  account: QuestTrade
   transaction_type: Buy
   date: 2008-03-27
   price: 17.00
   shares: 100
 	
-CNR:
+CNR_1:
   id: 3
   date: 2008-03-27
+  account: QuestTrade
   transaction_type: Buy
   stock_id: 3
   price: 49.95
   shares: 25
 
-TORO:
+TORO_1:
   id: 4
+  account: QuestTrade
   date: 2008-05-07
   transaction_type: Buy
   stock_id: 4
   price: 2.04
   shares: 500
 
-TORO2:
+TORO_2:
   id: 5
+  account: QuestTrade
   date: 2008-05-14
   transaction_type: Buy
   stock_id: 4
   price: 1.65
   shares: 500
 
-TORO3:
+TORO_3:
   id: 6
+  account: QuestTrade
   date: 2008-08-14
   transaction_type: Buy
   stock_id: 4
   price: 1.30
   shares: 1000
 
+GIC703_1:
+  name: Initial Investment
+  account: GIC703
+  amount: 5000
+  date: 2008-08-01
+
+GIC703_2:
+  name: Withdrawal
+  account: GIC703
+  amount: -1000
+  date: 2008-09-01
+
+GIC704_1:
+  name: Initial Investment
+  account: GIC704
+  amount: 4000
+  date: 2008-01-01
+	
+VISA_1:
+  name: March Balance
+  account: VISA
+  amount: -3000
+  date: 2008-01-01

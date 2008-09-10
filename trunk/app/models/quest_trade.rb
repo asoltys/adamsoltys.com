@@ -1,8 +1,16 @@
 class QuestTrade < Account
-	has_many :transactions, :class_name => 'StockTransaction'
+	has_many :transactions, :class_name => "StockTransaction", :foreign_key => :account_id
 	
 	def stocks
 		transactions.collect { |t| t.stock }.uniq
+	end
+	
+	def buy_transactions
+		transactions.select { |t| t.transaction_type == 'Buy' }
+	end
+	
+	def sell_transactions
+		transactions.select { |t| t.transaction_type == 'Sell' }
 	end
 	
 	def positions
@@ -17,7 +25,7 @@ class QuestTrade < Account
 			buy_transactions = transactions.select { |t| t.stock.symbol === s.symbol && t.transaction_type == 'Buy' }
 			sell_transactions = transactions.select { |t| t.stock.symbol === s.symbol && t.transaction_type == 'Sell' }
 
-			buy_transactions.each { |t| bought_shares += t.shares; cost += t.cost }
+			buy_transactions.each { |t| bought_shares += t.shares; cost -= t.amount }
 			sell_transactions.each { |t| sold_shares += t.shares; }
 					
 			p.shares = bought_shares - sold_shares
@@ -25,7 +33,6 @@ class QuestTrade < Account
 			if p.shares > 0
 				p.price = cost / bought_shares
 				positions.push(p)
-				@value += p.value
 			end
 		end
 		
@@ -33,23 +40,35 @@ class QuestTrade < Account
 	end
 	
 	def commission
-		transactions.inject(0) {|sum,t| sum = t.commission }
+		transactions.inject(0) {|sum,t| sum += t.commission }
+	end
+
+	def market_value
+		positions.inject(0) {|sum,p| sum += p.value }
+	end
+	
+	def value(date = Time.now)
+		market_value + gain - commission
 	end
 	
 	def cost
-		transactions.inject(0) {|sum,t| sum = t.cost }
+		buy_transactions.inject(0) {|sum,t| sum -= t.amount } - commission
 	end
 	
 	def gain
-		-cost
+		sell_transactions.inject(0) {|sum,t| sum += t.amount } - commission
 	end
 	
 	def profit
-		value - (cost + commission)
+		market_value + (balance - commission)
+	end
+	
+	def balance
+		transactions.inject(0) {|sum,t| sum += t.amount }
 	end
 	
 	def percent_return
-		if cost > 0
+		if cost != 0
 			100 * profit / cost
 		else
 			0

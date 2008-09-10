@@ -16,7 +16,7 @@
 		<th>Shares</th>
 		<th>Price</th>
 		<th>Commission</th>
-		<th>Gain</th>
+		<th>Amount</th>
 	</tr>
 	<% for t in @account.transactions %>
 	<tr>
@@ -30,7 +30,7 @@
 		<td><%= t.shares %></td>
 		<td>$<%= sprintf("%.2f", t.price) %></td>
 		<td>$<%= gain_or_loss(-t.commission) %></td>
-		<td>$<%= gain_or_loss(-t.cost) %></td>
+		<td>$<%= gain_or_loss(t.amount) %></td>
 	</tr>
 	<% end %>
 	<tr>
@@ -40,8 +40,8 @@
 		<td colspan="4"></td>
 		<% end %>
 		<td><strong>Total:</strong></td>
-		<td>$<%= gain_or_loss(@account.commission) %></td>
-		<td>$<%= gain_or_loss(@account.gain) %></td>
+		<td>$<%= gain_or_loss(-@account.commission) %></td>
+		<td>$<%= gain_or_loss(@account.balance) %></td>
 	</tr>
 </table>
 
@@ -81,17 +81,17 @@
 <table>
 	<tr>
 		<th>Current Market Value</th>
-		<th>Current Gain</th>
-		<th>Projected Gain</th>
+		<th>Account Balance</th>
+		<th>Projected Profit</th>
 		<th>Projected Percent Return</th>
 	</tr>
 	<tr>
-		<td>$<%= sprintf("%.2f", @account.value) %></td>
-		<td>$<%= gain_or_loss(@account.cost) %></td>
+		<td>$<%= sprintf("%.2f", @account.market_value) %></td>
+		<td>$<%= gain_or_loss(@account.balance) %></td>
 		<td>$<%= gain_or_loss(@account.profit) %></td>
 		<td><%= gain_or_loss(@account.percent_return) %>%</td>
 	</tr>
 </table>
 
-<p><%= link_to 'Click here', :controller => 'application', :action => 'update_stocks' %> to refresh this page with the latest stock prices from <a href="http://finance.google.com" title="Google Finance">Google Finance</a></p>
+<p><%= link_to 'Click here', update_stocks_path %> to refresh this page with the latest stock prices from <a href="http://finance.google.com" title="Google Finance">Google Finance</a></p>
 

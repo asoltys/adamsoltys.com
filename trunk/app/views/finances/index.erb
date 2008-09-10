@@ -5,13 +5,13 @@
 	
 	<table id="assets">
 		<tr>
-			<th>Asset</th>
+			<th>Account</th>
 			<th>Value</th>
 		</tr>
 		<% for a in @assets %>
 		<tr>
 			<td><%= link_to a.name, account_path(a) %></td>
-			<td>$<%= sprintf("%.2f", a.value) %></td>
+			<td>$<%= gain_or_loss(a.value) %></td>
 		</tr>
 		<% end %>
 	</table>
@@ -22,13 +22,13 @@
 
 	<table id="liabilities" class="right">
 		<tr>
-			<th>Liability</th>
+			<th>Account</th>
 			<th>Value</th>
 		</tr>
 		<% for l in @liabilities %>
 		<tr>
 			<td><%= link_to l.name, account_path(l) %></td>
-			<td>$<%= sprintf("%.2f", l.value) %></td>
+			<td>$<%= gain_or_loss(l.value) %></td>
 		</tr>
 		<% end %>
 	</table>

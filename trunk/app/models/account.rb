@@ -1,7 +1,11 @@
 class Account < ActiveRecord::Base
-	has_many :transactions
+	has_many :transactions, :foreign_key => :account_id
 	
-	def value(date = Time.now)
-		0
+	def balance(date = Time.now)
+		transactions.inject(0) {|sum,t| sum += t.amount}
+	end
+	
+	def value
+		balance
 	end
 end

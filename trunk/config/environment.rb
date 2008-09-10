@@ -11,10 +11,6 @@ RAILS_GEM_VERSION = '2.1.1' unless defined? RAILS_GEM_VERSION
 require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
-	# Load models from subdirectories within models folder	
-	config.load_paths += Dir["#{RAILS_ROOT}/app/models/[a-z]*"]
-	config.load_paths += Dir["#{RAILS_ROOT}/app/models/[a-z]*/*"]
-
 	config.action_controller.page_cache_directory = RAILS_ROOT + "/public/cache/"
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
@@ -61,11 +57,4 @@ Rails::Initializer.run do |config|
 
   # Make Active Record use UTC-base instead of local time
   # config.active_record.default_timezone = :utc
-end
-
-# Include subfolders within models directory
-[ "app/models" ].each do |path|
-  Dir["#{RAILS_ROOT}/#{path}/**/*.rb"].each do |file|
-    load file
-  end
 end

@@ -1,11 +1,11 @@
 class FinancesController < ApplicationController
 	def index
 		@accounts = Account.find(:all)
-		@assets = @accounts.select { |a| a.account_type == 'asset' }
-		@liabilities = @accounts.select { |a| a.account_type == 'liability' }
+		@assets = @accounts.select { |a| a.value >= 0 }
+		@liabilities = @accounts - @assets
 		
-		@total_assets = @assets.inject(0){|sum,a| sum = a.value}
-		@total_liabilities = @liabilities.inject(0){|sum,l| sum = l.value}
+		@total_assets = @assets.inject(0){|sum,a| sum += a.value}
+		@total_liabilities = @liabilities.inject(0){|sum,l| sum -= l.value}
 		
 		@net_worth = @total_assets - @total_liabilities
 	end
