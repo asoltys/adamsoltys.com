@@ -1,3 +1,0 @@
-class VISAAccount < Account
-
-end

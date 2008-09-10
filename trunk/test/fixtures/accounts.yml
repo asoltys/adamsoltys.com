@@ -1,3 +1,19 @@
-VISAAccount:
-  type: VISAAccount
-  name: VISA
+QuestTrade:
+  name: QuestTrade Brokerage Account
+  type: QuestTrade
+  account_type: asset
+
+CoastCapGIC703:
+  name: Coast Capital 1-Year Redeemable GIC
+  type: GIC703
+  account_type: asset
+
+CoastCapGIC704:
+  name: Coast Capital 1-Year Redeemable GIC
+  type: GIC704
+  account_type: asset
+
+VISA:
+  name: CIBC VISA Dividend Card
+  type: DividendCard
+  account_type: liability

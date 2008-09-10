@@ -1,35 +1,35 @@
 <h1>Finances</h1>
 
-<h2>Assets</h2>
+<div class="left">
+	<h2>Assets</h2>
+	
+	<table id="assets">
+		<tr>
+			<th>Asset</th>
+			<th>Value</th>
+		</tr>
+		<% for a in @assets %>
+		<tr>
+			<td><%= a.name %></td>
+			<td>$<%= sprintf("%.2f", a.value) %></td>
+		</tr>
+		<% end %>
+	</table>
+</div>
 
-<table>
-	<tr>
-		<th>Name</th>
-		<th>Value</th>
-	</tr>
-	<tr>
-		<td><%= link_to 'Stock Portfolio', stocks_path %></td>
-		<td>$6000</td>
-	</tr>
-	<% for i in @investments %>
-	<tr>
-		<td><%= i.type %></td>
-		<td>$<%= sprintf("%.2f", i.value) %></td>
-	</tr>
-	<% end %>
-</table>
+<div class="right">
+	<h2>Liabilities</h2>
 
-<h2>Liabilities</h2>
-
-<table>
-	<tr>
-		<th>Name</th>
-		<th>Value</th>
-	</tr>
-	<% for l in @liabilities %>
-	<tr>
-		<td><%= l.balances.length %></td>
-		<td>$<%= sprintf("%.2f", l.worth) %></td>
-	</tr>
-	<% end %>
-</table>
+	<table id="liabilities" class="right">
+		<tr>
+			<th>Liability</th>
+			<th>Value</th>
+		</tr>
+		<% for l in @liabilities %>
+		<tr>
+			<td><%= l.name %></td>
+			<td>$<%= sprintf("%.2f", l.value) %></td>
+		</tr>
+		<% end %>
+	</table>
+</div>

@@ -1,0 +1,3 @@
+class QuestTrade < Account
+
+end

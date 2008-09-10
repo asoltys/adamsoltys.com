@@ -1,7 +1,8 @@
 class FinancesController < ApplicationController
 	def index
-		@investments = Investment.find(:all)
-		@liabilities = Liability.find(:all)
+		@accounts = Account.find(:all)
+		@assets = @accounts.select { |a| a.account_type == 'asset' }
+		@liabilities = @accounts.select { |a| a.account_type == 'liability' }
 	end
 	
 	def stocks

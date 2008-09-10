@@ -9,15 +9,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080910015202) do
+ActiveRecord::Schema.define(:version => 20080910002918) do
 
   create_table "accounts", :force => true do |t|
     t.string "name"
     t.string "type"
-  end
-
-  create_table "assets", :force => true do |t|
-    t.string "type"
+    t.string "account_type"
   end
 
   create_table "balances", :force => true do |t|
@@ -68,10 +65,6 @@ ActiveRecord::Schema.define(:version => 20080910015202) do
     t.datetime "updated_at"
   end
 
-  create_table "liabilities", :force => true do |t|
-    t.string "type"
-  end
-
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.text     "body"
@@ -105,7 +98,7 @@ ActiveRecord::Schema.define(:version => 20080910015202) do
     t.integer "shares"
     t.float   "price"
     t.integer "stock_id"
-    t.string  "transaction_type"
+    t.string  "transaction_type", :limit => 1
   end
 
   create_table "users", :force => true do |t|

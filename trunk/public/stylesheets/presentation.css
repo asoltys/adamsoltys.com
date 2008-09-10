@@ -195,11 +195,9 @@ img#book {
 FINANCES
 --------------------------------------------------------------------- */
 
-img#finance {
-	width: 24.0em;
-	height: 16.0em;
+div#content table#assets, div#content table#liabilities {
+	width: 32.0em;
 }
-	
 
 span.profit {
 	color: #009900;
