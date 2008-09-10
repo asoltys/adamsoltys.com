@@ -10,8 +10,9 @@ RAILS_GEM_VERSION = '2.1.1' unless defined? RAILS_GEM_VERSION
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
 
-Rails::Initializer.run do |config|	
-	config.load_paths += Dir["#{RAILS_ROOT}/app/models/[a-z]*"]
+Rails::Initializer.run do |config|
+	# Load models from subdirectories within models folder	
+	config.load_paths += Dir["#{RAILS_ROOT}/app/models/[a-z]*/[a-z]*"]
 
 	config.action_controller.page_cache_directory = RAILS_ROOT + "/public/cache/"
   # Settings in config/environments/* take precedence over those specified here.
@@ -61,7 +62,7 @@ Rails::Initializer.run do |config|
   # config.active_record.default_timezone = :utc
 end
 
-
+# Include subfolders within models directory
 [ "app/models" ].each do |path|
   Dir["#{RAILS_ROOT}/#{path}/**/*.rb"].each do |file|
     load file
