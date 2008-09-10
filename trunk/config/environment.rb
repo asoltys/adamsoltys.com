@@ -12,7 +12,8 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
 	# Load models from subdirectories within models folder	
-	config.load_paths += Dir["#{RAILS_ROOT}/app/models/[a-z]*/[a-z]*"]
+	config.load_paths += Dir["#{RAILS_ROOT}/app/models/[a-z]*"]
+	config.load_paths += Dir["#{RAILS_ROOT}/app/models/[a-z]*/*"]
 
 	config.action_controller.page_cache_directory = RAILS_ROOT + "/public/cache/"
   # Settings in config/environments/* take precedence over those specified here.

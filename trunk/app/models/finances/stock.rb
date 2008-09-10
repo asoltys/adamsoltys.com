@@ -2,7 +2,8 @@ class Stock < ActiveRecord::Base
 	require 'hpricot'
 	require 'open-uri'
 	
-	has_many :transactions
+	has_many :stock_transactions
+	belongs_to :account
 	
 	def update_last_known_price
 		url = "http://finance.google.com/finance?q=#{symbol}"

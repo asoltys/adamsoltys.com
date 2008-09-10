@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080910002918) do
+ActiveRecord::Schema.define(:version => 20080910070658) do
 
   create_table "accounts", :force => true do |t|
     t.string "name"
@@ -98,7 +98,10 @@ ActiveRecord::Schema.define(:version => 20080910002918) do
     t.integer "shares"
     t.float   "price"
     t.integer "stock_id"
-    t.string  "transaction_type", :limit => 1
+    t.string  "transaction_type"
+    t.integer "account_id"
+    t.string  "name"
+    t.float   "amount"
   end
 
   create_table "users", :force => true do |t|

@@ -10,7 +10,7 @@
 		</tr>
 		<% for a in @assets %>
 		<tr>
-			<td><%= a.name %></td>
+			<td><%= link_to a.name, account_path(a) %></td>
 			<td>$<%= sprintf("%.2f", a.value) %></td>
 		</tr>
 		<% end %>
@@ -27,9 +27,14 @@
 		</tr>
 		<% for l in @liabilities %>
 		<tr>
-			<td><%= l.name %></td>
+			<td><%= link_to l.name, account_path(l) %></td>
 			<td>$<%= sprintf("%.2f", l.value) %></td>
 		</tr>
 		<% end %>
 	</table>
 </div>
+
+<p class="clear">
+	<strong>Net Worth:</strong>
+	<%= gain_or_loss(@net_worth) %>
+</p>

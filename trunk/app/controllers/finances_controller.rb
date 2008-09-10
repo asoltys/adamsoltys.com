@@ -3,45 +3,17 @@ class FinancesController < ApplicationController
 		@accounts = Account.find(:all)
 		@assets = @accounts.select { |a| a.account_type == 'asset' }
 		@liabilities = @accounts.select { |a| a.account_type == 'liability' }
+		
+		@total_assets = @assets.inject(0){|sum,a| sum = a.value}
+		@total_liabilities = @liabilities.inject(0){|sum,l| sum = l.value}
+		
+		@net_worth = @total_assets - @total_liabilities
 	end
 	
 	def stocks
 		expire_page(:controller => 'finances', :action => 'stocks') if params[:expire_cache]
 
-		@transactions = Transaction.find(:all)
-		@profit = @commission = @gain = @cost = @value = @percent_return = 0
-		
-		@transactions.each do |t|				
-			@commission += t.commission
-			@cost += t.cost
-		end
-		
-		@stocks = @transactions.collect { |t| t.stock }.uniq
-		@positions = []
-		
-		@stocks.each do |s|
-			bought_shares = sold_shares = cost = 0
-
-			p = Position.new
-			p.stock = s
-
-			buy_transactions = @transactions.select { |t| t.stock.symbol === s.symbol && t.type == 'Buy' }
-			sell_transactions = @transactions.select { |t| t.stock.symbol === s.symbol && t.type == 'Sell' }
-
-			buy_transactions.each { |t| bought_shares += t.shares; cost += t.cost }
-			sell_transactions.each { |t| sold_shares += t.shares; }
-					
-			p.shares = bought_shares - sold_shares
-			
-			if p.shares > 0
-				p.price = cost / bought_shares
-				@positions.push(p)
-				@value += p.value
-			end
-		end
-
-		@profit = @value - (@cost + @commission)
-		@percent_return = 100 * @profit / @cost
+		@account = Account.find_by_type('QuestTrade')
 
 		respond_appropriately
 	end
@@ -56,6 +28,6 @@ class FinancesController < ApplicationController
 			s.update_last_known_price
 		end
 		
-		redirect_to finances_path, :expire_cache => true
+		redirect_to stocks_path, :expire_cache => true
 	end	
 end

@@ -15,6 +15,7 @@ ActionController::Routing::Routes.draw do |map|
 	
 	# Resources
 	
+	map.resources :accounts
 	map.resources :companies
 	map.resources :posts
 	map.resources :projects

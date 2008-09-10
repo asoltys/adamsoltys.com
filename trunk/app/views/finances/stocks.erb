@@ -1,6 +1,6 @@
 <h1>Finances</h1>
 
-<h2>Stock Portfolio</h2>
+<h2><%= @account.name %></h2>
 
 <h3>Transactions</h3>
 
@@ -15,35 +15,33 @@
 		<th>Company</th>
 		<th>Shares</th>
 		<th>Price</th>
-		<th>Current Price</th>
 		<th>Commission</th>
 		<th>Gain</th>
 	</tr>
-	<% for t in @transactions %>
+	<% for t in @account.transactions %>
 	<tr>
 		<% if logged_in? %>
 		<td><%= link_to 'Delete', transaction_path(t), :method => :delete %></td>
 		<td><%= link_to 'Edit', edit_transaction_path(t) %></td>
 		<% end %>
 		<td><%= t.date %></td>
-		<td><%= t.type %></td>
+		<td><%= t.transaction_type %></td>
 		<td><%= link_to t.stock.company, "http://finance.google.com/finance?q=#{t.stock.symbol}" %></td>
 		<td><%= t.shares %></td>
 		<td>$<%= sprintf("%.2f", t.price) %></td>
-		<td>$<%= sprintf("%.2f", t.stock.last_known_price) %></td>
 		<td>$<%= gain_or_loss(-t.commission) %></td>
 		<td>$<%= gain_or_loss(-t.cost) %></td>
 	</tr>
 	<% end %>
 	<tr>
 		<% if logged_in? %>
-		<td colspan="7"></td>
+		<td colspan="6"></td>
 		<% else %>
-		<td colspan="5"></td>
+		<td colspan="4"></td>
 		<% end %>
 		<td><strong>Total:</strong></td>
-		<td>$<%= gain_or_loss(-@commission) %></td>
-		<td>$<%= gain_or_loss(-@cost) %></td>
+		<td>$<%= gain_or_loss(@account.commission) %></td>
+		<td>$<%= gain_or_loss(@account.gain) %></td>
 	</tr>
 </table>
 
@@ -65,7 +63,7 @@
 		<th>Gain/Loss</th>
 		<th>Percent Return</th>
 	</tr>
-	<% for p in @positions %>
+	<% for p in @account.positions %>
 	<tr>
 		<td><%= link_to p.stock.company, "http://finance.google.com/finance?q=#{t.stock.symbol}" %></td>
 		<td><%= p.shares %></td>
@@ -88,10 +86,10 @@
 		<th>Projected Percent Return</th>
 	</tr>
 	<tr>
-		<td>$<%= sprintf("%.2f", @value) %></td>
-		<td>$<%= gain_or_loss(-@cost) %></td>
-		<td>$<%= gain_or_loss(@profit) %></td>
-		<td><%= gain_or_loss(@percent_return) %>%</td>
+		<td>$<%= sprintf("%.2f", @account.value) %></td>
+		<td>$<%= gain_or_loss(@account.cost) %></td>
+		<td>$<%= gain_or_loss(@account.profit) %></td>
+		<td><%= gain_or_loss(@account.percent_return) %>%</td>
 	</tr>
 </table>
 

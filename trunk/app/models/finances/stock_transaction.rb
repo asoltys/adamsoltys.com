@@ -1,8 +1,9 @@
 class StockTransaction < Transaction
 	belongs_to :stock
+	belongs_to :quest_trade
 	
 	def cost
-		if type == 'Buy'
+		if transaction_type == 'Buy'
 			(price * shares) + commission
 		else
 			-(price * shares) + commission
