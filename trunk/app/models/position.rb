@@ -6,7 +6,7 @@ class Position
 	end
 	
 	def value
-		stock.last_known_price * shares
+		stock.price * shares
 	end
 	
 	def percent_return

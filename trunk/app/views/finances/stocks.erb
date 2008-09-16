@@ -68,7 +68,7 @@
 		<td><%= link_to p.stock.company, "http://finance.google.com/finance?q=#{t.stock.symbol}" %></td>
 		<td><%= p.shares %></td>
 		<td>$<%= sprintf("%.2f", p.price) %></td>
-		<td>$<%= sprintf("%.2f", p.stock.last_known_price) %></td>
+		<td>$<%= sprintf("%.2f", p.stock.price) %></td>
 		<td>$<%= sprintf("%.2f", p.value) %></td>
 		<td>$<%= gain_or_loss(p.gain) %></td>
 		<td><%= gain_or_loss(p.percent_return) %>%</td>

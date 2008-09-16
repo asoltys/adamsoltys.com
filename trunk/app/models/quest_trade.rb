@@ -1,5 +1,5 @@
 class QuestTrade < Account
-	has_many :transactions, :class_name => "StockTransaction", :foreign_key => :account_id
+	has_many :transactions, :class_name => "StockTransaction", :foreign_key => "account_id"
 	
 	def stocks
 		transactions.collect { |t| t.stock }.uniq
