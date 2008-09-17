@@ -2,6 +2,14 @@ QuestTrade:
   name: QuestTrade Brokerage Account
   type: QuestTrade
 
+GIC701:
+  name: Coast Capital Better Than Cash GIC
+  type: GIC701
+	
+GIC702:
+  name: Coast Capital Park-It RSP
+  type: GIC702
+
 GIC703:
   name: Coast Capital 1-Year Redeemable GIC
   type: GIC703
@@ -15,5 +23,9 @@ VISA:
   type: DividendCard
 	
 CIBCChequing:
-	name: CIBC Chequing Account
+  name: CIBC Chequing Account
+  type: Chequing
+
+CoastCapitalChequing:
+  name: Coast Capital Chequing Account
   type: Chequing
