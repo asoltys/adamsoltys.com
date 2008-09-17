@@ -1,16 +1,16 @@
 class QuestTrade < Account
-	has_many :transactions, :class_name => "StockTransaction", :foreign_key => "account_id"
+	has_many :executions, :foreign_key => "account_id"
 	
 	def stocks
-		transactions.collect { |t| t.stock }.uniq
+		executions.collect { |e| e.stock }.uniq
 	end
 	
-	def buy_transactions
-		transactions.select { |t| t.transaction_type == 'Buy' }
+	def buy_executions
+		executions.select { |e| e.execution_type == 'Buy' }
 	end
 	
-	def sell_transactions
-		transactions.select { |t| t.transaction_type == 'Sell' }
+	def sell_executions
+		executions.select { |e| e.execution_type == 'Sell' }
 	end
 	
 	def positions
@@ -22,11 +22,11 @@ class QuestTrade < Account
 			p = Position.new
 			p.stock = s
 
-			buy_transactions = transactions.select { |t| t.stock.symbol === s.symbol && t.transaction_type == 'Buy' }
-			sell_transactions = transactions.select { |t| t.stock.symbol === s.symbol && t.transaction_type == 'Sell' }
+			buy_executions = executions.select { |e| e.stock.symbol === s.symbol && e.execution_type == 'Buy' }
+			sell_executions = executions.select { |e| e.stock.symbol === s.symbol && e.execution_type == 'Sell' }
 
-			buy_transactions.each { |t| bought_shares += t.shares; cost -= t.amount }
-			sell_transactions.each { |t| sold_shares += t.shares; }
+			buy_executions.each { |e| bought_shares += e.shares; cost -= e.amount }
+			sell_executions.each { |e| sold_shares += e.shares; }
 					
 			p.shares = bought_shares - sold_shares
 			
@@ -40,7 +40,7 @@ class QuestTrade < Account
 	end
 	
 	def commission
-		transactions.inject(0) {|sum,t| sum += t.commission }
+		executions.inject(0) {|sum,e| sum += e.commission }
 	end
 
 	def market_value
@@ -52,11 +52,11 @@ class QuestTrade < Account
 	end
 	
 	def cost
-		buy_transactions.inject(0) {|sum,t| sum -= t.amount } - commission
+		buy_executions.inject(0) {|sum,e| sum -= e.amount } - commission
 	end
 	
 	def gain
-		sell_transactions.inject(0) {|sum,t| sum += t.amount } - commission
+		sell_executions.inject(0) {|sum,e| sum += e.amount } - commission
 	end
 	
 	def profit
@@ -64,7 +64,7 @@ class QuestTrade < Account
 	end
 	
 	def balance
-		transactions.inject(0) {|sum,t| sum += t.amount }
+		executions.inject(0) {|sum,e| sum += e.amount }
 	end
 	
 	def percent_return

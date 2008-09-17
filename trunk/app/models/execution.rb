@@ -1,9 +1,9 @@
-class StockTransaction < Transaction
+class Execution < ActiveRecord::Base
 	belongs_to :stock
-	belongs_to :quest_trade
+	belongs_to :account
 	
 	def amount
-		if transaction_type == 'Buy'
+		if execution_type == 'Buy'
 			-(price * shares) - commission
 		else
 			(price * shares) - commission

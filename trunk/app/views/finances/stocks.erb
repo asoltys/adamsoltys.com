@@ -2,7 +2,7 @@
 
 <h2><%= @account.name %></h2>
 
-<h3>Transactions</h3>
+<h3>Executions</h3>
 
 <table id="portfolio">
 	<tr>
@@ -18,14 +18,14 @@
 		<th>Commission</th>
 		<th>Amount</th>
 	</tr>
-	<% for t in @account.transactions %>
+	<% for t in @account.executions %>
 	<tr>
 		<% if logged_in? %>
-		<td><%= link_to 'Delete', transaction_path(t), :method => :delete %></td>
-		<td><%= link_to 'Edit', edit_transaction_path(t) %></td>
+		<td><%= link_to 'Delete', execution_path(t), :method => :delete %></td>
+		<td><%= link_to 'Edit', edit_execution_path(t) %></td>
 		<% end %>
 		<td><%= t.date %></td>
-		<td><%= t.transaction_type %></td>
+		<td><%= t.execution_type %></td>
 		<td><%= link_to t.stock.company, "http://finance.google.com/finance?q=#{t.stock.symbol}" %></td>
 		<td><%= t.shares %></td>
 		<td>$<%= sprintf("%.2f", t.price) %></td>
@@ -47,7 +47,7 @@
 
 <% if logged_in? %>
 	<p>
-		<%= link_to 'Add Transaction', new_transaction_path %>
+		<%= link_to 'Add Transaction', new_execution_path %>
 	</p>
 <% end %>
 
