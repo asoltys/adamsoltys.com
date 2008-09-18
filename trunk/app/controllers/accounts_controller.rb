@@ -2,8 +2,8 @@ class AccountsController < ApplicationController
 	def show
 		@account = Account.find(params[:id])
 		
-		if @account.type.to_s == "QuestTrade"
-			redirect_to stocks_path
+		if @account.class.to_s == "QuestTrade"
+			redirect_to stocks_path(@account)
 		else
 			respond_appropriately
 		end

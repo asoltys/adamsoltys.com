@@ -1,7 +1,7 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 BMO_1:
-  account: QuestTrade	
+  account: QuestTradeCAD
   date: 2008-03-18
   execution_type: Buy
   stock_id: 1
@@ -10,7 +10,7 @@ BMO_1:
 
 GMP_1:
   stock_id: 2
-  account: QuestTrade
+  account: QuestTradeCAD
   execution_type: Buy
   date: 2008-03-27
   price: 17.00
@@ -18,14 +18,14 @@ GMP_1:
 	
 CNR_1:
   date: 2008-03-27
-  account: QuestTrade
+  account: QuestTradeCAD
   execution_type: Buy
   stock_id: 3
   price: 49.95
   shares: 25
 
 TORO_1:
-  account: QuestTrade
+  account: QuestTradeUSD
   date: 2008-05-07
   execution_type: Buy
   stock_id: 4
@@ -33,7 +33,7 @@ TORO_1:
   shares: 500
 
 TORO_2:
-  account: QuestTrade
+  account: QuestTradeUSD
   date: 2008-05-14
   execution_type: Buy
   stock_id: 4
@@ -41,7 +41,7 @@ TORO_2:
   shares: 500
 
 TORO_3:
-  account: QuestTrade
+  account: QuestTradeUSD
   date: 2008-08-14
   execution_type: Buy
   stock_id: 4

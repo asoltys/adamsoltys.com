@@ -13,7 +13,7 @@ class FinancesController < ApplicationController
 	def stocks
 		expire_page(:controller => 'finances', :action => 'stocks') if params[:expire_cache]
 
-		@account = QuestTrade.find(:first)
+		@account = QuestTrade.find(params[:id])
 
 		respond_appropriately
 	end
@@ -22,12 +22,6 @@ class FinancesController < ApplicationController
 	end
 	
 	def update_stocks
-		@stocks = Stock.find(:all)
-
-		@stocks.each do |s|
-			s.update_last_known_price
-		end
-		
 		redirect_to stocks_path, :expire_cache => true
 	end	
 end

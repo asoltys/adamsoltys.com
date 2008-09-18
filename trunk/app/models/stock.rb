@@ -15,9 +15,12 @@ class Stock < ActiveRecord::Base
 		# Not in database? Try Google Finance historical records.
 		else			
 			startdate = enddate = date.strftime("%Y-%m-%d")
-			url = "http://finance.google.com/finance/historical?q=#{symbol}&startdate=#{startdate}&enddate=#{enddate}"
-			price_td = Hpricot(open(url)).at("div#prices/table/tr:eq(1)/td:eq(4)")
 			
+			if date === Time.now
+				url = "http://finance.google.com/finance/historical?q=#{symbol}&startdate=#{startdate}&enddate=#{enddate}"
+				price_td = Hpricot(open(url)).at("div#prices/table/tr:eq(1)/td:eq(4)")
+			end
+					
 			# Not in the historical records yet?  Use today's quote.
 			if !price_td
 				url = "http://finance.google.com/finance?q=#{symbol}"

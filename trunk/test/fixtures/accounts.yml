@@ -1,5 +1,9 @@
-QuestTrade:
-  name: QuestTrade Brokerage Account
+QuestTradeCAD:
+  name: QuestTrade Brokerage Account CAD
+  type: QuestTrade
+
+QuestTradeUSD:
+  name: QuestTrade Brokerage Account USD
   type: QuestTrade
 
 GIC701:
