@@ -33,3 +33,27 @@ CIBCChequing:
 CoastCapitalChequing:
   name: Coast Capital Chequing Account
   type: Chequing
+
+Bond2008:
+  name: G0132082D
+  type: CS51
+
+Bond2013_1:
+  name: 2100376805 CP34P0335478K
+  type: CP34
+
+Bond2013_2:
+  name: 2100376806 CP34P8635668D
+  type: CP34
+
+GIC19:
+  name: CIBC GIC 
+  type: GIC19
+
+RSPGIC:
+  name: CIBC 5-Year Escalating Rate RRSP GIC
+  type: GIC697
+
+InvestorsEdge:
+  name: CIBC Investor's Edge
+  type: InvestorsEdge
