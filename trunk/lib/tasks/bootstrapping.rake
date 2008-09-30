@@ -2,12 +2,13 @@ require 'fastercsv'
 		
 namespace :adam do
 	namespace :transactions do
-	
-		CIBC_CHEQUING = "C:/Documents and Settings/Adam/Desktop/cibc.csv"
-		INVESTORS_EDGE = "C:/Documents and Settings/Adam/Desktop/investors_edge.csv"
-		COAST_CAPITAL_CHEQUING = "C:/Documents and Settings/Adam/Desktop/statement.csv"
-		VISA = "C:/Documents and Settings/Adam/Desktop/cibcvisa.csv"
-		QUESTRADE = "C:/Documents and Settings/Adam/Desktop/questrade.csv"
+		TRANSACTIONS_DIR = "C:/Documents and Settings/Adam/Desktop/"
+		
+		CIBC_CHEQUING = "cibc.csv"
+		INVESTORS_EDGE = "investors_edge.csv"
+		COAST_CAPITAL_CHEQUING = "statement.csv"
+		VISA = "cibcvisa.csv"
+		QUESTRADE = "questrade.csv"
 
 		desc "Clean transactions by stripping out double quotes"
 		task :clean => :environment do
