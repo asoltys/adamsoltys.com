@@ -1,6 +1,9 @@
 load_paths.unshift File.expand_path(File.dirname(__FILE__) + '/../vendor/plugins/awesomeness/recipes')
 load 'awesomeness'
 
+load_paths.unshift File.expand_path(File.dirname(__FILE__) + '/../vendor/plugins/awesomeness/recipes')
+load 'awesomeness'
+
 set :application, "adam_soltys"
 set :repository,  "svn://adamsoltys.com/adam_soltys/trunk"
 
