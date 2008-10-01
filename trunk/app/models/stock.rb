@@ -9,7 +9,7 @@ class Stock < ActiveRecord::Base
 	def price(date = Time.now)
 		# Try the database first
 		historical_price = stock_prices.find(:first, :conditions => ['date = ?', date])
-		
+		debugger
 		if historical_price
 			@price = historical_price.price
 		# Not in database? Try Google Finance historical records.

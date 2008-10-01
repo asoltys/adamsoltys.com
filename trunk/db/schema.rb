@@ -109,9 +109,9 @@ ActiveRecord::Schema.define(:version => 20080917211012) do
 
   create_table "transactions", :force => true do |t|
     t.date    "date"
+    t.integer "account_id"
     t.string  "name"
     t.float   "amount"
-    t.integer "account_id"
   end
 
   create_table "users", :force => true do |t|
