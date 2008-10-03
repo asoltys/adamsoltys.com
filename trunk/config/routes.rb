@@ -17,6 +17,7 @@ ActionController::Routing::Routes.draw do |map|
 	
 	map.resources :accounts
 	map.resources :companies
+	map.resources :executions
 	map.resources :posts
 	map.resources :projects
 	map.resources :reviews
