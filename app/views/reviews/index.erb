@@ -1,0 +1,10 @@
+<h1>Reviews</h1>
+
+<ul>
+<% for review in @reviews %>
+	<li>
+		<%= review.title %>
+		(<%= review.rating %> / 10)
+	</li>
+<% end %>
+</ul>
