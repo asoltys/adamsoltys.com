@@ -1,0 +1,3 @@
+class InvestorsEdge < Account
+
+end
