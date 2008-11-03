@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Adam Soltys</title>
+    <meta http-equiv="Content-Type" content="application/xml+xhtml; charset=UTF-8" />
+    <meta name="keywords" content="Adam Soltys, Victoria, Vancouver, Programmer, Computer Science, Web Developer, ColdFusion, Ruby on Rails" />
+    <meta name="description" content="The personal website of Adam Soltys, a software engineer and web developer living in Victoria, British Columbia." />
+    
+    <%= stylesheet_link_tag :all, :cache => true %>
+		<%= javascript_include_tag :all, :cache => true %>
+    <link rel="shortcut icon" href="/favicon.ico" />
+  </head>
+  
+  <body>  
+    <div id="container">
+      <div id="header">
+        <h1><a href="/" title="Adam Soltys">Adam Soltys</a></h1>
+        <h2>Personal Homepage</h2>
+      </div>
+    
+      <div id="banner">
+        <%= image_tag "countryside.jpg" %>
+      </div>
+    
+      <div id="menu">
+        <%= render :partial => 'layouts/navigation' %>
+      </div>
+  
+      <div id="content">
+        <%= @content_for_layout %>
+      </div>
+    
+      <div id="footer">
+        <div class="left">
+          <strong>Adam Soltys</strong>. &copy; 2008 All rights reserved.
+        </div>
+        
+        <div class="hcard right">
+					<strong>Phone:</strong>
+					<span class="tel">(250) 294-9383</span>
+          <strong>Email:</strong> 
+					<a class="email" href="mailto:asoltys@gmail.com">asoltys@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

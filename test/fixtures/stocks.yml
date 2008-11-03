@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+BMO:
+  id: 1
+  symbol: TSE:BMO
+  company: Bank of Montreal
+
+GMP:
+  id: 2
+  symbol: TSE:GMP.UN
+  company: GMP Capital Trust
+	
+CNR:
+  id: 3
+  symbol: TSE:CNR
+  company: Canadian National Railway
+
+TORO:
+  id: 4
+  symbol: OTC:TORO
+  company: Toro Venture Inc.
