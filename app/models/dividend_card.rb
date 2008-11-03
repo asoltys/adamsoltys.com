@@ -1,0 +1,3 @@
+class DividendCard < Account
+
+end

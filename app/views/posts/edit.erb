@@ -1,0 +1,12 @@
+<h1>Editing Post</h1>
+
+<%= error_messages_for :post %>
+
+<% form_for(@post) do |f| %>
+  <p>
+		<%= render :partial => 'form' %>
+		<br />
+	  <%= f.submit "Update" %>
+  </p>
+<% end %>
+
