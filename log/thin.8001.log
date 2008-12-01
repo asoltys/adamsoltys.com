@@ -1,0 +1,133 @@
+>> Writing PID to /var/www/adam_soltys/tmp/pids/thin.8001.pid
+>> Using rails adapter
+>> Exiting!
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.1.1/lib/initializer.rb:716:in `read': No such file or directory - /var/www/adam_soltys/config/database.yml (Errno::ENOENT)
+	from /usr/local/lib/ruby/gems/1.8/gems/rails-2.1.1/lib/initializer.rb:716:in `database_configuration'
+	from /usr/local/lib/ruby/gems/1.8/gems/rails-2.1.1/lib/initializer.rb:340:in `initialize_database'
+	from /usr/local/lib/ruby/gems/1.8/gems/rails-2.1.1/lib/initializer.rb:124:in `process'
+	from /usr/local/lib/ruby/gems/1.8/gems/rails-2.1.1/lib/initializer.rb:97:in `send'
+	from /usr/local/lib/ruby/gems/1.8/gems/rails-2.1.1/lib/initializer.rb:97:in `run'
+	from /var/www/adam_soltys/config/environment.rb:13
+	from /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+	from /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+	 ... 8 levels...
+	from /usr/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:136:in `run!'
+	from /usr/local/lib/ruby/gems/1.8/gems/thin-0.8.1/bin/thin:6
+	from /usr/local/bin/thin:19:in `load'
+	from /usr/local/bin/thin:19
+>> Writing PID to /var/www/adam_soltys/tmp/pids/thin.8001.pid
+>> Using rails adapter
+>> Thin web server (v0.8.1 codename Rebel Porpoise)
+>> Threaded mode OFF
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:8001, CTRL+C to stop
+>> Exiting!
+/usr/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:500:in `start_tcp_server': no acceptor (RuntimeError)
+	from /usr/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:500:in `start_server'
+	from /usr/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/backends/tcp_server.rb:16:in `connect'
+	from /usr/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/backends/base.rb:46:in `start'
+	from /usr/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:1086:in `call'
+	from /usr/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:1086:in `event_callback'
+	from /usr/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:224:in `run_machine'
+	from /usr/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:224:in `run'
+	from /usr/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/backends/base.rb:45:in `start'
+	from /usr/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/server.rb:146:in `start'
+	from /usr/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/controllers/controller.rb:82:in `start'
+	from /usr/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:166:in `send'
+	from /usr/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:166:in `run_command'
+	from /usr/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:136:in `run!'
+	from /usr/local/lib/ruby/gems/1.8/gems/thin-0.8.1/bin/thin:6
+	from /usr/local/bin/thin:19:in `load'
+	from /usr/local/bin/thin:19
+>> Writing PID to /var/www/adam_soltys/tmp/pids/thin.8001.pid
+>> Using rails adapter
+>> Thin web server (v0.8.1 codename Rebel Porpoise)
+>> Threaded mode OFF
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:8001, CTRL+C to stop
+>> Writing PID to /var/www/adam_soltys/tmp/pids/thin.8001.pid
+>> Using rails adapter
+>> Thin web server (v0.8.1 codename Rebel Porpoise)
+>> Threaded mode OFF
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:8001, CTRL+C to stop
+>> Writing PID to /var/www/adam_soltys/tmp/pids/thin.8001.pid
+>> Using rails adapter
+>> Thin web server (v0.8.1 codename Rebel Porpoise)
+>> Threaded mode OFF
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:8001, CTRL+C to stop
+>> Writing PID to /var/www/adam_soltys/tmp/pids/thin.8001.pid
+>> Using rails adapter
+>> Thin web server (v0.8.1 codename Rebel Porpoise)
+>> Threaded mode OFF
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:8001, CTRL+C to stop
+>> Writing PID to /var/www/adam_soltys/tmp/pids/thin.8001.pid
+>> Using rails adapter
+>> Thin web server (v0.8.1 codename Rebel Porpoise)
+>> Threaded mode OFF
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:8001, CTRL+C to stop
+>> Writing PID to /var/www/adam_soltys/tmp/pids/thin.8001.pid
+>> Using rails adapter
+>> Thin web server (v0.8.1 codename Rebel Porpoise)
+>> Threaded mode OFF
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:8001, CTRL+C to stop
+>> Writing PID to /var/www/adam_soltys/tmp/pids/thin.8001.pid
+>> Using rails adapter
+>> Thin web server (v0.8.1 codename Rebel Porpoise)
+>> Threaded mode OFF
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:8001, CTRL+C to stop
+>> Writing PID to /var/www/adam_soltys/tmp/pids/thin.8001.pid
+>> Using rails adapter
+>> Thin web server (v0.8.1 codename Rebel Porpoise)
+>> Threaded mode OFF
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:8001, CTRL+C to stop
+>> Exiting!
+>> Writing PID to /var/www/adam_soltys/tmp/pids/thin.8001.pid
+>> Using rails adapter
+>> Thin web server (v0.8.1 codename Rebel Porpoise)
+>> Threaded mode OFF
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:8001, CTRL+C to stop
+>> Writing PID to /var/www/adam_soltys/tmp/pids/thin.8001.pid
+>> Using rails adapter
+>> Thin web server (v0.8.1 codename Rebel Porpoise)
+>> Threaded mode OFF
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:8001, CTRL+C to stop
+>> Exiting!
+>> Writing PID to /var/www/adam_soltys/tmp/pids/thin.8001.pid
+>> Using rails adapter
+>> Thin web server (v0.8.1 codename Rebel Porpoise)
+>> Threaded mode OFF
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:8001, CTRL+C to stop
+>> Writing PID to /var/www/adam_soltys/tmp/pids/thin.8001.pid
+>> Using rails adapter
+>> Thin web server (v0.8.1 codename Rebel Porpoise)
+>> Threaded mode OFF
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:8001, CTRL+C to stop
+>> Writing PID to /var/www/adam_soltys/tmp/pids/thin.8001.pid
+>> Using rails adapter
+>> Thin web server (v0.8.1 codename Rebel Porpoise)
+>> Threaded mode OFF
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:8001, CTRL+C to stop
+>> Writing PID to /var/www/adam_soltys/tmp/pids/thin.8001.pid
+>> Using rails adapter
+>> Thin web server (v0.8.1 codename Rebel Porpoise)
+>> Threaded mode OFF
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:8001, CTRL+C to stop
+>> Writing PID to /var/www/adam_soltys/tmp/pids/thin.8001.pid
+>> Using rails adapter
+>> Thin web server (v0.8.1 codename Rebel Porpoise)
+>> Threaded mode OFF
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:8001, CTRL+C to stop
