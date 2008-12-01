@@ -1,0 +1,12 @@
+<h1>New Post</h1>
+
+<%= error_messages_for :company %>
+
+<% form_for(@post) do |f| %>
+  <p>
+		<%= render :partial => 'form' %>
+		<br />
+		<%= f.submit "Create" %>
+  </p>
+<% end %>
+
