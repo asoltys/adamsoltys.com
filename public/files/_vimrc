@@ -9,8 +9,6 @@ set guifont=Courier_New:h10:cANSI
 set bs=2
 set nocp
 set gp=grep\ -nr
-set wildmenu
-set wildmode=list:longest,full
 set ignorecase
 set smartcase
 set title
@@ -27,7 +25,6 @@ set visualbell
 set confirm
 set viminfo='20,<50,s10,h,%
 set guioptions+=c
-
 syntax enable
 filetype on
 filetype plugin on
@@ -35,21 +32,23 @@ filetype indent on
 colorscheme ir_black
 
 nmap <silent> <leader>s :set nolist!<CR>
+noremap <C-y> <C-r>
 noremap <C-n> :bnext<CR>
 noremap <C-p> :bprev<CR>
-noremap <C-c> :clo!<CR>
-noremap <C-s> :w<CR>
-noremap <C-f> :Gsearch<CR>
-noremap <C-g> :FuzzyFinderTextMate<CR>
+noremap <C-c> :bn <bar> bw #<CR>
+noremap <C-s> :w!<CR>
+noremap <C-g> :Gsearch<CR>
+noremap <C-r> :Greplace<CR>
+noremap <C-f> :FuzzyFinderTextMate<CR>
 noremap <C-x> :BufOnly<CR>
 noremap <C-z> :NERDTreeToggle<CR>
-inoremap <C-s> <Esc>:w<CR>
+inoremap <C-s> <Esc>:w!<CR>
 nnoremap ' `
 nnoremap ` '
 
 let mapleader = ","
 let g:fuzzy_matching_limit=20
-let g:fuzzy_roots=["C:/CFusionMX7/wwwroot/pacific_renewal", "C:/CFusionMX7/wwwroot/egd_billing"]
+let g:NERDTreeChDirMode=2
 
 autocmd GUIEnter * simalt ~X
 autocmd VimLeave * NERDTreeClose
