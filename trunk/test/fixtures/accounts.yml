@@ -1,0 +1,59 @@
+QuestTradeCAD:
+  name: QuestTrade Brokerage Account CAD
+  type: QuestTrade
+
+QuestTradeUSD:
+  name: QuestTrade Brokerage Account USD
+  type: QuestTrade
+
+GIC701:
+  name: Coast Capital Better Than Cash GIC
+  type: GIC701
+	
+GIC702:
+  name: Coast Capital Park-It RSP
+  type: GIC702
+
+GIC703:
+  name: Coast Capital 1-Year Redeemable GIC
+  type: GIC703
+
+GIC704:
+  name: Coast Capital 1-Year Redeemable GIC
+  type: GIC704
+
+VISA:
+  name: CIBC VISA Dividend Card
+  type: DividendCard
+	
+CIBCChequing:
+  name: CIBC Chequing Account
+  type: Chequing
+
+CoastCapitalChequing:
+  name: Coast Capital Chequing Account
+  type: Chequing
+
+Bond2008:
+  name: G0132082D
+  type: CS51
+
+Bond2013_1:
+  name: 2100376805 CP34P0335478K
+  type: CP34
+
+Bond2013_2:
+  name: 2100376806 CP34P8635668D
+  type: CP34
+
+GIC19:
+  name: CIBC GIC 
+  type: GIC19
+
+RSPGIC:
+  name: CIBC 5-Year Escalating Rate RRSP GIC
+  type: GIC697
+
+InvestorsEdge:
+  name: CIBC Investor's Edge
+  type: InvestorsEdge
