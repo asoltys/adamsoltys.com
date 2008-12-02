@@ -1,0 +1,22 @@
+<h1>Home</h1>
+
+<h2>Welcome</h2>
+
+<p>Thanks for visiting my homepage.  Please <a href="/contact" title="Contact Page">let me know</a> if you have any suggestions.</p>
+
+<h2>What's New</h2>
+
+<div class="post">
+	<div class="date"><%= @post.created_at.strftime('%B %d, %Y') %></div>
+	<%= @post.body %>
+
+	<% if logged_in? %>
+	<p>
+		<%= link_to 'Edit', edit_post_path(@post) %>
+	</p>
+	<% end %>
+</div>
+
+<p>
+	<a href="/archive">News Archive</a>
+</p>
