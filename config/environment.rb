@@ -13,6 +13,7 @@ require File.join(File.dirname(__FILE__), 'boot')
 Rails::Initializer.run do |config|
 	config.gem "fastercsv"
 	config.gem "htmlentities"
+  config.gem 'hpricot'
 
 	config.action_controller.page_cache_directory = RAILS_ROOT + "/public/cache/"
 
