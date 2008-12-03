@@ -3,12 +3,13 @@ require 'fastercsv'
 namespace :adam do
 	namespace :transactions do
 	
-		TRANSACTIONS_DIRECTORY = "C:/CFusionMX7/wwwroot/adam_soltys/public/transactions/"
+		TRANSACTIONS_DIRECTORY = "C:/ColdFusion8/wwwroot/adam_soltys/public/transactions/"
 		CIBC_CHEQUING = TRANSACTIONS_DIRECTORY + "cibc.csv"
 		INVESTORS_EDGE = TRANSACTIONS_DIRECTORY + "investors_edge.csv"
 		COAST_CAPITAL_CHEQUING = TRANSACTIONS_DIRECTORY + "statement.csv"
 		VISA = TRANSACTIONS_DIRECTORY + "cibcvisa.csv"
 		QUESTRADE = TRANSACTIONS_DIRECTORY + "questrade.csv"
+    GOOGLE_FINANCE = TRANSACTIONS_DIRECTORY + "data.csv"
 
 		desc "Clean transactions by stripping out double quotes"
 		task :clean => :environment do
@@ -151,5 +152,23 @@ namespace :adam do
 				t.save
 			end
 		end
+
+    desc 'Load Google Finance stock transactions'
+    task :google_finance => :environment do
+      QT_CAD = Account.find_by_name('QuestTrade Brokerage Account CAD')
+      Execution.delete_all
+      FasterCSV.foreach(GOOGLE_FINANCE, {:headers => true, :return_headers => false}) do |row|
+        e = Execution.new
+
+        e.stock = Stock.find_by_symbol('TSE:' + row[0])
+        e.account = QT_CAD
+        e.execution_type = row[2]
+        e.date = row[3]
+        e.shares = row[4]
+        e.price = row[5].to_f
+
+        e.save
+      end
+    end
 	end
 end
