@@ -1,8 +1,0 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-gic1:
-  principal: 1000
-  type: RedeemableGIC
-  investment_date: 2008-01-01
-  maturity_date: 2009-01-01
-
