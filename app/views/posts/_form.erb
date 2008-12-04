@@ -1,3 +1,8 @@
+<label for="created_at">Date:</label>
 <%= text_field :post, "created_at" %>
+
 <br />
-<%= text_area :post, "body" %>
+
+<label for="body">Content:</label>
+<br />
+<%= text_area :post, "body", :cols => '60' %>

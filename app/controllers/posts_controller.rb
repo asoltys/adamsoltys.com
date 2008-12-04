@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def new
-    @post = Post.new
+    @post = Post.new(:created_at => Time.now.strftime('%m/%d/%Y'))
 
     respond_appropriately
   end
