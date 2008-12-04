@@ -3,15 +3,15 @@
 <br />
 
 <label for="date">Account</label>
-<%= collection_select :transaction, :account_id, Account.find(:all), :id, :name %>
+<%= collection_select :execution, :account_id, Account.find(:all), :id, :name %>
 <br />
 
 <label for="type">Type</label>
-<%= select :transaction, :transaction_type, [['Buy', 'b'], ['Sell', 's']] %>
+<%= select :execution, :execution_type, ['Buy','Sell'] %>
 <br />
 
 <label for="stock">Stock</label>
-<%= collection_select :transaction, :stock_id, Stock.find(:all), :id, :company %>
+<%= collection_select :execution, :stock_id, Stock.find(:all), :id, :company %>
 <br />
 
 <label for="shares">Shares</label>
