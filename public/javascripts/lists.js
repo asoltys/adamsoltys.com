@@ -1,40 +1,28 @@
-var NUM_ITEMS_TO_DISPLAY = 3;
+var SIZE = 3;
 
-Event.observe(window, 'load', function() {
-	$$('div#content ul').each(function(e) {
-		showLess(e);
-	});
-	
-	$$('a.more').each(function(e) {
-		e.observe('click', clickHandler);
-	});
+$(function() {
+  var more_link = "<a class=\"more\">More...</a>";
+  $('div#content ul').filter(needShrinking).after(more_link).each(collapse);
+  $('a.more').click(expandList);
 });
 
-function clickHandler(e)
+function needShrinking()
 {
-	e = e.element();
-	if (e.innerHTML == 'More...')
-	{
-		showMore(e.previous());
-		e.update('Less...');
-	}
-	else
-	{
-		showLess(e.previous());
-		e.update('More...');
-	}
+  return $(this).children().length > 3;
 }
 
-function showLess(e)
+function expandList()
 {
-	var i = 0;
-	e.childElements().each(function(c) {
-		i++;
-		if (i > NUM_ITEMS_TO_DISPLAY) c.hide();
-	});
+  var list = $(this).previous();
+  list.expand();
 }
 
-function showMore(e)
+function expand()
 {
-	e.childElements().invoke('show');
+  $(this).find("li:gt(3)").show();
+}
+
+function collapse()
+{
+  $(this).find("li:gt(3)").hide();
 }
