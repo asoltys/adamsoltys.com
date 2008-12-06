@@ -5,11 +5,15 @@
     <meta http-equiv="Content-Type" content="application/xml+xhtml; charset=UTF-8" />
     <meta name="keywords" content="Adam Soltys, Victoria, Vancouver, Programmer, Computer Science, Web Developer, ColdFusion, Ruby on Rails" />
     <meta name="description" content="The personal website of Adam Soltys, a software engineer and web developer living in Victoria, British Columbia." />
-    
-    <%= stylesheet_link_tag :all, :cache => true %>
 	
+    <%= stylesheet_link_tag :all, :cache => true %>
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
-    <script src="/javascripts/lists.js"></script>
+    <script src="http://jqueryjs.googlecode.com/svn/trunk/plugins/datePicker/v2/demo/date.js"></script>
+    <script src="http://jquery-datepicker.googlecode.com/files/jquery.datePicker.min-2.1.1.js"></script>
+
+    <%= yield :head %>
+
     <link rel="shortcut icon" href="/favicon.ico" />
   </head>
   
@@ -46,11 +50,12 @@
       </div>
     </div>
 
-<script src="http://www.google-analytics.come/ga.js"></script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-3917084-1");
-pageTracker._trackPageview();
-} catch(err) {}</script>
+    <script src="http://www.google-analytics.come/ga.js"></script>
+    <script type="text/javascript">
+      try {
+      var pageTracker = _gat._getTracker("UA-3917084-1");
+      pageTracker._trackPageview();
+      } catch(err) {}
+    </script>
   </body>
 </html>
