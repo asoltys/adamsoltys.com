@@ -65,7 +65,11 @@ module AuthenticatedSystem
       respond_to do |format|
         format.html do
           store_location
-          redirect_to new_session_path
+          redirect_to login_path 
+        end
+        format.xhtml do
+          store_location
+          redirect_to login_path
         end
         # format.any doesn't work in rails version < http://dev.rubyonrails.org/changeset/8987
         # Add any other API formats here.  Some browsers send Accept: */* and 

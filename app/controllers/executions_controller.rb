@@ -1,4 +1,6 @@
 class ExecutionsController < ApplicationController
+  before_filter :login_required
+
 	def new
 		@execution = Execution.new
 	end
