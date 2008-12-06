@@ -1,3 +1,7 @@
+<% content_for :head do %>
+  <%= javascript_include_tag "posts" %>
+<% end %>
+
 <label for="created_at">Date:</label>
 <%= text_field :post, "created_at" %>
 
