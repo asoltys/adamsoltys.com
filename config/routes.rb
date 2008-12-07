@@ -21,10 +21,11 @@ ActionController::Routing::Routes.draw do |map|
 	map.resources :posts
 	map.resources :projects
 	map.resources :reviews
+	map.resources :review_categories
   map.resource :session
 	map.resources :transactions
 	map.resources :users
-	
+
 	# User Routes
 	
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
