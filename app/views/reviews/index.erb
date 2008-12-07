@@ -1,10 +1,14 @@
 <h1>Reviews</h1>
 
 <ul>
-<% for review in @reviews %>
-	<li>
-		<%= review.title %>
-		(<%= review.rating %> / 10)
-	</li>
-<% end %>
+  <% @review_categories.each do |category| %>
+    <h2><%= category.name %></h2>
+
+    <% category.reviews do |review| %>
+      <li>
+        <%= review.title %>
+        (<%= review.rating %> / 5)
+      </li>
+    <% end %>
+  <% end %>
 </ul>
