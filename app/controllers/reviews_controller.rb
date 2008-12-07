@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   def index
-    @reviews = Review.find(:all)
+    @review_categories = ReviewCategory.find(:all)
 		respond_appropriately
   end
 	
