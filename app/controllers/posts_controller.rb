@@ -1,5 +1,9 @@
 class PostsController < ApplicationController
-  before_filter :login_required 
+  before_filter :login_required, :except => :index
+
+  def index
+    @posts = Post.find(:all)
+  end
 
   def new
     @post = Post.new(:created_at => Time.now.strftime('%m/%d/%Y'))
