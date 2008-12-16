@@ -11,6 +11,8 @@ RAILS_GEM_VERSION = '2.2.2' unless defined? RAILS_GEM_VERSION
 require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
+  require 'coderay'
+
 	config.gem "fastercsv"
 	config.gem "htmlentities"
   config.gem 'hpricot'
