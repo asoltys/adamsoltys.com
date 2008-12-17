@@ -15,4 +15,8 @@ module ApplicationHelper
 		content_tag(:div, flash[key], :class => "flash flash_#{key}") unless flash[key].blank?
 		end.join
 	end
+
+  def title(title)
+    content_for(:title) { title }
+  end
 end
