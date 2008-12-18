@@ -1,22 +1,9 @@
 <style>
-  div.news {
-    width: 55em;
-  }
 
-  div.sidebar {
-    width: 14em;
-  }
-
-  div.sidebar div {
-    text-align: center;
-    width: 100%;
-  }
 </style>
 
-<div class="right sidebar">
-  <div>
-    <img src="/images/me.jpg" alt="Adam Soltys" title="Me" />
-  </div>
+<div id="sidebar" class="right">
+  <img src="/images/me.jpg" alt="Adam Soltys" title="Me" />
 
   <p>
     Thanks for visiting my homepage.  Please <a href="/contact" title="Contact Page">let me know</a> if you have any suggestions. 
@@ -24,7 +11,7 @@
 </div>
 
 
-<div class="news left">
+<div id="news" class="left">
   <% @posts.each do |post| %>
     <div class="post">
       <div class="date"><%= post.created_at.strftime('%B %d, %Y') %></div>
