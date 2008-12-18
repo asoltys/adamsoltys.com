@@ -36,4 +36,10 @@ class PostsController < ApplicationController
 			render :action => "edit"
     end
   end
+
+  def destroy 
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to home_path
+  end
 end
