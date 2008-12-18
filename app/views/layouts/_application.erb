@@ -3,7 +3,7 @@
   <head>
     <title>Adam Soltys<%= " - #{@content_for_title}" if @content_for_title %></title>
     <meta http-equiv="Content-Type" content="application/xml+xhtml; charset=UTF-8" />
-    <meta name="keywords" content="Adam Soltys, Victoria, Vancouver, Programmer, Computer Science, Web Developer, ColdFusion, Ruby on Rails" />
+    <meta name="keywords" content="Adam Soltys, Web Developer, ColdFusion, Ruby on Rails" />
     <meta name="description" content="The personal website of Adam Soltys, a software engineer and web developer living in Victoria, British Columbia." />
 	
     <%= stylesheet_link_tag :all, :cache => true %>
@@ -33,7 +33,7 @@
       </div>
   
       <div id="content">
-        <h1><%= @content_for_title %></h1>
+        <%= "<h1>#{@content_for_title}</h1>" if @content_for_title %>
         <%= @content_for_layout %>
       </div>
     
