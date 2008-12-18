@@ -19,8 +19,8 @@ html {
 
 p
 {
-	line-height: 2.0em;
-	margin: 0 0 0 1.0em;
+  line-height: 1.5em;
+	margin: 0 0 1.0em 1.0em;
 }
 
 ul, ol 

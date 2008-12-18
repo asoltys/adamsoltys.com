@@ -1,24 +1,46 @@
-<% title('Home') %>
+<style>
+  div.news {
+    width: 55em;
+  }
 
-<h2>Welcome</h2>
+  div.sidebar {
+    width: 14em;
+  }
 
-<p>Thanks for visiting my homepage.  Please <a href="/contact" title="Contact Page">let me know</a> if you have any suggestions.</p>
+  div.sidebar div {
+    text-align: center;
+    width: 100%;
+  }
+</style>
 
-<h2>What's New</h2>
+<div class="right sidebar">
+  <div>
+    <img src="/images/me.jpg" alt="Adam Soltys" title="Me" />
+  </div>
 
-<div class="post">
-	<div class="date"><%= @post.created_at.strftime('%B %d, %Y') %></div>
-	<%= @post.body %>
-
-	<% if logged_in? %>
-	<p>
-		<%= link_to 'Edit', edit_post_path(@post) %>
-	</p>
-	<% end %>
+  <p>
+    Thanks for visiting my homepage.  Please <a href="/contact" title="Contact Page">let me know</a> if you have any suggestions. 
+  </p>
 </div>
 
-<% if logged_in? %>
-  <p>
-    <%= link_to 'Add Post', new_post_path %>
-  </p>
-<% end %>
+
+<div class="news left">
+  <% @posts.each do |post| %>
+    <div class="post">
+      <div class="date"><%= post.created_at.strftime('%B %d, %Y') %></div>
+      <%= post.body %>
+
+      <% if logged_in? %>
+      <p>
+        <%= link_to 'Edit', edit_post_path(post) %>
+      </p>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if logged_in? %>
+    <p>
+      <%= link_to 'Add Post', new_post_path %>
+    </p>
+  <% end %>
+</div>
