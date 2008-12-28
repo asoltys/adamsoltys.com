@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 	include AuthenticatedSystem
   helper :all # include all helpers, all the time
 	before_filter :adjust_request_format
-	caches_page :about, :lists, :contact
+	caches_page :about, :resume, :contact
 
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
