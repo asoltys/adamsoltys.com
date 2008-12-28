@@ -62,7 +62,6 @@ ActiveRecord::Schema.define(:version => 20081210060905) do
 
   create_table "investments", :force => true do |t|
     t.float  "principal"
-    t.float  "rate"
     t.string "type"
     t.date   "investment_date"
     t.date   "maturity_date"
