@@ -12,7 +12,8 @@ ActionController::Routing::Routes.draw do |map|
 	map.contact '/contact', :controller => 'application', :action => 'contact'
 	map.resume '/resume', :controller => 'application', :action => 'resume'
 	map.finances '/finances', :controller => 'finances', :action => 'index'
-	map.work '/work', :controller => 'application', :action => 'work'
+	map.projects'/projects', :controller => 'application', :action => 'projects'
+	map.team'/team', :controller => 'application', :action => 'team'
 	
 	# Resources
 	
