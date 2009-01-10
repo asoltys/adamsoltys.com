@@ -49,6 +49,7 @@ class ApplicationController < ActionController::Base
 		respond_to do |format|
 			format.html
 			format.xhtml
+      format.atom
 		end
 	end
 	
