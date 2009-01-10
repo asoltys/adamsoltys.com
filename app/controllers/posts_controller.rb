@@ -5,6 +5,12 @@ class PostsController < ApplicationController
     @posts = Post.find(:all)
   end
 
+  def show
+    @post = Post.find(params[:id])
+
+    respond_appropriately
+  end
+
   def new
     @post = Post.new(:created_at => Time.now.strftime('%m/%d/%Y'))
 
