@@ -1,5 +1,5 @@
 atom_feed do |feed|
-  feed.title "Adam Soltys' Posts" 
+  feed.title "Adam Soltys" 
   feed.updated @posts.first.created_at 
 
   i = @posts.length
