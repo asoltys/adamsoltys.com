@@ -14,6 +14,8 @@ ActionController::Routing::Routes.draw do |map|
 	map.finances '/finances', :controller => 'finances', :action => 'index'
 	map.projects'/projects', :controller => 'application', :action => 'projects'
 	map.team'/team', :controller => 'application', :action => 'team'
+
+  map.connect '/home.:format', :controller => 'application', :action => 'home'
 	
 	# Resources
 	
