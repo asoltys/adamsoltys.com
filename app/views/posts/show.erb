@@ -1,3 +1,5 @@
-<h1>Posted <%= @post.created_at.strftime('%B %d, %Y') %></h1>
+<h1><%= @post.created_at.strftime('%B %d, %Y') %></h1>
+
+<br />
 
 <%= @post.body %>
