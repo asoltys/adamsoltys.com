@@ -15,7 +15,8 @@ ActionController::Routing::Routes.draw do |map|
 	map.projects'/projects', :controller => 'application', :action => 'projects'
 	map.team'/team', :controller => 'application', :action => 'team'
 
-  map.connect '/home.:format', :controller => 'application', :action => 'home'
+  map.blog '/blog', :controller => 'application', :action => 'home', :format => 'atom'
+  
 	
 	# Resources
 	
