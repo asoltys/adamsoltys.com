@@ -9,8 +9,12 @@
 
   <% @posts.each do |post| %>
     <div class="post">
-      <div class="date"><%= link_to post.created_at.strftime('%B %d, %Y'), post_path(post) %></div>
-      <%= post.body %>
+      <span class="date"><%= post.created_at.strftime('%B %d, %Y') %></span>
+      <span class="title"><%= link_to post.title, post_path(post) %></span>
+
+      <p class="body">
+        <%= post.body %>
+      </p>
 
       <% if logged_in? %>
       <p>

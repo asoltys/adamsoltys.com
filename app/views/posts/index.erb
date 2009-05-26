@@ -4,6 +4,7 @@
 
 <% @posts.each do |p| %>
   <div class="post">
+    <h1><%= p.title %>
     <div class="date"><%= p.created_at.strftime('%B %d, %Y') %></div>
     <%= p.body %>
   
