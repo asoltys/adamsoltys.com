@@ -139,20 +139,29 @@ div#content img.right
 	margin: 0em 0em 1.8em 1.8em;
 }
 
-div#content div.date
-{	
-	background:url(/images/date.gif) no-repeat left top;
-	color: #787878;	
-	font-size: 0.86em;
-	padding: 0 0 1.0em 2.0em;
-	width: 80.0em;
-}
-
-div#content div.post
+div.post
 {
 	border: 1px dashed #ccc;
 	padding: 1.0em;
 	margin-bottom: 1.0em;
+}
+
+div.post span.date
+{	
+	background:url(/images/date.gif) no-repeat left top;
+	color: #787878;	
+  float: right;
+	font-size: 0.86em;
+	padding: 0 0 1.0em 2.0em;
+}
+
+div.post span.title
+{
+  font-size: 1.5em;
+}
+
+div.post p.body {
+  margin-top: 1em;
 }
 
 /* ------------------------------------------------------------------ 
