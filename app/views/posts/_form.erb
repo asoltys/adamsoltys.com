@@ -5,6 +5,11 @@
   <%= javascript_include_tag "posts" %>
 <% end %>
 
+<label for="title">Title:</label>
+<%= text_field :post, 'title' %>
+
+<br />
+
 <label for="created_at">Date:</label>
 <%= text_field :post, "created_at" %>
 
