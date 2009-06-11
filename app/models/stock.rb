@@ -9,8 +9,9 @@ class Stock < ActiveRecord::Base
 	def price(date = Time.now)
 		# Try the database first
 		historical_price = stock_prices.find(:first, :conditions => ['date = ?', date.strftime("%Y-%m-%d")])
+debugger
 
-		if historical_price
+		if historical_price && historical_price.price != 0
 			@price = historical_price.price
 		# Not in database? Try Google Finance historical records.
 		else			
@@ -24,7 +25,7 @@ class Stock < ActiveRecord::Base
 			# Not in the historical records yet?  Use today's quote.
 			if !price_td
 				url = "http://finance.google.com/finance?q=#{symbol}"
-				price_td = Hpricot(open(url)).at("span.pr")
+				price_td = Hpricot(open(url)).at("span.pr span")
 			end
 			
 			# Save whatever price we found in the database for faster lookups later
