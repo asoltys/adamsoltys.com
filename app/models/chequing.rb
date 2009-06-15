@@ -1,3 +1,0 @@
-class Chequing < Account
-
-end
