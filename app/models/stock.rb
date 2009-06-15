@@ -9,7 +9,6 @@ class Stock < ActiveRecord::Base
 	def price(date = Time.now)
 		# Try the database first
 		historical_price = stock_prices.find(:first, :conditions => ['date = ?', date.strftime("%Y-%m-%d")])
-debugger
 
 		if historical_price && historical_price.price != 0
 			@price = historical_price.price
