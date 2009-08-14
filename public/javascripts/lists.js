@@ -6,7 +6,7 @@ $(function() {
 
 function needShrinking()
 {
-  return $(this).children().length > 3;
+  return $(this).children().length > 4;
 }
 
 function toggleList()
