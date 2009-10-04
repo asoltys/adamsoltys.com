@@ -1,18 +1,34 @@
-<h1>Work</h1>
+<h2>Table of Contents</h2>
 
-<h2>What's New</h2>
+<ul>
+  <% @posts.each do |p| %>
+    <% month_and_year = p.created_at.strftime('%B %Y') %>
+    <% month_anchor = month_and_year.tr(' ', '_').downcase %>
+    <li>
+      <a href="#<%= month_anchor %>"><%= month_and_year %></a> - <a href="#<%= p.id %>"><%= p.title %></a>
+    </li>
+  <% end %>
+</ul>
 
-<% @posts.each do |p| %>
-  <div class="post">
-    <h1><%= p.title %>
-    <div class="date"><%= p.created_at.strftime('%B %d, %Y') %></div>
-    <%= p.body %>
-  
-    <% if logged_in? %>
-      <p>
-        <%= link_to 'Edit', edit_post_path(p) %>
+<% @posts_by_month.each do |month_and_year, posts| %>
+  <% month_anchor = month_and_year.tr(' ', '_').downcase %>
+	<h2 id="<%= month_anchor %>"><%= month_and_year %></h2>
+	<% posts.each do |p| %>
+		<div id="<%= p.id %>" class="post">
+      <span class="date"><%= p.created_at.strftime('%B %d, %Y') %></span>
+      <span class="title"><%= link_to p.title, post_path(p) %></span>
+
+      <p class="body">
+        <%= p.body %>
       </p>
-    <% end %>
-  </div>
-  <br />
+
+      <% if logged_in? %>
+        <p>
+          <%= link_to 'Edit', edit_post_path(p) %>
+          &nbsp;
+          <%= link_to 'Delete', post_path(p), :method => :delete %>
+        </p>
+      <% end %>
+    </div>
+  <% end %>
 <% end %>

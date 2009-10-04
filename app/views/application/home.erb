@@ -26,6 +26,8 @@
     </div>
   <% end %>
 
+  <%= link_to 'More...', posts_path %>
+
   <% if logged_in? %>
     <p>
       <%= link_to 'Add Post', new_post_path %>
