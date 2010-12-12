@@ -1,6 +1,6 @@
-tmp
-log
+config/initializers/secret_token.rb
 config/database.yml
-public/stylesheets/all.css
-public/cache/*
-public/drafts
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/**/*
