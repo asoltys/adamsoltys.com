@@ -1,6 +1,6 @@
 <h1>Add Review</h1>
 
-<% form_for(@review) do |f| %>
+<%= form_for(@review) do |f| %>
   <%= render :partial => 'form', :locals => {:f => f} %>
 	<%= submit_tag %>
 <% end %>

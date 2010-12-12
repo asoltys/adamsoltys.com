@@ -2,7 +2,7 @@
 
 <%= error_messages_for :execution %>
 
-<% form_for(@execution) do |f| %>
+<%= form_for(@execution) do |f| %>
   <p>
 		<%= render :partial => 'form', :locals => {:f => f} %>
 		<br />
