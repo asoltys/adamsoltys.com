@@ -2,7 +2,7 @@
 
 <%= error_messages_for :transaction %>
 
-<% form_for(@transaction) do |f| %>
+<%= form_for(@transaction) do |f| %>
   <p>
 		<%= render :partial => 'form', :locals => {:f => f} %>
 		<br />
