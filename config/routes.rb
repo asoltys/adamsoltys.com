@@ -1,4 +1,4 @@
-ActionController::Routing::Routes.draw do
+AdamSoltys::Application.routes do
 
 	# Root Page
 
