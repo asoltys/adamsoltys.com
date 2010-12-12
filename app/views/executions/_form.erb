@@ -10,7 +10,7 @@
 <br />
 
 <label for="date">Account</label>
-<%= collection_select :execution, :account_id, Account.find(:all), :id, :name %>
+<%= collection_select :execution, :account_id, Account.all, :id, :name %>
 <br />
 
 <label for="type">Type</label>
@@ -18,7 +18,7 @@
 <br />
 
 <label for="stock">Stock</label>
-<%= collection_select :execution, :stock_id, Stock.find(:all), :id, :company %>
+<%= collection_select :execution, :stock_id, Stock.all, :id, :company %>
 <br />
 
 <label for="shares">Shares</label>
