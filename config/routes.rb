@@ -1,51 +1,49 @@
-ActionController::Routing::Routes.draw do |map|		
+ActionController::Routing::Routes.draw do
+
 	# Root Page
 
-	map.root :controller => 'application', :action => 'home'
+	root :to => 'application#home'
 
 	# Static Pages
-	
-	map.home '/home', :controller => 'application', :action => 'home'
-	map.archive '/archive', :controller => 'application', :action => 'archive'
-	map.about '/about', :controller => 'application', :action => 'about'
-	map.lists '/lists', :controller => 'application', :action => 'lists'
-	map.contact '/contact', :controller => 'application', :action => 'contact'
-	map.resume '/resume', :controller => 'application', :action => 'resume'
-	map.finances '/finances', :controller => 'finances', :action => 'index'
-	map.projects'/projects', :controller => 'application', :action => 'projects'
-	map.team'/team', :controller => 'application', :action => 'team'
 
-  map.blog '/blog', :controller => 'application', :action => 'home', :format => 'atom'
-  
+	match '/home', 'application#home'
+	match '/archive', 'application#archive'
+	match '/about', 'application#about'
+	match '/lists', 'application#lists'
+	match '/contact', 'application#contact'
+	match '/resume', 'application#resume'
+	match '/finances', 'finances#index'
+  match '/blog', 'application#home', :defaults => { :format => 'atom' }
 	
 	# Resources
 	
-	map.resources :accounts
-	map.resources :companies
-	map.resources :executions
-	map.resources :posts
-	map.resources :projects
-	map.resources :reviews
-	map.resources :review_categories
-  map.resource :session
-	map.resources :transactions
-	map.resources :users
+	resources :accounts
+	resources :companies
+	resources :executions
+	resources :posts
+	resources :projects
+	resources :reviews
+	resources :review_categories
+  resource :session
+	resources :transactions
+	resources :users
 
 	# User Routes
 	
-  map.logout '/logout', :controller => 'sessions', :action => 'destroy'
-  map.login '/login', :controller => 'sessions', :action => 'new'
-  map.register '/register', :controller => 'users', :action => 'create'
+  match '/logout', 'sessions#destroy'
+  match '/login', 'sessions#new'
+  match '/register', 'users#create'
 	
 	# Finance Routes
 	
-	map.stocks '/stocks', :controller => 'finances', :action => 'stocks'
-	map.update_stocks '/update_stocks', :controller => 'finances', :action => 'update_stocks'
-	map.expire_cache '/expire_cache', :controller => 'application', :action => 'expire_cache'
-
-	map.connect '/quotes/:symbol', :controller => 'quotes', :action => 'new'
+	match '/stocks', 'finances#stocks'
+	match '/update_stocks', 'finances#update_stocks'
+	match '/expire_cache', 'application#expire_cache'
+	match '/quotes/:symbol', 'quotes#new'
 	
   # Default Routes
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
+
+  match ':controller/:action/:id'
+  match ':controller/:action/:id.:format'
+
 end
