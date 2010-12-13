@@ -21,14 +21,6 @@
       <p class="body">
         <%= p.body %>
       </p>
-
-      <% if logged_in? %>
-        <p>
-          <%= link_to 'Edit', edit_post_path(p) %>
-          &nbsp;
-          <%= link_to 'Delete', post_path(p), :method => :delete %>
-        </p>
-      <% end %>
     </div>
   <% end %>
 <% end %>
