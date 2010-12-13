@@ -4,10 +4,6 @@
 
 <table id="portfolio">
 	<tr>
-		<% if logged_in? %>
-		<th>&nbsp;</th>
-		<th>&nbsp;</th>
-		<% end %>
 		<th>Date</th>
 		<th>Type</th>
 		<th>Company</th>
@@ -18,10 +14,6 @@
 	</tr>
 	<% for t in @account.executions %>
 	<tr>
-		<% if logged_in? %>
-		<td><%= link_to 'Delete', execution_path(t), :method => :delete %></td>
-		<td><%= link_to 'Edit', edit_execution_path(t) %></td>
-		<% end %>
 		<td><%= t.date %></td>
 		<td><%= t.execution_type %></td>
 		<td><%= link_to t.stock.company, "http://finance.google.com/finance?q=#{t.stock.symbol}" %></td>
@@ -32,22 +24,12 @@
 	</tr>
 	<% end %>
 	<tr>
-		<% if logged_in? %>
-		<td colspan="6"></td>
-		<% else %>
 		<td colspan="4"></td>
-		<% end %>
 		<td><strong>Total:</strong></td>
 		<td>$<%= gain_or_loss(-@account.commission) %></td>
 		<td>$<%= gain_or_loss(@account.balance) %></td>
 	</tr>
 </table>
-
-<% if logged_in? %>
-	<p>
-		<%= link_to 'Add Execution', new_execution_path %>
-	</p>
-<% end %>
 
 <h3>Current Positions</h3>
 

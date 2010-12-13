@@ -2,12 +2,13 @@
 module ApplicationHelper
 	def gain_or_loss(amount)
 		if amount > 0
-			"<span class='profit'>" + sprintf("%.2f", amount) + "</span>"
+			s = "<span class='profit'>" + sprintf("%.2f", amount) + "</span>"
 		elsif amount < 0
-			"<span class='loss'>(" + sprintf("%.2f", amount.abs) + ")</span>"
+			s = "<span class='loss'>(" + sprintf("%.2f", amount.abs) + ")</span>"
 		else
-			sprintf("%.2f", amount)
+			s = sprintf("%.2f", amount)
 		end
+    raw s
 	end
 	
 	def show_flash
