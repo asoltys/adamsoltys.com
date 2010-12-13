@@ -3,4 +3,6 @@ config/database.yml
 .bundle
 db/*.sqlite3
 log/*.log
-tmp/**/*
+tmp
+public/cache
+public/stylesheets/all.css
