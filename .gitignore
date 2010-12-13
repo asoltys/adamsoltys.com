@@ -6,3 +6,4 @@ log/*.log
 tmp
 public/cache
 public/stylesheets/all.css
+public/*.html
