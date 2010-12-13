@@ -32,7 +32,7 @@
   
       <div id="content">
         <%= "<h1>#{@content_for_title}</h1>" if @content_for_title %>
-        <%= @content_for_layout %>
+        <%= content_for :layout %>
       </div>
     
       <div id="footer">

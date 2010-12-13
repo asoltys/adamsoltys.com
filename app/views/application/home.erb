@@ -1,28 +1,14 @@
 <%= render :partial => 'layouts/sidebar' %>
 
 <div id="news" class="left">
-  <% if logged_in? %>
-    <p>
-      <%= link_to 'Add Post', new_post_path %>
-    </p>
-  <% end %>
-
   <% @posts.each do |post| %>
     <div class="post">
       <span class="date"><%= post.created_at.strftime('%B %d, %Y') %></span>
       <span class="title"><%= link_to post.title, post_path(post) %></span>
 
       <p class="body">
-        <%= post.body %>
+        <%= raw post.body %>
       </p>
-
-      <% if logged_in? %>
-      <p>
-        <%= link_to 'Edit', edit_post_path(post) %>
-        &nbsp;
-        <%= link_to 'Delete', post_path(post), :method => :delete %>
-      </p>
-      <% end %>
     </div>
   <% end %>
 

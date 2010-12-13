@@ -13,7 +13,7 @@ class FinancesController < ApplicationController
 	def stocks
 		expire_page(:controller => 'finances', :action => 'stocks') if params[:expire_cache]
 
-		@account = QuestTrade.where(:name => 'QuestTrade Brokerage Account CAD')
+		@account = QuestTrade.where(:name => 'QuestTrade Brokerage Account CAD').first
 
 		respond_appropriately
 	end
