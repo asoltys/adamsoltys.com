@@ -1,6 +1,6 @@
 class FinancesController < ApplicationController
 	def index
-		@accounts = Account.find(:all)
+		@accounts = Account.all
 		@assets = @accounts.select { |a| a.value >= 0 }
 		@liabilities = @accounts - @assets
 		
@@ -13,7 +13,7 @@ class FinancesController < ApplicationController
 	def stocks
 		expire_page(:controller => 'finances', :action => 'stocks') if params[:expire_cache]
 
-		@account = QuestTrade.find_by_name('QuestTrade Brokerage Account CAD')
+		@account = QuestTrade.where(:name => 'QuestTrade Brokerage Account CAD').first
 
 		respond_appropriately
 	end

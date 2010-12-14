@@ -2,7 +2,6 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
-	include AuthenticatedSystem
   helper :all # include all helpers, all the time
 	before_filter :adjust_request_format
 	caches_page :about, :resume, :contact
@@ -12,7 +11,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # :secret => '3f8438829100c0cf5f5a5ed73c0ba3792bd5dd1c0988b01bbe28998d2b21d8fdc0fd77d0a227d236443ee1307647cfd935b81524ba054c79cd381ac65467d370'
 	
 	def home
-		@posts = Post.find(:all, :order => 'created_at DESC', :limit => 3)
+		@posts = Post.order('created_at DESC').limit(3)
 		respond_appropriately
 	end
 	

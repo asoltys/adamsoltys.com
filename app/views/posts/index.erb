@@ -19,16 +19,8 @@
       <span class="title"><%= link_to p.title, post_path(p) %></span>
 
       <p class="body">
-        <%= p.body %>
+        <%= raw p.body %>
       </p>
-
-      <% if logged_in? %>
-        <p>
-          <%= link_to 'Edit', edit_post_path(p) %>
-          &nbsp;
-          <%= link_to 'Delete', post_path(p), :method => :delete %>
-        </p>
-      <% end %>
     </div>
   <% end %>
 <% end %>

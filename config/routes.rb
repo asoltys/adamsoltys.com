@@ -1,51 +1,27 @@
-ActionController::Routing::Routes.draw do |map|		
-	# Root Page
+AdamSoltys::Application.routes.draw do
+	root :to => 'application#home'
 
-	map.root :controller => 'application', :action => 'home'
+	match '/home', :to => 'application#home'
+	match '/archive', :to => 'application#archive'
+	match '/about', :to => 'application#about'
+	match '/lists', :to => 'application#lists'
+	match '/contact', :to => 'application#contact'
+	match '/resume', :to => 'application#resume'
+	match '/finances', :to => 'finances#index'
+  match '/blog', :to => 'application#home', :defaults => { :format => 'atom' }
+	
+	resources :accounts
+	resources :companies
+	resources :executions
+	resources :posts
 
-	# Static Pages
+  devise_for :users
 	
-	map.home '/home', :controller => 'application', :action => 'home'
-	map.archive '/archive', :controller => 'application', :action => 'archive'
-	map.about '/about', :controller => 'application', :action => 'about'
-	map.lists '/lists', :controller => 'application', :action => 'lists'
-	map.contact '/contact', :controller => 'application', :action => 'contact'
-	map.resume '/resume', :controller => 'application', :action => 'resume'
-	map.finances '/finances', :controller => 'finances', :action => 'index'
-	map.projects'/projects', :controller => 'application', :action => 'projects'
-	map.team'/team', :controller => 'application', :action => 'team'
-
-  map.blog '/blog', :controller => 'application', :action => 'home', :format => 'atom'
-  
+	match '/stocks', :to => 'finances#stocks'
+	match '/update_stocks', :to => 'finances#update_stocks'
+	match '/expire_cache', :to => 'application#expire_cache'
+	match '/quotes/:symbol', :to => 'quotes#new'
 	
-	# Resources
-	
-	map.resources :accounts
-	map.resources :companies
-	map.resources :executions
-	map.resources :posts
-	map.resources :projects
-	map.resources :reviews
-	map.resources :review_categories
-  map.resource :session
-	map.resources :transactions
-	map.resources :users
-
-	# User Routes
-	
-  map.logout '/logout', :controller => 'sessions', :action => 'destroy'
-  map.login '/login', :controller => 'sessions', :action => 'new'
-  map.register '/register', :controller => 'users', :action => 'create'
-	
-	# Finance Routes
-	
-	map.stocks '/stocks', :controller => 'finances', :action => 'stocks'
-	map.update_stocks '/update_stocks', :controller => 'finances', :action => 'update_stocks'
-	map.expire_cache '/expire_cache', :controller => 'application', :action => 'expire_cache'
-
-	map.connect '/quotes/:symbol', :controller => 'quotes', :action => 'new'
-	
-  # Default Routes
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
+  match ':controller/:action/:id'
+  match ':controller/:action/:id.:format'
 end
