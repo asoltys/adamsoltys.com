@@ -19,7 +19,7 @@
       <span class="title"><%= link_to p.title, post_path(p) %></span>
 
       <p class="body">
-        <%= p.body %>
+        <%= raw p.body %>
       </p>
     </div>
   <% end %>
