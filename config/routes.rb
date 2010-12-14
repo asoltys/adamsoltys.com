@@ -1,5 +1,7 @@
 AdamSoltys::Application.routes.draw do
 
+  devise_for :users
+
 	# Root Page
 
 	root :to => 'application#home'
