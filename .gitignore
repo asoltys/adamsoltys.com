@@ -1,6 +1,8 @@
 tmp
 log
 config/database.yml
+config/initializers/secret_token.rb
 public/stylesheets/all.css
 public/cache/*
 public/drafts
+public/*.html
