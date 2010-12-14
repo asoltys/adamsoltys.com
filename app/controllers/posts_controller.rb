@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_filter :login_required, :except => ['index', 'show']
+  before_filter :authenticate_user!, :except => ['index', 'show']
 
   def index
     @posts = Post.order('created_at DESC')
