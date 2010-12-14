@@ -32,6 +32,9 @@
   
       <div id="content">
         <%= "<h1>#{@content_for_title}</h1>" if @content_for_title %>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+
         <%= content_for :layout %>
       </div>
     
