@@ -9,7 +9,7 @@ class ExecutionsController < ApplicationController
     @execution = Execution.new(params[:execution ])
 
 		if @execution.save
-			redirect_to finances_path
+			redirect_to stocks_path 
 		else
 			render :action => "new"
     end
@@ -23,7 +23,7 @@ class ExecutionsController < ApplicationController
     @execution = Execution.find(params[:id])
 
 		if @execution.update_attributes(params[:execution])
-			redirect_to finances_path
+			redirect_to stocks_path
 		else
 			render :action => "edit"
     end
@@ -31,6 +31,6 @@ class ExecutionsController < ApplicationController
 	
 	def destroy
 		Execution.delete(params[:id])
-		redirect_to finances_path
+		redirect_to stocks_path
 	end
 end
