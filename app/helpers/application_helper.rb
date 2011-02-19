@@ -6,7 +6,7 @@ module ApplicationHelper
 		elsif amount < 0
 			s = "<span class='loss'>(" + sprintf("%.2f", amount.abs) + ")</span>"
 		else
-			s = sprintf("%.2f", amount)
+			s = sprintf("%.2f", amount.abs)
 		end
     raw s
 	end
