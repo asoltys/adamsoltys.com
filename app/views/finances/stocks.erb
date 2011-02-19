@@ -12,7 +12,7 @@
 		<th>Commission</th>
 		<th>Amount</th>
 	</tr>
-	<% for t in @account.executions %>
+	<% for t in @account.executions.reverse %>
 	<tr>
 		<td><%= t.date %></td>
 		<td><%= t.execution_type %></td>
