@@ -10,11 +10,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101214083247) do
+ActiveRecord::Schema.define(:version => 20110219065235) do
 
   create_table "accounts", :force => true do |t|
     t.string "name"
-    t.string "type"
     t.string "account_type"
   end
 
