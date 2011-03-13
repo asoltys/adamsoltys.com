@@ -5,6 +5,7 @@ gem 'ruby-debug19', :require => 'ruby-debug'
 gem 'mysql2'
 gem 'hpricot'
 gem 'devise', '1.1.5'
+gem 'devise_openid_authenticatable'
 
 group :development, :test do
   gem 'mocha'
