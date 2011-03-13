@@ -6,9 +6,7 @@
       <span class="date"><%= post.created_at.strftime('%B %d, %Y') %></span>
       <span class="title"><%= link_to post.title, post_path(post) %></span>
 
-      <p class="body">
-        <%= raw post.body %>
-      </p>
+      <%= raw post.body %>
     </div>
   <% end %>
 
