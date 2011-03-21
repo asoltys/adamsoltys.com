@@ -31,9 +31,6 @@ Devise.setup do |config|
   # Set this to true to use Basic Auth for AJAX requests.  True by default.
   config.http_authenticatable_on_xhr = false
 
-  # The realm used in Http Basic Authentication
-  config.http_authentication_realm = "Application"
-
   # ==> Configuration for :database_authenticatable
   # For bcrypt, this is the cost for hashing the password and defaults to 10. If
   # using other encryptors, it sets how many times you want the password re-encrypted.
