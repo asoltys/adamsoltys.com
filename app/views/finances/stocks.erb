@@ -26,7 +26,7 @@ I have plans to improve this page to show which holdings are in which accounts, 
 		<th>Commission</th>
 		<th>Amount</th>
 	</tr>
-	<% for t in @account.executions.reverse %>
+	<% for t in @account.executions.order(:date).reverse %>
 	<tr>
 		<td><%= t.date %></td>
 		<td><%= t.execution_type %></td>
