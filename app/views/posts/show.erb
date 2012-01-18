@@ -1,4 +1,6 @@
-<h1><%= @post.title %></h1>
+<h1><%= @post.title %>
+<small style="color: #666"><%= @post.created_at.strftime('%B %d, %Y') %></small>
+</h1>
 <br />
 
 <%= render :partial => 'layouts/sidebar' %>

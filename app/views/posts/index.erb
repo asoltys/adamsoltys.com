@@ -17,10 +17,6 @@
 		<div id="<%= p.id %>" class="post">
       <span class="date"><%= p.created_at.strftime('%B %d, %Y') %></span>
       <span class="title"><%= link_to p.title, post_path(p) %></span>
-
-      <p class="body">
-        <%= raw p.body %>
-      </p>
     </div>
   <% end %>
 <% end %>
