@@ -3,18 +3,10 @@
 <h1>Stocks</h1>
 
 <p>
-This is a history of my stock picks and current holdings.  Making this information public forces me to review my decisions a little more than I normally might.  It also means that people can scrutinize my choices and ask questions or offer me advice.
+This is a list of my stock trade history and current holdings.  Making this information public forces me to review my decisions a little more than I normally might.  It also means that people can scrutinize my choices and ask questions or offer me advice.
 </p>
 
-<p>
-I manage my stocks through an online discount brokerage called <a href="http://questrade.com">QuestTrade</a>.  Chelsea and I each have RSP and TFSA accounts there.  We'll prefer to max out the contribution limits within our TFSAs and my RSP but we're waiting until Chelsea is in a higher tax bracket before before contributing to hers.  If we ever do hit our contribution limits, we'll prefer to buy Canadian dividend stocks outside of the registered accounts since Canadian dividends are tax-sheltered.
-</p>
-
-<p>
-I have plans to improve this page to show which holdings are in which accounts, and also to display dividend payouts.  The current prices are fetched daily from Google Finance.
-</p>
-
-<h3>Executions</h3>
+<h2>Trade History</h2>
 
 <table id="portfolio">
 	<tr>
@@ -26,7 +18,7 @@ I have plans to improve this page to show which holdings are in which accounts, 
 		<th>Commission</th>
 		<th>Amount</th>
 	</tr>
-	<% for t in @account.executions.reverse %>
+	<% for t in @account.executions.order(:date).reverse %>
 	<tr>
 		<td><%= t.date %></td>
 		<td><%= t.execution_type %></td>
@@ -45,7 +37,7 @@ I have plans to improve this page to show which holdings are in which accounts, 
 	</tr>
 </table>
 
-<h3>Current Positions</h3>
+<h2>Current Positions</h2>
 
 <table id="positions">
 	<tr>

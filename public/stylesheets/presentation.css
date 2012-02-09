@@ -146,7 +146,7 @@ div.post
 	margin-bottom: 1.0em;
 }
 
-div.post span.date
+span.date
 {	
 	background:url(/images/date.gif) no-repeat left top;
 	color: #787878;	
