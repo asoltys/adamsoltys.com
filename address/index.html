@@ -1,0 +1,54 @@
+<html>
+<head>
+  <script src="bundle.js"></script>
+  <script src="qrcode.js"></script>
+  <script>
+  var bitcoin = require('bitcoinjs-lib')
+  var bigi = require('bigi')
+
+  $(function() {
+    $('#privkey_div').hide()
+    $('#show_privkey').click(function() { $('#privkey_div').toggle() })
+    $('input').keyup(function() { 
+      var hash = bitcoin.crypto.sha256($(this).val())
+      var d = bigi.fromBuffer(hash)
+
+      var keyPair = new bitcoin.ECPair(d, null, {compressed: false})
+      var address = keyPair.getAddress()
+      var privKey = keyPair.toWIF()
+
+      $('#address').html(address)
+      $('#privkey').html(privKey)
+      $('#address_qr, #privkey_qr').html('')
+
+      new QRCode('address_qr', {text: address})
+      new QRCode('privkey_qr', {text: privKey})
+    }).keyup().focus()
+  })
+  </script>
+  <style>
+    body { background: black; color: white; text-align: center; }
+    body, input, button { font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 24px; }
+    .qr { margin: auto; width: 260px; padding: 20px; background: white; }
+  </style>
+</head>
+<body>
+  <div>
+    <img src="bitcoin.jpg" style=" width: 300px" />
+    <div id="instructions">
+      <p>Type a unique passphrase into the box and we'll generate a bitcoin address from it.  Typing the phrase again will bring up the same address and key.</p>
+    </div>
+    <p><input type="text" style="width: 400px"></p>
+    <span id="address"></span><br />
+    <div id="address_qr" class="qr"></div>
+    <br />
+    <button id="show_privkey">Show Private Key</button>
+    <br />
+    <br />
+    <div id="privkey_div">
+      <span id="privkey"></span><br />
+      <div id="privkey_qr" class="qr"></div>
+    </div>
+  </div>
+</body>
+</html>
